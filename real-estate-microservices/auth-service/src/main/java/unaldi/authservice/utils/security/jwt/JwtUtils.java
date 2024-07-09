@@ -51,7 +51,7 @@ public class JwtUtils {
   }
 
   public ResponseCookie generateRefreshJwtCookie(String refreshToken) {
-    return generateCookie(jwtRefreshCookie, refreshToken, "/api/auth/refreshtoken");
+    return generateCookie(jwtRefreshCookie, refreshToken, "/api/v1/auth/refreshtoken");
   }
 
   public String getJwtFromCookies(HttpServletRequest request) {
@@ -72,7 +72,7 @@ public class JwtUtils {
   public ResponseCookie getCleanJwtRefreshCookie() {
     return ResponseCookie
             .from(jwtRefreshCookie, null)
-            .path("/api/auth/refreshtoken")
+            .path("/api/v1/auth/refreshtoken")
             .build();
   }
 
