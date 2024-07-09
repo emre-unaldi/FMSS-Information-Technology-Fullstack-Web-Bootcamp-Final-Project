@@ -13,7 +13,7 @@ import java.util.Optional;
  * All rights reserved.
  *
  * @author Emre Ünaldı
- * @since 3.07.2024
+ * @since 9.07.2024
  */
 @Repository
 public interface RefreshTokenRepository extends JpaRepository<RefreshToken, Long> {

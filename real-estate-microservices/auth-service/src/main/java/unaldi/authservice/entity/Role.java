@@ -10,7 +10,7 @@ import lombok.Setter;
  * All rights reserved.
  *
  * @author Emre Ünaldı
- * @since 2.07.2024
+ * @since 9.07.2024
  */
 @Entity
 @Table(name = "roles")
