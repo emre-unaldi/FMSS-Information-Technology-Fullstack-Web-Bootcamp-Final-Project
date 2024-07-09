@@ -12,7 +12,7 @@ import java.time.Instant;
  * All rights reserved.
  *
  * @author Emre Ünaldı
- * @since 3.07.2024
+ * @since 9.07.2024
  */
 @Entity
 @Table(name = "refresh_token")
