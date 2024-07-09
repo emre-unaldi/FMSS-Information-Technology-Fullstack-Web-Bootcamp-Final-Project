@@ -1,9 +1,7 @@
 package unaldi.authservice.entity.dto.request;
 
 import jakarta.persistence.Column;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -49,6 +47,7 @@ public class SignupRequest {
     @Size(min = 10, max = 20)
     private String phoneNumber;
 
-    @NotBlank
+    @NotEmpty
+    @Size(min = 1, max = 2)
     private Set<String> role;
 }
