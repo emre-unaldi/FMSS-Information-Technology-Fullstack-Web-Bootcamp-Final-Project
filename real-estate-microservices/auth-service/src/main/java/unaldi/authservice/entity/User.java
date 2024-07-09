@@ -35,13 +35,13 @@ public class User {
   private Long id;
 
   @NotBlank
-  @Size(min = 3, max = 50)
-  @Column(name = "first_name", nullable = false, length = 30)
+  @Size(min = 3, max = 20)
+  @Column(name = "first_name", nullable = false, length = 20)
   private String firstName;
 
   @NotBlank
-  @Size(min = 3, max = 50)
-  @Column(name = "last_name", nullable = false, length = 30)
+  @Size(min = 3, max = 20)
+  @Column(name = "last_name", nullable = false, length = 20)
   private String lastName;
 
   @NotBlank
@@ -71,9 +71,12 @@ public class User {
              inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles = new HashSet<>();
 
-  public User(String username, String email, String password) {
+  public User(String firstName, String lastName, String username, String email, String password, String phoneNumber) {
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.username = username;
     this.email = email;
     this.password = password;
+    this.phoneNumber = phoneNumber;
   }
 }

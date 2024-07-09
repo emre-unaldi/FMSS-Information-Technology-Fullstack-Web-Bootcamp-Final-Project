@@ -19,27 +19,35 @@ import java.util.stream.Collectors;
  * @author Emre Ünaldı
  * @since 9.07.2024
  */
+@Getter
 public class UserDetailsImpl implements UserDetails {
     private static final long serialVersionUID = 1L;
 
-    @Getter
     private Long id;
+
+    private String firstName;
+
+    private String lastName;
 
     private String username;
 
-    @Getter
     private String email;
 
     @JsonIgnore
     private String password;
 
+    private String phoneNumber;
+
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Long id, String username, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailsImpl(Long id, String firstName, String lastName, String username, String email, String password, String phoneNumber, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.phoneNumber = phoneNumber;
         this.authorities = authorities;
     }
 
@@ -50,9 +58,12 @@ public class UserDetailsImpl implements UserDetails {
 
         return new UserDetailsImpl(
                 user.getId(),
+                user.getFirstName(),
+                user.getLastName(),
                 user.getUsername(),
                 user.getEmail(),
                 user.getPassword(),
+                user.getPhoneNumber(),
                 authorities
         );
     }
