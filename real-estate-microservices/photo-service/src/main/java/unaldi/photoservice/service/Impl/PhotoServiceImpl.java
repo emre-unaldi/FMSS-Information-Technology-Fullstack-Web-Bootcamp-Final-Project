@@ -176,7 +176,7 @@ public class PhotoServiceImpl implements PhotoService {
 
     private String prepareDownloadUrl(String photoId) {
         return ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("api/photos/download/")
+                .path("api/v1/photos/download/")
                 .path(photoId)
                 .toUriString();
     }
