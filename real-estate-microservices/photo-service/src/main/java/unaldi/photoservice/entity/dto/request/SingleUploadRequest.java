@@ -15,6 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UploadRequest {
-    private MultipartFile file;
+public class SingleUploadRequest {
+    private MultipartFile photo;
 }
