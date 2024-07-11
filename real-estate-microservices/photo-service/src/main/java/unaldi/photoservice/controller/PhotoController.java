@@ -6,6 +6,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import unaldi.photoservice.entity.dto.request.MultipleUploadRequest;
 import unaldi.photoservice.entity.dto.request.SingleUploadRequest;
 import unaldi.photoservice.entity.dto.response.DownloadResponse;
@@ -33,17 +34,21 @@ public class PhotoController {
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<PhotoResponse> singleUpload(@RequestParam("photo") SingleUploadRequest photo) throws Exception {
+    public ResponseEntity<PhotoResponse> singleUpload(@RequestParam("photo") MultipartFile photo) throws Exception {
+        SingleUploadRequest singleUploadRequest = new SingleUploadRequest(photo);
+
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(photoService.singleUpload(photo));
+                .body(photoService.singleUpload(singleUploadRequest));
     }
 
     @PostMapping("/uploads")
-    public ResponseEntity<List<PhotoResponse>> multipleUpload(@RequestParam("photos") MultipleUploadRequest photos) {
+    public ResponseEntity<List<PhotoResponse>> multipleUpload(@RequestParam("photos") MultipartFile[] photos) {
+        MultipleUploadRequest multipleUploadRequest = new MultipleUploadRequest(photos);
+
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(photoService.multipleUpload(photos));
+                .body(photoService.multipleUpload(multipleUploadRequest));
     }
 
     @GetMapping

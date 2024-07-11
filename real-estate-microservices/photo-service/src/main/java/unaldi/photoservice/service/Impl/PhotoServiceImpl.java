@@ -48,6 +48,11 @@ public class PhotoServiceImpl implements PhotoService {
         }
 
         String photoName = StringUtils.cleanPath(photo.getOriginalFilename());
+        String contentType = photo.getContentType();
+
+        if (!isImageFormat(contentType)) {
+            throw new Exception("Invalid file format. Only image files are allowed");
+        }
 
         try {
 
@@ -179,6 +184,21 @@ public class PhotoServiceImpl implements PhotoService {
                 .path("api/v1/photos/download/")
                 .path(photoId)
                 .toUriString();
+    }
+
+    private boolean isImageFormat(String contentType) {
+        List<String> allowedImageFormats = Arrays.asList(
+                "image/jpg",
+                "image/jpeg",
+                "image/png",
+                "image/gif",
+                "image/bmp",
+                "image/webp",
+                "image/tiff",
+                "image/svg+xml"
+        );
+
+        return allowedImageFormats.contains(contentType);
     }
 
 }
