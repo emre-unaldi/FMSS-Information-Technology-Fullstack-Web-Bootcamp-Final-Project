@@ -15,13 +15,15 @@ import unaldi.photoservice.entity.dto.response.PhotoResponse;
 import unaldi.photoservice.repository.PhotoRepository;
 import unaldi.photoservice.service.PhotoService;
 import unaldi.photoservice.service.mapper.PhotoMapper;
+import unaldi.photoservice.utils.constants.ExceptionMessages;
 import unaldi.photoservice.utils.constants.Messages;
+import unaldi.photoservice.utils.exception.*;
 import unaldi.photoservice.utils.result.DataResult;
 import unaldi.photoservice.utils.result.Result;
 import unaldi.photoservice.utils.result.SuccessDataResult;
 import unaldi.photoservice.utils.result.SuccessResult;
 
-import java.nio.file.FileAlreadyExistsException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -45,62 +47,53 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public DataResult<PhotoResponse> singleUpload(SingleUploadRequest singleUploadRequest) throws Exception {
+    public DataResult<PhotoResponse> singleUpload(SingleUploadRequest singleUploadRequest) {
         MultipartFile uploadPhoto = singleUploadRequest.getPhoto();
 
         if (uploadPhoto.getOriginalFilename() == null || uploadPhoto.getOriginalFilename().trim().isEmpty()) {
-            throw new Exception("Photo name is null or empty");
+            throw new PhotoNameEmptyException(ExceptionMessages.PHOTO_NAME_EMPTY);
         }
 
         String photoName = StringUtils.cleanPath(uploadPhoto.getOriginalFilename());
         String contentType = uploadPhoto.getContentType();
 
         if (!isImageFormat(contentType)) {
-            throw new Exception("Invalid file format. Only image files are allowed");
+            throw new InvalidPhotoFormatException(ExceptionMessages.INVALID_PHOTO_FORMAT);
         }
 
-        try {
+        if (photoName.contains("..")) {
+            throw new InvalidPathSequenceException(ExceptionMessages.INVALID_PHOTO_NAME_PATH_SEQUENCE);
+        }
 
-            if (photoName.contains("..")) {
-                throw new Exception("Photo name contains invalid path sequence " + photoName);
-            }
-
-            if (photoName.getBytes().length > (1024 * 1024)) {
-                throw new Exception("Photo size exceeds maximum limit");
-            }
-
-            if (photoRepository.existsByPhotoName(photoName)) {
-                throw new FileAlreadyExistsException("A Photo of that name already exists : " + photoName);
-            }
-
-            byte[] sourceData = uploadPhoto.getBytes();
-            Photo photoDto = PhotoMapper.INSTANCE.uploadRequestToPhoto(photoName, contentType, sourceData);
-            Photo photo = photoRepository.save(photoDto);
-
-            return new SuccessDataResult<>(
-                    PhotoMapper.INSTANCE.photoToPhotoResponse(photo),
-                    Messages.PHOTO_SINGLE_UPLOAD);
-
-        } catch (MaxUploadSizeExceededException e) {
+        if (photoName.getBytes().length > (1024 * 1024)) {
             throw new MaxUploadSizeExceededException(uploadPhoto.getSize());
-        } catch (Exception e) {
-            throw new Exception("Could not upload the file: " + photoName + "!"); // HttpStatus.EXPECTATION_FAILED
         }
+
+        if (photoRepository.existsByPhotoName(photoName)) {
+            throw new PhotoAlreadyExistsException(ExceptionMessages.PHOTO_NAME_ALREADY_EXISTS + photoName);
+        }
+
+        byte[] sourceData;
+        try {
+            sourceData = uploadPhoto.getBytes();
+        } catch (IOException exception) {
+            throw new PhotoNotReadException(ExceptionMessages.PHOTO_NOT_READ);
+        }
+        Photo photoDto = PhotoMapper.INSTANCE.uploadRequestToPhoto(photoName, contentType, sourceData);
+        Photo photo = photoRepository.save(photoDto);
+
+        return new SuccessDataResult<>(
+                PhotoMapper.INSTANCE.photoToPhotoResponse(photo),
+                Messages.PHOTO_SINGLE_UPLOAD);
     }
 
     @Override
     public DataResult<List<PhotoResponse>> multipleUpload(MultipleUploadRequest multipleUploadRequest) {
         List<PhotoResponse> photos = new ArrayList<>();
 
-        Arrays
-                .stream(multipleUploadRequest.getPhotos())
+        Arrays.stream(multipleUploadRequest.getPhotos())
                 .forEach(photo -> {
-                    try {
-                        SingleUploadRequest singleUploadRequest = new SingleUploadRequest(photo);
-                        photos.add(singleUpload(singleUploadRequest).getData());
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
+                    photos.add(singleUpload(PhotoMapper.INSTANCE.multipartFileToSingleUploadRequest(photo)).getData());
                 });
 
         return new SuccessDataResult<>(photos, Messages.PHOTO_MULTIPLE_UPLOAD);
@@ -120,7 +113,7 @@ public class PhotoServiceImpl implements PhotoService {
         Optional<Photo> photo = photoRepository.findById(photoId);
 
         if (photo.isEmpty()) {
-            throw new RuntimeException("Could not find the photo with id : " + photoId);
+            throw new PhotoNotFoundException(ExceptionMessages.PHOTO_NOT_FOUND);
         }
 
         return new SuccessDataResult<>(
@@ -131,26 +124,21 @@ public class PhotoServiceImpl implements PhotoService {
 
     @Override
     public DataResult<DownloadResponse> downloadById(String photoId) {
-        try {
-            Optional<Photo> photo = photoRepository.findById(photoId);
+        Optional<Photo> photo = photoRepository.findById(photoId);
 
-            if (photo.isEmpty()) {
-                throw new RuntimeException("Could not find the photo with id : " + photoId);
-            }
+        if (photo.isEmpty()) {
+            throw new PhotoNotFoundException(ExceptionMessages.PHOTO_NOT_FOUND);
+        }
 
-            byte[] data = photo.get().getSourceData();
-            ByteArrayResource resource = new ByteArrayResource(data);
+        byte[] data = photo.get().getSourceData();
+        ByteArrayResource resource = new ByteArrayResource(data);
 
-            if (resource.exists() || resource.isReadable()) {
-
-                return new SuccessDataResult<>(
-                        PhotoMapper.INSTANCE.photoToDownloadResponse(photo.get(), resource)
-                );
-            } else {
-                throw new RuntimeException("Could not read the photo with id : " + photoId);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException("Error: " + e.getMessage());
+        if (resource.exists() || resource.isReadable()) {
+            return new SuccessDataResult<>(
+                    PhotoMapper.INSTANCE.photoToDownloadResponse(photo.get(), resource)
+            );
+        } else {
+            throw new PhotoNotReadException(ExceptionMessages.PHOTO_NOT_READ);
         }
     }
 
@@ -160,7 +148,7 @@ public class PhotoServiceImpl implements PhotoService {
         Optional<Photo> photo = photoRepository.findById(photoId);
 
         if (photo.isEmpty()) {
-            throw new RuntimeException("Could not find the photo with id : " + photoId);
+            throw new PhotoNotFoundException(ExceptionMessages.PHOTO_NOT_FOUND);
         }
 
         photoRepository.deleteById(photo.get().getId());

@@ -3,8 +3,10 @@ package unaldi.photoservice.service.mapper;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 import org.springframework.core.io.ByteArrayResource;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import unaldi.photoservice.entity.Photo;
+import unaldi.photoservice.entity.dto.request.SingleUploadRequest;
 import unaldi.photoservice.entity.dto.response.DownloadResponse;
 import unaldi.photoservice.entity.dto.response.PhotoResponse;
 
@@ -47,4 +49,5 @@ public interface PhotoMapper {
     @Mapping(target = "name", source = "photo.name")
     DownloadResponse photoToDownloadResponse(Photo photo, ByteArrayResource resource);
 
+    SingleUploadRequest multipartFileToSingleUploadRequest(MultipartFile photo);
 }
