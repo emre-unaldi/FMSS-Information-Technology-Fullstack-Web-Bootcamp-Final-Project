@@ -1,6 +1,9 @@
-package unaldi.authservice.entity.dto.request;
+package unaldi.userservice.entity.dto.request;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,13 +16,13 @@ import java.util.Set;
  * All rights reserved.
  *
  * @author Emre Ünaldı
- * @since 9.07.2024
+ * @since 12.07.2024
  */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class SignupRequest {
+public class SignUpRequest {
 
     @NotBlank
     @Size(min = 3, max = 20)
@@ -32,12 +35,12 @@ public class SignupRequest {
     @NotBlank
     @Size(min = 3, max = 20)
     private String username;
- 
+
     @NotBlank
     @Size(max = 50)
     @Email
     private String email;
-    
+
     @NotBlank
     @Size(min = 6, max = 40)
     private String password;
