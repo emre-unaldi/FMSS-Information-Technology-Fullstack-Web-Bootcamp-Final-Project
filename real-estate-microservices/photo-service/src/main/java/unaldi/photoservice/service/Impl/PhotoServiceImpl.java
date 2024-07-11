@@ -15,6 +15,11 @@ import unaldi.photoservice.entity.dto.response.DownloadResponse;
 import unaldi.photoservice.entity.dto.response.PhotoResponse;
 import unaldi.photoservice.repository.PhotoRepository;
 import unaldi.photoservice.service.PhotoService;
+import unaldi.photoservice.utils.constants.Messages;
+import unaldi.photoservice.utils.result.DataResult;
+import unaldi.photoservice.utils.result.Result;
+import unaldi.photoservice.utils.result.SuccessDataResult;
+import unaldi.photoservice.utils.result.SuccessResult;
 
 import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
@@ -40,7 +45,7 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public PhotoResponse singleUpload(SingleUploadRequest singleUploadRequest) throws Exception {
+    public DataResult<PhotoResponse> singleUpload(SingleUploadRequest singleUploadRequest) throws Exception {
         MultipartFile photo = singleUploadRequest.getPhoto();
 
         if (photo.getOriginalFilename() == null || photo.getOriginalFilename().trim().isEmpty()) {
@@ -72,13 +77,15 @@ public class PhotoServiceImpl implements PhotoService {
             Photo photoDb = photoRepository.save(photoDto);
             String downloadURl = prepareDownloadUrl(photoDb.getId());
 
-            return new PhotoResponse(
+            PhotoResponse photoResponse = new PhotoResponse(
                     photoDb.getId(),
-                    photo.getName(),
+                    photoDb.getName(),
                     downloadURl,
                     photo.getContentType(),
                     photo.getSize()
             );
+
+            return new SuccessDataResult<>(photoResponse, Messages.PHOTO_SINGLE_UPLOAD);
 
         } catch (MaxUploadSizeExceededException e) {
             throw new MaxUploadSizeExceededException(photo.getSize());
@@ -88,7 +95,7 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public List<PhotoResponse> multipleUpload(MultipleUploadRequest multipleUploadRequest) {
+    public DataResult<List<PhotoResponse>> multipleUpload(MultipleUploadRequest multipleUploadRequest) {
         List<PhotoResponse> photos = new ArrayList<>();
 
         Arrays
@@ -96,21 +103,20 @@ public class PhotoServiceImpl implements PhotoService {
                 .forEach(photo -> {
                     try {
                         SingleUploadRequest singleUploadRequest = new SingleUploadRequest(photo);
-                        photos.add(singleUpload(singleUploadRequest));
+                        photos.add(singleUpload(singleUploadRequest).getData());
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
                 });
 
-        return photos;
+        return new SuccessDataResult<>(photos, Messages.PHOTO_MULTIPLE_UPLOAD);
     }
 
     @Override
-    public List<PhotoResponse> findAll() {
+    public DataResult<List<PhotoResponse>> findAll() {
         List<Photo> photos = photoRepository.findAll();
 
-        return photos
-                .stream()
+        List<PhotoResponse> photoResponses = photos.stream()
                 .map(photo -> new PhotoResponse(
                         photo.getId(),
                         photo.getName(),
@@ -119,10 +125,12 @@ public class PhotoServiceImpl implements PhotoService {
                         photo.getSourceData().length)
                 )
                 .toList();
+
+        return new SuccessDataResult<>(photoResponses, Messages.PHOTOS_LISTED);
     }
 
     @Override
-    public PhotoResponse findById(String photoId) {
+    public DataResult<PhotoResponse> findById(String photoId) {
         Optional<Photo> photo = photoRepository.findById(photoId);
 
         if (photo.isEmpty()) {
@@ -131,17 +139,19 @@ public class PhotoServiceImpl implements PhotoService {
 
         Photo photoDto = photo.get();
 
-        return new PhotoResponse(
+        PhotoResponse photoResponse = new PhotoResponse(
                 photoDto.getId(),
                 photoDto.getName(),
                 prepareDownloadUrl(photoDto.getId()),
                 photoDto.getType(),
                 photoDto.getSourceData().length
         );
+
+        return new SuccessDataResult<>(photoResponse, Messages.PHOTO_FOUND);
     }
 
     @Override
-    public DownloadResponse downloadById(String photoId) {
+    public DataResult<DownloadResponse> downloadById(String photoId) {
         try {
             Optional<Photo> photo = photoRepository.findById(photoId);
 
@@ -153,10 +163,12 @@ public class PhotoServiceImpl implements PhotoService {
             ByteArrayResource resource = new ByteArrayResource(data);
 
             if (resource.exists() || resource.isReadable()) {
-                return new DownloadResponse(
+                DownloadResponse downloadResponse = new DownloadResponse(
                         resource,
                         photo.get().getName()
                 );
+
+                return new SuccessDataResult<>(downloadResponse);
             } else {
                 throw new RuntimeException("Could not read the photo with id : " + photoId);
             }
@@ -167,7 +179,7 @@ public class PhotoServiceImpl implements PhotoService {
 
     @Transactional
     @Override
-    public Boolean deleteById(String photoId) {
+    public Result deleteById(String photoId) {
         Optional<Photo> photo = photoRepository.findById(photoId);
 
         if (photo.isEmpty()) {
@@ -176,7 +188,7 @@ public class PhotoServiceImpl implements PhotoService {
 
         photoRepository.deleteById(photo.get().getId());
 
-        return !photoRepository.existsById(photoId);
+        return new SuccessResult(Messages.PHOTO_DELETED);
     }
 
     private String prepareDownloadUrl(String photoId) {

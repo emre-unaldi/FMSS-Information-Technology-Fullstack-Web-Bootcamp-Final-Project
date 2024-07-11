@@ -4,6 +4,8 @@ import unaldi.photoservice.entity.dto.request.MultipleUploadRequest;
 import unaldi.photoservice.entity.dto.request.SingleUploadRequest;
 import unaldi.photoservice.entity.dto.response.DownloadResponse;
 import unaldi.photoservice.entity.dto.response.PhotoResponse;
+import unaldi.photoservice.utils.result.DataResult;
+import unaldi.photoservice.utils.result.Result;
 
 import java.util.List;
 
@@ -16,11 +18,11 @@ import java.util.List;
  */
 public interface PhotoService {
 
-    PhotoResponse singleUpload(SingleUploadRequest singleUploadRequest) throws Exception;
-    List<PhotoResponse> multipleUpload(MultipleUploadRequest multipleUploadRequest);
-    List<PhotoResponse> findAll();
-    PhotoResponse findById(String photoId);
-    DownloadResponse downloadById(String photoId);
-    Boolean deleteById(String photoId);
+    DataResult<PhotoResponse> singleUpload(SingleUploadRequest singleUploadRequest) throws Exception;
+    DataResult<List<PhotoResponse>> multipleUpload(MultipleUploadRequest multipleUploadRequest);
+    DataResult<List<PhotoResponse>> findAll();
+    DataResult<PhotoResponse> findById(String photoId);
+    DataResult<DownloadResponse> downloadById(String photoId);
+    Result deleteById(String photoId);
 
 }

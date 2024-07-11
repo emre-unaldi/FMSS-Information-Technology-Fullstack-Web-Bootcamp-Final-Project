@@ -12,6 +12,8 @@ import unaldi.photoservice.entity.dto.request.SingleUploadRequest;
 import unaldi.photoservice.entity.dto.response.DownloadResponse;
 import unaldi.photoservice.entity.dto.response.PhotoResponse;
 import unaldi.photoservice.service.PhotoService;
+import unaldi.photoservice.utils.result.DataResult;
+import unaldi.photoservice.utils.result.Result;
 
 import java.util.List;
 
@@ -34,39 +36,37 @@ public class PhotoController {
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<PhotoResponse> singleUpload(@RequestParam("photo") MultipartFile photo) throws Exception {
-        SingleUploadRequest singleUploadRequest = new SingleUploadRequest(photo);
+    public ResponseEntity<DataResult<PhotoResponse>> singleUpload(@RequestParam("photo") MultipartFile photo) throws Exception {
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(photoService.singleUpload(singleUploadRequest));
+                .body(photoService.singleUpload(new SingleUploadRequest(photo)));
     }
 
     @PostMapping("/uploads")
-    public ResponseEntity<List<PhotoResponse>> multipleUpload(@RequestParam("photos") MultipartFile[] photos) {
-        MultipleUploadRequest multipleUploadRequest = new MultipleUploadRequest(photos);
+    public ResponseEntity<DataResult<List<PhotoResponse>>> multipleUpload(@RequestParam("photos") MultipartFile[] photos) {
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(photoService.multipleUpload(multipleUploadRequest));
+                .body(photoService.multipleUpload(new MultipleUploadRequest(photos)));
     }
 
     @GetMapping
-    public ResponseEntity<List<PhotoResponse>> findAll() {
+    public ResponseEntity<DataResult<List<PhotoResponse>>> findAll() {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(photoService.findAll());
     }
 
     @GetMapping("/{photoId}")
-    public ResponseEntity<PhotoResponse> findById(@PathVariable("photoId") String photoId) {
+    public ResponseEntity<DataResult<PhotoResponse>> findById(@PathVariable("photoId") String photoId) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(photoService.findById(photoId));
     }
 
     @DeleteMapping("/{photoId}")
-    public ResponseEntity<Boolean> deleteById(@PathVariable("photoId") String photoId) {
+    public ResponseEntity<Result> deleteById(@PathVariable("photoId") String photoId) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(photoService.deleteById(photoId));
@@ -74,7 +74,7 @@ public class PhotoController {
 
     @GetMapping("/download/{photoId}")
     public ResponseEntity<Resource> downloadById(@PathVariable("photoId") String photoId) {
-        DownloadResponse downloaded = photoService.downloadById(photoId);
+        DownloadResponse downloaded = photoService.downloadById(photoId).getData();
 
         return ResponseEntity
                 .status(HttpStatus.OK)
