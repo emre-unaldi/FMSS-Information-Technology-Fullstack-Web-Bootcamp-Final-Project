@@ -3,7 +3,6 @@ package unaldi.photoservice.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,7 +16,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "photos")
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Photo {
@@ -27,20 +25,14 @@ public class Photo {
     private String id;
 
     @Size(min = 1, max = 255)
-    @Column(name = "photo_name", nullable = false, unique = true)
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "photo_type", nullable = false)
+    @Column(name = "type", nullable = false)
     private String type;
 
     @Lob
     @Column(name = "source_data", nullable = false)
     private byte[] sourceData;
-
-    public Photo(String name, String type, byte[] sourceData) {
-        this.name = name;
-        this.type = type;
-        this.sourceData = sourceData;
-    }
 
 }
