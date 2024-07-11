@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import unaldi.photoservice.entity.Photo;
 import unaldi.photoservice.entity.dto.request.MultipleUploadRequest;
 import unaldi.photoservice.entity.dto.request.SingleUploadRequest;
@@ -15,6 +14,7 @@ import unaldi.photoservice.entity.dto.response.DownloadResponse;
 import unaldi.photoservice.entity.dto.response.PhotoResponse;
 import unaldi.photoservice.repository.PhotoRepository;
 import unaldi.photoservice.service.PhotoService;
+import unaldi.photoservice.service.mapper.PhotoMapper;
 import unaldi.photoservice.utils.constants.Messages;
 import unaldi.photoservice.utils.result.DataResult;
 import unaldi.photoservice.utils.result.Result;
@@ -46,14 +46,14 @@ public class PhotoServiceImpl implements PhotoService {
 
     @Override
     public DataResult<PhotoResponse> singleUpload(SingleUploadRequest singleUploadRequest) throws Exception {
-        MultipartFile photo = singleUploadRequest.getPhoto();
+        MultipartFile uploadPhoto = singleUploadRequest.getPhoto();
 
-        if (photo.getOriginalFilename() == null || photo.getOriginalFilename().trim().isEmpty()) {
+        if (uploadPhoto.getOriginalFilename() == null || uploadPhoto.getOriginalFilename().trim().isEmpty()) {
             throw new Exception("Photo name is null or empty");
         }
 
-        String photoName = StringUtils.cleanPath(photo.getOriginalFilename());
-        String contentType = photo.getContentType();
+        String photoName = StringUtils.cleanPath(uploadPhoto.getOriginalFilename());
+        String contentType = uploadPhoto.getContentType();
 
         if (!isImageFormat(contentType)) {
             throw new Exception("Invalid file format. Only image files are allowed");
@@ -73,22 +73,16 @@ public class PhotoServiceImpl implements PhotoService {
                 throw new FileAlreadyExistsException("A Photo of that name already exists : " + photoName);
             }
 
-            Photo photoDto = new Photo(photoName, photo.getContentType(), photo.getBytes());
-            Photo photoDb = photoRepository.save(photoDto);
-            String downloadURl = prepareDownloadUrl(photoDb.getId());
+            byte[] sourceData = uploadPhoto.getBytes();
+            Photo photoDto = PhotoMapper.INSTANCE.uploadRequestToPhoto(photoName, contentType, sourceData);
+            Photo photo = photoRepository.save(photoDto);
 
-            PhotoResponse photoResponse = new PhotoResponse(
-                    photoDb.getId(),
-                    photoDb.getName(),
-                    downloadURl,
-                    photo.getContentType(),
-                    photo.getSize()
-            );
-
-            return new SuccessDataResult<>(photoResponse, Messages.PHOTO_SINGLE_UPLOAD);
+            return new SuccessDataResult<>(
+                    PhotoMapper.INSTANCE.photoToPhotoResponse(photo),
+                    Messages.PHOTO_SINGLE_UPLOAD);
 
         } catch (MaxUploadSizeExceededException e) {
-            throw new MaxUploadSizeExceededException(photo.getSize());
+            throw new MaxUploadSizeExceededException(uploadPhoto.getSize());
         } catch (Exception e) {
             throw new Exception("Could not upload the file: " + photoName + "!"); // HttpStatus.EXPECTATION_FAILED
         }
@@ -116,17 +110,9 @@ public class PhotoServiceImpl implements PhotoService {
     public DataResult<List<PhotoResponse>> findAll() {
         List<Photo> photos = photoRepository.findAll();
 
-        List<PhotoResponse> photoResponses = photos.stream()
-                .map(photo -> new PhotoResponse(
-                        photo.getId(),
-                        photo.getName(),
-                        prepareDownloadUrl(photo.getId()),
-                        photo.getType(),
-                        photo.getSourceData().length)
-                )
-                .toList();
-
-        return new SuccessDataResult<>(photoResponses, Messages.PHOTOS_LISTED);
+        return new SuccessDataResult<>(
+                PhotoMapper.INSTANCE.photosToPhotoResponses(photos),
+                Messages.PHOTOS_LISTED);
     }
 
     @Override
@@ -137,17 +123,10 @@ public class PhotoServiceImpl implements PhotoService {
             throw new RuntimeException("Could not find the photo with id : " + photoId);
         }
 
-        Photo photoDto = photo.get();
-
-        PhotoResponse photoResponse = new PhotoResponse(
-                photoDto.getId(),
-                photoDto.getName(),
-                prepareDownloadUrl(photoDto.getId()),
-                photoDto.getType(),
-                photoDto.getSourceData().length
+        return new SuccessDataResult<>(
+                PhotoMapper.INSTANCE.photoToPhotoResponse(photo.get()),
+                Messages.PHOTO_FOUND
         );
-
-        return new SuccessDataResult<>(photoResponse, Messages.PHOTO_FOUND);
     }
 
     @Override
@@ -163,12 +142,10 @@ public class PhotoServiceImpl implements PhotoService {
             ByteArrayResource resource = new ByteArrayResource(data);
 
             if (resource.exists() || resource.isReadable()) {
-                DownloadResponse downloadResponse = new DownloadResponse(
-                        resource,
-                        photo.get().getName()
-                );
 
-                return new SuccessDataResult<>(downloadResponse);
+                return new SuccessDataResult<>(
+                        PhotoMapper.INSTANCE.photoToDownloadResponse(photo.get(), resource)
+                );
             } else {
                 throw new RuntimeException("Could not read the photo with id : " + photoId);
             }
@@ -189,13 +166,6 @@ public class PhotoServiceImpl implements PhotoService {
         photoRepository.deleteById(photo.get().getId());
 
         return new SuccessResult(Messages.PHOTO_DELETED);
-    }
-
-    private String prepareDownloadUrl(String photoId) {
-        return ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("api/v1/photos/download/")
-                .path(photoId)
-                .toUriString();
     }
 
     private boolean isImageFormat(String contentType) {
