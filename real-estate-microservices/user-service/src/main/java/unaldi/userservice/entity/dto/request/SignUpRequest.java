@@ -51,6 +51,6 @@ public class SignUpRequest {
 
     @NotEmpty
     @Size(min = 1, max = 2)
-    private Set<String> role;
+    private Set<String> roles;
 
 }
