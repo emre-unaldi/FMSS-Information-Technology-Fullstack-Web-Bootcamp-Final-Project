@@ -5,6 +5,7 @@ import unaldi.authservice.entity.RefreshToken;
 import unaldi.authservice.entity.dto.request.LoginRequest;
 import unaldi.authservice.entity.dto.response.*;
 import unaldi.authservice.service.AuthService;
+import unaldi.authservice.service.mapper.AuthMapper;
 import unaldi.authservice.utils.constants.ExceptionMessages;
 import unaldi.authservice.utils.constants.Messages;
 import unaldi.authservice.utils.exception.RefreshTokenEmptyException;
@@ -19,11 +20,9 @@ import org.springframework.http.ResponseCookie;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -62,33 +61,13 @@ public class AuthServiceImpl implements AuthService {
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
 
-        List<String> roles = userDetails
-                .getAuthorities()
-                .stream()
-                .map(GrantedAuthority::getAuthority)
-                .toList();
-
         RefreshToken refreshToken = refreshTokenService.createRefreshToken(userDetails.getId());
         ResponseCookie jwtRefreshCookie = jwtUtils.generateRefreshJwtCookie(refreshToken.getToken());
 
-        UserResponse userResponse = new UserResponse(
-                userDetails.getId(),
-                userDetails.getFirstName(),
-                userDetails.getLastName(),
-                userDetails.getUsername(),
-                userDetails.getEmail(),
-                userDetails.getPassword(),
-                userDetails.getPhoneNumber(),
-                roles
-        );
-
+        UserResponse userResponse = AuthMapper.INSTANCE.userDetailsToUserResponse(userDetails);
         SuccessDataResult<UserResponse> user = new SuccessDataResult<>(userResponse, Messages.USER_LOGGED_IN);
 
-        return new LoginResponse(
-                user,
-                jwtCookie,
-                jwtRefreshCookie
-        );
+        return AuthMapper.INSTANCE.mapToLoginResponse(user, jwtCookie, jwtRefreshCookie);
     }
 
     @Override
@@ -105,11 +84,7 @@ public class AuthServiceImpl implements AuthService {
 
         SuccessResult result = new SuccessResult(Messages.USER_LOGGED_OUT);
 
-        return new LogoutResponse(
-                result,
-                jwtCookie,
-                jwtRefreshCookie
-        );
+        return AuthMapper.INSTANCE.mapToLogoutResponse(result, jwtCookie, jwtRefreshCookie);
     }
 
     @Override
@@ -124,7 +99,7 @@ public class AuthServiceImpl implements AuthService {
                         SuccessResult result = new SuccessResult(Messages.TOKEN_REFRESHED);
                         ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(user);
 
-                        return new RefreshTokenResponse(result, jwtCookie);
+                        return AuthMapper.INSTANCE.mapToRefreshTokenResponse(result, jwtCookie);
                     })
                     .orElseThrow(() -> new RefreshTokenNotFoundException(refreshToken, ExceptionMessages.REFRESH_TOKEN_NOT_FOUND));
         }
