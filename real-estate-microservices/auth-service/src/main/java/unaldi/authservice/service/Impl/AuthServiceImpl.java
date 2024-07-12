@@ -8,7 +8,7 @@ import unaldi.authservice.service.AuthService;
 import unaldi.authservice.utils.constants.ExceptionMessages;
 import unaldi.authservice.utils.constants.Messages;
 import unaldi.authservice.utils.exception.RefreshTokenEmptyException;
-import unaldi.authservice.utils.exception.RefreshTokenException;
+import unaldi.authservice.utils.exception.RefreshTokenNotFoundException;
 import unaldi.authservice.utils.result.SuccessDataResult;
 import unaldi.authservice.utils.result.SuccessResult;
 import unaldi.authservice.utils.security.jwt.JwtUtils;
@@ -126,7 +126,7 @@ public class AuthServiceImpl implements AuthService {
 
                         return new RefreshTokenResponse(result, jwtCookie);
                     })
-                    .orElseThrow(() -> new RefreshTokenException(refreshToken, ExceptionMessages.REFRESH_TOKEN_NOT_FOUND));
+                    .orElseThrow(() -> new RefreshTokenNotFoundException(refreshToken, ExceptionMessages.REFRESH_TOKEN_NOT_FOUND));
         }
 
         throw new RefreshTokenEmptyException(ExceptionMessages.REFRESH_TOKEN_EMPTY);
