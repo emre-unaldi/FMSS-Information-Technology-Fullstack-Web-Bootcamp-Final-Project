@@ -9,6 +9,8 @@ import unaldi.authservice.utils.constants.ExceptionMessages;
 import unaldi.authservice.utils.constants.Messages;
 import unaldi.authservice.utils.exception.RefreshTokenEmptyException;
 import unaldi.authservice.utils.exception.RefreshTokenException;
+import unaldi.authservice.utils.result.SuccessDataResult;
+import unaldi.authservice.utils.result.SuccessResult;
 import unaldi.authservice.utils.security.jwt.JwtUtils;
 import unaldi.authservice.utils.security.services.RefreshTokenService;
 import unaldi.authservice.utils.security.services.UserDetailsImpl;
@@ -46,7 +48,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public AuthenticationResponse login(LoginRequest loginRequest) {
+    public LoginResponse login(LoginRequest loginRequest) {
 
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -69,7 +71,7 @@ public class AuthServiceImpl implements AuthService {
         RefreshToken refreshToken = refreshTokenService.createRefreshToken(userDetails.getId());
         ResponseCookie jwtRefreshCookie = jwtUtils.generateRefreshJwtCookie(refreshToken.getToken());
 
-        UserInfoResponse userInfoResponse = new UserInfoResponse(
+        UserResponse userResponse = new UserResponse(
                 userDetails.getId(),
                 userDetails.getFirstName(),
                 userDetails.getLastName(),
@@ -80,8 +82,10 @@ public class AuthServiceImpl implements AuthService {
                 roles
         );
 
-        return new AuthenticationResponse(
-                userInfoResponse,
+        SuccessDataResult<UserResponse> user = new SuccessDataResult<>(userResponse, Messages.USER_LOGGED_IN);
+
+        return new LoginResponse(
+                user,
                 jwtCookie,
                 jwtRefreshCookie
         );
@@ -99,10 +103,12 @@ public class AuthServiceImpl implements AuthService {
         ResponseCookie jwtCookie = jwtUtils.getCleanJwtCookie();
         ResponseCookie jwtRefreshCookie = jwtUtils.getCleanJwtRefreshCookie();
 
+        SuccessResult result = new SuccessResult(Messages.USER_LOGGED_OUT);
+
         return new LogoutResponse(
+                result,
                 jwtCookie,
-                jwtRefreshCookie,
-                new MessageResponse(Messages.USER_SIGN_OUT)
+                jwtRefreshCookie
         );
     }
 
@@ -115,10 +121,10 @@ public class AuthServiceImpl implements AuthService {
                     .map(refreshTokenService::verifyExpiration)
                     .map(RefreshToken::getUser)
                     .map(user -> {
+                        SuccessResult result = new SuccessResult(Messages.TOKEN_REFRESHED);
                         ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(user);
-                        MessageResponse messageResponse = new MessageResponse(Messages.TOKEN_REFRESHED);
 
-                        return new RefreshTokenResponse(jwtCookie, messageResponse);
+                        return new RefreshTokenResponse(result, jwtCookie);
                     })
                     .orElseThrow(() -> new RefreshTokenException(refreshToken, ExceptionMessages.REFRESH_TOKEN_NOT_FOUND));
         }

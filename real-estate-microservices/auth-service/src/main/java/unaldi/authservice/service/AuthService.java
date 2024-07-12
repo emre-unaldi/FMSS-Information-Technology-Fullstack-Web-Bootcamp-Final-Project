@@ -13,7 +13,7 @@ import unaldi.authservice.entity.dto.response.*;
  */
 public interface AuthService {
 
-    AuthenticationResponse login(LoginRequest loginRequest);
+    LoginResponse login(LoginRequest loginRequest);
     LogoutResponse logout();
     RefreshTokenResponse refreshToken(HttpServletRequest request);
 

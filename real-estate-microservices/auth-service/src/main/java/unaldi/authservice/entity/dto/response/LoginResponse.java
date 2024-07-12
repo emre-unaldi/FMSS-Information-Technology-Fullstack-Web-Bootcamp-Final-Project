@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.http.ResponseCookie;
+import unaldi.authservice.utils.result.DataResult;
 
 /**
  * Copyright (c) 2024
@@ -17,9 +18,9 @@ import org.springframework.http.ResponseCookie;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthenticationResponse {
+public class LoginResponse {
 
-    private UserInfoResponse userInfoResponse;
+    private DataResult<UserResponse> user;
     private ResponseCookie jwtCookie;
     private ResponseCookie jwtRefreshCookie;
 
