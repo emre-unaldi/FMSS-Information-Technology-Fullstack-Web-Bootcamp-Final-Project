@@ -5,6 +5,7 @@ import org.mapstruct.factory.Mappers;
 import unaldi.userservice.entity.Role;
 import unaldi.userservice.entity.User;
 import unaldi.userservice.entity.dto.request.SignUpRequest;
+import unaldi.userservice.entity.dto.request.UserUpdateRequest;
 import unaldi.userservice.entity.dto.response.UserResponse;
 
 import java.util.List;
@@ -28,6 +29,12 @@ public interface UserMapper {
             @Mapping(source = "encodedPassword", target = "password")
     })
     User signUpRequestToUser(SignUpRequest signUpRequest, String encodedPassword);
+
+    @Mappings({
+            @Mapping(target = "roles", ignore = true),
+            @Mapping(source = "encodedPassword", target = "password")
+    })
+    User userUpdateRequestToUser(UserUpdateRequest userUpdateRequest, String encodedPassword);
 
     @Mapping(target = "roles", ignore = true)
     UserResponse userToUserResponse(User user);

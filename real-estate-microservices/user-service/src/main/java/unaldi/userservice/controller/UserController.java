@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import unaldi.userservice.entity.dto.request.SignUpRequest;
+import unaldi.userservice.entity.dto.request.UserUpdateRequest;
 import unaldi.userservice.entity.dto.response.UserResponse;
 import unaldi.userservice.service.UserService;
 import unaldi.userservice.utils.result.DataResult;
@@ -30,11 +31,18 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/register")
+    @PostMapping
     public ResponseEntity<DataResult<UserResponse>> register(@RequestBody SignUpRequest signUpRequest) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(userService.register(signUpRequest));
+    }
+
+    @PutMapping
+    public ResponseEntity<DataResult<UserResponse>> update(@RequestBody UserUpdateRequest userUpdateRequest) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(userService.update(userUpdateRequest));
     }
 
     @GetMapping
