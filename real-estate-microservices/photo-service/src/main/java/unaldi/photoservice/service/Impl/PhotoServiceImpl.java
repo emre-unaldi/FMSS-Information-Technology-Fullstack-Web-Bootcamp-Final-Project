@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
 import unaldi.photoservice.entity.Photo;
 import unaldi.photoservice.entity.dto.request.MultipleUploadRequest;
+import unaldi.photoservice.entity.dto.request.PhotoIdsRequest;
 import unaldi.photoservice.entity.dto.request.SingleUploadRequest;
 import unaldi.photoservice.entity.dto.response.DownloadResponse;
 import unaldi.photoservice.entity.dto.response.PhotoResponse;
@@ -47,8 +48,8 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public DataResult<PhotoResponse> singleUpload(SingleUploadRequest singleUploadRequest) {
-        MultipartFile uploadPhoto = singleUploadRequest.getPhoto();
+    public DataResult<PhotoResponse> singleUpload(SingleUploadRequest request) {
+        MultipartFile uploadPhoto = request.getPhoto();
 
         if (uploadPhoto.getOriginalFilename() == null || uploadPhoto.getOriginalFilename().trim().isEmpty()) {
             throw new PhotoNameEmptyException(ExceptionMessages.PHOTO_NAME_EMPTY);
@@ -88,10 +89,10 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public DataResult<List<PhotoResponse>> multipleUpload(MultipleUploadRequest multipleUploadRequest) {
+    public DataResult<List<PhotoResponse>> multipleUpload(MultipleUploadRequest request) {
         List<PhotoResponse> photos = new ArrayList<>();
 
-        Arrays.stream(multipleUploadRequest.getPhotos())
+        Arrays.stream(request.getPhotos())
                 .forEach(photo -> {
                     photos.add(singleUpload(PhotoMapper.INSTANCE.multipartFileToSingleUploadRequest(photo)).getData());
                 });
@@ -106,6 +107,16 @@ public class PhotoServiceImpl implements PhotoService {
         return new SuccessDataResult<>(
                 PhotoMapper.INSTANCE.photosToPhotoResponses(photos),
                 Messages.PHOTOS_LISTED);
+    }
+
+    @Override
+    public DataResult<List<PhotoResponse>> findByPhotoIds(PhotoIdsRequest request) {
+        List<Photo> photos = photoRepository.findByPhotoIds(request.getPhotoIds());
+
+        return new SuccessDataResult<>(
+                PhotoMapper.INSTANCE.photosToPhotoResponses(photos),
+                Messages.PHOTOS_LISTED
+        );
     }
 
     @Override
