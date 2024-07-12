@@ -109,6 +109,7 @@ public class PhotoServiceImpl implements PhotoService {
                 Messages.PHOTOS_LISTED);
     }
 
+    @Transactional
     @Override
     public DataResult<List<PhotoResponse>> findByPhotoIds(PhotoIdsRequest request) {
         List<Photo> photos = photoRepository.findByPhotoIds(request.getPhotoIds());
