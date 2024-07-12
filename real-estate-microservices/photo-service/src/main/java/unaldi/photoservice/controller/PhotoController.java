@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import unaldi.photoservice.entity.dto.request.MultipleUploadRequest;
+import unaldi.photoservice.entity.dto.request.PhotoIdsRequest;
 import unaldi.photoservice.entity.dto.request.SingleUploadRequest;
 import unaldi.photoservice.entity.dto.response.DownloadResponse;
 import unaldi.photoservice.entity.dto.response.PhotoResponse;
@@ -58,11 +59,11 @@ public class PhotoController {
                 .body(photoService.findAll());
     }
 
-    @GetMapping("/findByIds")
-    public ResponseEntity<DataResult<List<PhotoResponse>>> findByPhotoIds(@RequestParam("photoIds") List<String> photoIds) {
+    @PostMapping("/findByIds")
+    public ResponseEntity<DataResult<List<PhotoResponse>>> findByPhotoIds(@RequestBody PhotoIdsRequest photoIdsRequest) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(photoService.findByPhotoIds(photoIds));
+                .body(photoService.findByPhotoIds(photoIdsRequest));
     }
 
     @GetMapping("/{photoId}")
