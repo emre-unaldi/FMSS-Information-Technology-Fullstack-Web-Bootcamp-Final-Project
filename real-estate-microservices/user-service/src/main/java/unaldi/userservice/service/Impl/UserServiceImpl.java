@@ -7,6 +7,7 @@ import unaldi.userservice.entity.ERole;
 import unaldi.userservice.entity.Role;
 import unaldi.userservice.entity.User;
 import unaldi.userservice.entity.dto.request.SignUpRequest;
+import unaldi.userservice.entity.dto.request.UserUpdateRequest;
 import unaldi.userservice.entity.dto.response.UserResponse;
 import unaldi.userservice.repository.RoleRepository;
 import unaldi.userservice.repository.UserRepository;
@@ -39,7 +40,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
-    PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
@@ -50,7 +51,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public DataResult<UserResponse> register(SignUpRequest signUpRequest) {
-
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
             throw new UsernameAlreadyExistsException(ExceptionMessages.USERNAME_ALREADY_TAKEN);
         }
@@ -63,43 +63,7 @@ public class UserServiceImpl implements UserService {
         User userDto = UserMapper.INSTANCE.signUpRequestToUser(signUpRequest, encodedPassword);
 
         Set<String> strRoles = signUpRequest.getRoles();
-        Set<Role> roles = new HashSet<>();
-
-        if (strRoles == null) {
-            Role userRole = roleRepository
-                    .findByName(ERole.ROLE_USER)
-                    .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
-
-            roles.add(userRole);
-
-        } else {
-            strRoles.forEach(role -> {
-                switch (role) {
-                    case "admin":
-                        Role adminRole = roleRepository
-                                .findByName(ERole.ROLE_ADMIN)
-                                .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
-
-                        roles.add(adminRole);
-
-                        break;
-                    case "moderator":
-                        Role modRole = roleRepository
-                                .findByName(ERole.ROLE_MODERATOR)
-                                .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
-
-                        roles.add(modRole);
-
-                        break;
-                    default:
-                        Role userRole = roleRepository
-                                .findByName(ERole.ROLE_USER)
-                                .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
-
-                        roles.add(userRole);
-                }
-            });
-        }
+        Set<Role> roles = mapToUserRoles(strRoles);
 
         userDto.setRoles(roles);
         User user = userRepository.save(userDto);
@@ -107,6 +71,35 @@ public class UserServiceImpl implements UserService {
         return new SuccessDataResult<>(
                 UserMapper.INSTANCE.userToUserResponse(user),
                 Messages.USER_REGISTERED
+        );
+    }
+
+    @Override
+    public DataResult<UserResponse> update(UserUpdateRequest userUpdateRequest) {
+        if (!userRepository.existsById(userUpdateRequest.getId())) {
+            throw new UserNotFoundException(ExceptionMessages.USER_NOT_FOUND);
+        }
+
+        if (userRepository.existsByUsername(userUpdateRequest.getUsername())) {
+            throw new UsernameAlreadyExistsException(ExceptionMessages.USERNAME_ALREADY_TAKEN);
+        }
+
+        if (userRepository.existsByEmail(userUpdateRequest.getEmail())) {
+            throw new EmailAlreadyExistsException(ExceptionMessages.EMAIL_ALREADY_TAKEN);
+        }
+
+        String encodedPassword = passwordEncoder.encode(userUpdateRequest.getPassword());
+        User userDto = UserMapper.INSTANCE.userUpdateRequestToUser(userUpdateRequest, encodedPassword);
+
+        Set<String> strRoles = userUpdateRequest.getRoles();
+        Set<Role> roles = mapToUserRoles(strRoles);
+
+        userDto.setRoles(roles);
+        User user = userRepository.save(userDto);
+
+        return new SuccessDataResult<>(
+                UserMapper.INSTANCE.userToUserResponse(user),
+                Messages.USER_UPDATED
         );
     }
 
@@ -139,5 +132,40 @@ public class UserServiceImpl implements UserService {
         this.userRepository.deleteById(user.getId());
 
         return new SuccessResult(Messages.USER_DELETED);
+    }
+
+    private Set<Role> mapToUserRoles(Set<String> strRoles) {
+        Set<Role> roles = new HashSet<>();
+
+        if (strRoles == null) {
+            Role userRole = roleRepository
+                    .findByName(ERole.ROLE_USER)
+                    .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
+            roles.add(userRole);
+        } else {
+            strRoles.forEach(role -> {
+                switch (role) {
+                    case "admin":
+                        Role adminRole = roleRepository
+                                .findByName(ERole.ROLE_ADMIN)
+                                .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
+                        roles.add(adminRole);
+                        break;
+                    case "moderator":
+                        Role modRole = roleRepository
+                                .findByName(ERole.ROLE_MODERATOR)
+                                .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
+                        roles.add(modRole);
+                        break;
+                    default:
+                        Role userRole = roleRepository
+                                .findByName(ERole.ROLE_USER)
+                                .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
+                        roles.add(userRole);
+                }
+            });
+        }
+
+        return roles;
     }
 }
