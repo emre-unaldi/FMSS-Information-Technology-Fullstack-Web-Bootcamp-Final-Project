@@ -58,6 +58,13 @@ public class PhotoController {
                 .body(photoService.findAll());
     }
 
+    @GetMapping("/findByIds")
+    public ResponseEntity<DataResult<List<PhotoResponse>>> findByPhotoIds(@RequestParam("photoIds") List<String> photoIds) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(photoService.findByPhotoIds(photoIds));
+    }
+
     @GetMapping("/{photoId}")
     public ResponseEntity<DataResult<PhotoResponse>> findById(@PathVariable("photoId") String photoId) {
         return ResponseEntity
