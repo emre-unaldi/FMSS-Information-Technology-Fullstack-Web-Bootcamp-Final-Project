@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @since 9.07.2024
  */
 @ResponseStatus(HttpStatus.FORBIDDEN)
-public class RefreshTokenException extends RuntimeException {
+public class RefreshTokenExpiredException extends RuntimeException {
 
-    public RefreshTokenException(String token, String message) {
+    public RefreshTokenExpiredException(String token, String message) {
         super(String.format("Failed for [%s]: %s", token, message));
     }
 

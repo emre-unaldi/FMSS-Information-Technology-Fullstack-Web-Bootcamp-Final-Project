@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import unaldi.authservice.entity.dto.request.LoginRequest;
 import unaldi.authservice.entity.dto.response.*;
 import unaldi.authservice.service.AuthService;
-import unaldi.authservice.utils.exception.RefreshTokenException;
 import unaldi.authservice.utils.result.DataResult;
-import unaldi.authservice.utils.result.ErrorResult;
 import unaldi.authservice.utils.result.Result;
 
 /**
@@ -58,19 +56,12 @@ public class AuthController {
 
     @PostMapping("/refreshToken")
     public ResponseEntity<Result> refreshToken(HttpServletRequest request) {
-        try {
-            RefreshTokenResponse refreshToken = authService.refreshToken(request);
+        RefreshTokenResponse refreshToken = authService.refreshToken(request);
 
-            return ResponseEntity
-                    .status(HttpStatus.OK)
-                    .header(HttpHeaders.SET_COOKIE, refreshToken.getJwtCookie().toString())
-                    .body(refreshToken.getResult());
-
-        } catch (IllegalArgumentException exception) {
-            return ResponseEntity.badRequest().body(new ErrorResult(exception.getMessage()));
-        } catch (RefreshTokenException exception) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new ErrorResult(exception.getMessage()));
-        }
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .header(HttpHeaders.SET_COOKIE, refreshToken.getJwtCookie().toString())
+                .body(refreshToken.getResult());
     }
 
 }
