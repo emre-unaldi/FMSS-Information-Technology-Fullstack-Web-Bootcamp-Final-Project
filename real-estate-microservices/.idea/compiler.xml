@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="advert-service" />
         <module name="photo-service" />
         <module name="auth-service" />
         <module name="user-service" />
@@ -19,6 +20,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="advert-service" options="-parameters" />
       <module name="api-gateway-service" options="-parameters" />
       <module name="auth-service" options="-parameters" />
       <module name="discovery-client-service" options="-parameters" />
