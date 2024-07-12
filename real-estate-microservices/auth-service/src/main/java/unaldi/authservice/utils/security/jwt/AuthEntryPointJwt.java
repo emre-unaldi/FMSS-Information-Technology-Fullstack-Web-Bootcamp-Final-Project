@@ -1,6 +1,8 @@
 package unaldi.authservice.utils.security.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
@@ -9,6 +11,11 @@ import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
+import unaldi.authservice.utils.constants.ExceptionMessages;
+import unaldi.authservice.utils.constants.Messages;
+import unaldi.authservice.utils.result.DataResult;
+import unaldi.authservice.utils.result.ErrorDataResult;
+import unaldi.authservice.utils.result.SuccessDataResult;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -39,8 +46,13 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint {
     body.put("message", authException.getMessage());
     body.put("path", request.getServletPath());
 
-    final ObjectMapper mapper = new ObjectMapper();
-    mapper.writeValue(response.getOutputStream(), body);
+    ErrorDataResult<Map<String, Object>> result = new ErrorDataResult<>(body, ExceptionMessages.USER_UNAUTHORIZED);
+
+    ObjectMapper mapper = new ObjectMapper();
+    mapper.registerModule(new JavaTimeModule());
+    mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+
+    mapper.writeValue(response.getOutputStream(), result);
   }
 
 }

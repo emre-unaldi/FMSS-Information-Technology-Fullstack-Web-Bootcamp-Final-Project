@@ -11,6 +11,9 @@ import unaldi.authservice.entity.dto.request.LoginRequest;
 import unaldi.authservice.entity.dto.response.*;
 import unaldi.authservice.service.AuthService;
 import unaldi.authservice.utils.exception.RefreshTokenException;
+import unaldi.authservice.utils.result.DataResult;
+import unaldi.authservice.utils.result.ErrorResult;
+import unaldi.authservice.utils.result.Result;
 
 /**
  * Copyright (c) 2024
@@ -32,41 +35,41 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserInfoResponse> authenticate(@Valid @RequestBody LoginRequest loginRequest) {
-        AuthenticationResponse authentication = authService.login(loginRequest);
+    public ResponseEntity<DataResult<UserResponse>> login(@Valid @RequestBody LoginRequest loginRequest) {
+        LoginResponse login = authService.login(loginRequest);
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .header(HttpHeaders.SET_COOKIE, authentication.getJwtCookie().toString())
-                .header(HttpHeaders.SET_COOKIE, authentication.getJwtRefreshCookie().toString())
-                .body(authentication.getUserInfoResponse());
+                .header(HttpHeaders.SET_COOKIE, login.getJwtCookie().toString())
+                .header(HttpHeaders.SET_COOKIE, login.getJwtRefreshCookie().toString())
+                .body(login.getUser());
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<MessageResponse> logoutUser() {
+    public ResponseEntity<Result> logout() {
         LogoutResponse logout = authService.logout();
 
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .header(HttpHeaders.SET_COOKIE, logout.getJwtCookie().toString())
                 .header(HttpHeaders.SET_COOKIE, logout.getJwtRefreshCookie().toString())
-                .body(logout.getMessageResponse());
+                .body(logout.getResult());
     }
 
     @PostMapping("/refreshToken")
-    public ResponseEntity<MessageResponse> refreshToken(HttpServletRequest request) {
+    public ResponseEntity<Result> refreshToken(HttpServletRequest request) {
         try {
             RefreshTokenResponse refreshToken = authService.refreshToken(request);
 
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .header(HttpHeaders.SET_COOKIE, refreshToken.getJwtCookie().toString())
-                    .body(refreshToken.getMessageResponse());
+                    .body(refreshToken.getResult());
 
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(new MessageResponse(e.getMessage()));
-        } catch (RefreshTokenException e) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new MessageResponse(e.getMessage()));
+        } catch (IllegalArgumentException exception) {
+            return ResponseEntity.badRequest().body(new ErrorResult(exception.getMessage()));
+        } catch (RefreshTokenException exception) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new ErrorResult(exception.getMessage()));
         }
     }
 
