@@ -1,24 +1,24 @@
 package unaldi.userservice.service.Impl;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import unaldi.userservice.entity.ERole;
+import unaldi.userservice.entity.RefreshToken;
 import unaldi.userservice.entity.Role;
 import unaldi.userservice.entity.User;
 import unaldi.userservice.entity.dto.request.SignUpRequest;
 import unaldi.userservice.entity.dto.request.UserUpdateRequest;
 import unaldi.userservice.entity.dto.response.UserResponse;
+import unaldi.userservice.repository.RefreshTokenRepository;
 import unaldi.userservice.repository.RoleRepository;
 import unaldi.userservice.repository.UserRepository;
 import unaldi.userservice.service.UserService;
 import unaldi.userservice.service.mapper.UserMapper;
 import unaldi.userservice.utils.constants.ExceptionMessages;
 import unaldi.userservice.utils.constants.Messages;
-import unaldi.userservice.utils.exception.EmailAlreadyExistsException;
-import unaldi.userservice.utils.exception.RoleNotFoundException;
-import unaldi.userservice.utils.exception.UserNotFoundException;
-import unaldi.userservice.utils.exception.UsernameAlreadyExistsException;
+import unaldi.userservice.utils.exception.*;
 import unaldi.userservice.utils.result.DataResult;
 import unaldi.userservice.utils.result.Result;
 import unaldi.userservice.utils.result.SuccessDataResult;
@@ -41,12 +41,14 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
+    private final RefreshTokenRepository refreshTokenRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, RefreshTokenRepository refreshTokenRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
+        this.refreshTokenRepository = refreshTokenRepository;
     }
 
     @Override
@@ -123,13 +125,19 @@ public class UserServiceImpl implements UserService {
         return new SuccessDataResult<>(userResponse, Messages.USER_FOUND);
     }
 
+    @Transactional
     @Override
     public Result deleteById(Long userId) {
         User user = userRepository
                 .findById(userId)
                 .orElseThrow(() -> new UserNotFoundException(ExceptionMessages.USER_NOT_FOUND));
 
-        this.userRepository.deleteById(user.getId());
+        RefreshToken refreshToken = refreshTokenRepository
+                .findByUserId(userId)
+                .orElseThrow(() -> new RefreshTokenNotFoundException(ExceptionMessages.REFRESH_TOKEN_NOT_FOUND));
+
+        refreshTokenRepository.deleteById(refreshToken.getId());
+        userRepository.deleteById(user.getId());
 
         return new SuccessResult(Messages.USER_DELETED);
     }
