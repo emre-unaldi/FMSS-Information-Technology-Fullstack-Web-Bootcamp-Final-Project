@@ -30,6 +30,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -79,4 +80,5 @@ public class User {
     this.password = password;
     this.phoneNumber = phoneNumber;
   }
+
 }

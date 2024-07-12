@@ -18,7 +18,9 @@ import org.springframework.http.ResponseCookie;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LogoutResponse {
+
     ResponseCookie jwtCookie;
     ResponseCookie jwtRefreshCookie;
     MessageResponse messageResponse;
+
 }

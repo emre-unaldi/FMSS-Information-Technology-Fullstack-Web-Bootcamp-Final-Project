@@ -72,9 +72,10 @@ public class WebSecurityConfig {
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
-                        auth.requestMatchers("/api/v1/auth/**").permitAll()
-                                .requestMatchers("/api/v1/users/**").hasRole("USER")
-                                .requestMatchers("/api/v1/users/admin/**").hasRole("ADMIN")
+                        auth.requestMatchers("/api/v1/auth/login", "/api/v1/users/register").permitAll()
+                                .requestMatchers("/api/v1/auth/logout", "/api/v1/auth/refreshToken").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/api/v1/users/**").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/api/v1/photos/**").hasAnyRole("USER", "ADMIN")
                                 .anyRequest().authenticated()
                 );
 
@@ -83,4 +84,5 @@ public class WebSecurityConfig {
 
         return http.build();
     }
+
 }

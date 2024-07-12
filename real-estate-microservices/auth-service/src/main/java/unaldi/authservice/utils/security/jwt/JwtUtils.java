@@ -26,6 +26,7 @@ import java.util.Date;
  */
 @Component
 public class JwtUtils {
+
   private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
   @Value("${unaldi.app.jwtSecret}")
@@ -51,7 +52,7 @@ public class JwtUtils {
   }
 
   public ResponseCookie generateRefreshJwtCookie(String refreshToken) {
-    return generateCookie(jwtRefreshCookie, refreshToken, "/api/v1/auth/refreshtoken");
+    return generateCookie(jwtRefreshCookie, refreshToken, "/api/v1/auth/refreshToken");
   }
 
   public String getJwtFromCookies(HttpServletRequest request) {
@@ -72,7 +73,7 @@ public class JwtUtils {
   public ResponseCookie getCleanJwtRefreshCookie() {
     return ResponseCookie
             .from(jwtRefreshCookie, null)
-            .path("/api/v1/auth/refreshtoken")
+            .path("/api/v1/auth/refreshToken")
             .build();
   }
 
@@ -131,4 +132,5 @@ public class JwtUtils {
       return null;
     }
   }
+
 }

@@ -8,7 +8,9 @@ package unaldi.authservice.entity;
  * @since 9.07.2024
  */
 public enum ERole {
+
   ROLE_USER,
   ROLE_MODERATOR,
   ROLE_ADMIN
+
 }

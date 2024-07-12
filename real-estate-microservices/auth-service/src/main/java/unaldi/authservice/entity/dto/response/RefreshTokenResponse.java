@@ -18,10 +18,12 @@ import org.springframework.http.ResponseCookie;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RefreshTokenResponse {
+
     private ResponseCookie jwtCookie;
     private MessageResponse messageResponse;
 
     public RefreshTokenResponse(MessageResponse messageResponse) {
         this.messageResponse = messageResponse;
     }
+
 }

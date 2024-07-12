@@ -19,6 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserInfoResponse {
+
 	private Long id;
 	private String firstName;
 	private String lastName;
@@ -27,4 +28,5 @@ public class UserInfoResponse {
 	private String password;
 	private String phoneNumber;
 	private List<String> roles;
+
 }
