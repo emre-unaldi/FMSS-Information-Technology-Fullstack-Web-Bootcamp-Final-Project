@@ -6,15 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import unaldi.authservice.entity.dto.request.LoginRequest;
-import unaldi.authservice.entity.dto.request.SignupRequest;
 import unaldi.authservice.entity.dto.response.*;
 import unaldi.authservice.service.AuthService;
 import unaldi.authservice.utils.exception.RefreshTokenException;
-
-import java.util.List;
 
 /**
  * Copyright (c) 2024
@@ -35,9 +31,9 @@ public class AuthController {
         this.authService = authService;
     }
 
-    @PostMapping("/signin")
-    public ResponseEntity<UserInfoResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-        AuthenticationResponse authentication = authService.authenticateUser(loginRequest);
+    @PostMapping("/login")
+    public ResponseEntity<UserInfoResponse> authenticate(@Valid @RequestBody LoginRequest loginRequest) {
+        AuthenticationResponse authentication = authService.login(loginRequest);
 
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -46,16 +42,9 @@ public class AuthController {
                 .body(authentication.getUserInfoResponse());
     }
 
-    @PostMapping("/signup")
-    public ResponseEntity<MessageResponse> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(authService.registerUser(signUpRequest));
-    }
-
-    @PostMapping("/signout")
+    @PostMapping("/logout")
     public ResponseEntity<MessageResponse> logoutUser() {
-        LogoutResponse logout = authService.logoutUser();
+        LogoutResponse logout = authService.logout();
 
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -64,15 +53,15 @@ public class AuthController {
                 .body(logout.getMessageResponse());
     }
 
-    @PostMapping("/refreshtoken")
-    public ResponseEntity<MessageResponse> refreshtoken(HttpServletRequest request) {
+    @PostMapping("/refreshToken")
+    public ResponseEntity<MessageResponse> refreshToken(HttpServletRequest request) {
         try {
-            RefreshTokenResponse refreshTokenResponse = authService.refreshToken(request);
+            RefreshTokenResponse refreshToken = authService.refreshToken(request);
 
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .header(HttpHeaders.SET_COOKIE, refreshTokenResponse.getJwtCookie().toString())
-                    .body(refreshTokenResponse.getMessageResponse());
+                    .header(HttpHeaders.SET_COOKIE, refreshToken.getJwtCookie().toString())
+                    .body(refreshToken.getMessageResponse());
 
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(new MessageResponse(e.getMessage()));
@@ -81,20 +70,5 @@ public class AuthController {
         }
     }
 
-    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-    @GetMapping
-    public ResponseEntity<List<UserInfoResponse>> findAll() {
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(authService.findAll());
-    }
-
-    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-    @GetMapping("/{userId}")
-    public ResponseEntity<UserInfoResponse> findById(@PathVariable Long userId) {
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(authService.findById(userId));
-    }
 }
 

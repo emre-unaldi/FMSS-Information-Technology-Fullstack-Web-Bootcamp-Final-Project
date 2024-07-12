@@ -2,10 +2,7 @@ package unaldi.authservice.service;
 
 import jakarta.servlet.http.HttpServletRequest;
 import unaldi.authservice.entity.dto.request.LoginRequest;
-import unaldi.authservice.entity.dto.request.SignupRequest;
 import unaldi.authservice.entity.dto.response.*;
-
-import java.util.List;
 
 /**
  * Copyright (c) 2024
@@ -15,10 +12,9 @@ import java.util.List;
  * @since 9.07.2024
  */
 public interface AuthService {
-    AuthenticationResponse authenticateUser(LoginRequest loginRequest);
-    MessageResponse registerUser(SignupRequest signUpRequest);
-    LogoutResponse logoutUser();
+
+    AuthenticationResponse login(LoginRequest loginRequest);
+    LogoutResponse logout();
     RefreshTokenResponse refreshToken(HttpServletRequest request);
-    List<UserInfoResponse> findAll();
-    UserInfoResponse findById(Long userId);
+
 }

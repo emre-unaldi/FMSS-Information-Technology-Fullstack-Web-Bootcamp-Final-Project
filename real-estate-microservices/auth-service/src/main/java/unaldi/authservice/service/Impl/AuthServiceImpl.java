@@ -1,21 +1,14 @@
 package unaldi.authservice.service.Impl;
 
-import unaldi.authservice.entity.ERole;
+import org.springframework.beans.factory.annotation.Autowired;
 import unaldi.authservice.entity.RefreshToken;
-import unaldi.authservice.entity.Role;
-import unaldi.authservice.entity.User;
 import unaldi.authservice.entity.dto.request.LoginRequest;
-import unaldi.authservice.entity.dto.request.SignupRequest;
 import unaldi.authservice.entity.dto.response.*;
-import unaldi.authservice.repository.RoleRepository;
-import unaldi.authservice.repository.UserRepository;
 import unaldi.authservice.service.AuthService;
 import unaldi.authservice.utils.constants.ExceptionMessages;
 import unaldi.authservice.utils.constants.Messages;
 import unaldi.authservice.utils.exception.RefreshTokenEmptyException;
-import unaldi.authservice.utils.exception.RoleNotFoundException;
 import unaldi.authservice.utils.exception.RefreshTokenException;
-import unaldi.authservice.utils.exception.UserAlreadyExistsException;
 import unaldi.authservice.utils.security.jwt.JwtUtils;
 import unaldi.authservice.utils.security.services.RefreshTokenService;
 import unaldi.authservice.utils.security.services.UserDetailsImpl;
@@ -26,13 +19,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * Copyright (c) 2024
@@ -44,36 +34,19 @@ import java.util.Set;
 @Service
 public class AuthServiceImpl implements AuthService {
 
-    AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
+    private final RefreshTokenService refreshTokenService;
+    private final JwtUtils jwtUtils;
 
-    UserRepository userRepository;
-
-    RoleRepository roleRepository;
-
-    PasswordEncoder encoder;
-
-    JwtUtils jwtUtils;
-
-    RefreshTokenService refreshTokenService;
-
-    public AuthServiceImpl(
-            AuthenticationManager authenticationManager,
-            UserRepository userRepository,
-            RoleRepository roleRepository,
-            PasswordEncoder encoder,
-            JwtUtils jwtUtils,
-            RefreshTokenService refreshTokenService
-    ) {
+    @Autowired
+    public AuthServiceImpl(AuthenticationManager authenticationManager, RefreshTokenService refreshTokenService, JwtUtils jwtUtils) {
         this.authenticationManager = authenticationManager;
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
-        this.encoder = encoder;
-        this.jwtUtils = jwtUtils;
         this.refreshTokenService = refreshTokenService;
+        this.jwtUtils = jwtUtils;
     }
 
     @Override
-    public AuthenticationResponse authenticateUser(LoginRequest loginRequest) {
+    public AuthenticationResponse login(LoginRequest loginRequest) {
 
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -115,72 +88,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public MessageResponse registerUser(SignupRequest signUpRequest) {
-
-        if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-            throw new UserAlreadyExistsException(ExceptionMessages.USERNAME_ALREADY_TAKEN);
-        }
-
-        if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-            throw new UserAlreadyExistsException(ExceptionMessages.EMAIL_ALREADY_TAKEN);
-        }
-
-        User user = new User(
-                signUpRequest.getFirstName(),
-                signUpRequest.getLastName(),
-                signUpRequest.getUsername(),
-                signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getPassword()),
-                signUpRequest.getPhoneNumber()
-        );
-
-        Set<String> strRoles = signUpRequest.getRole();
-        Set<Role> roles = new HashSet<>();
-
-        if (strRoles == null) {
-            Role userRole = roleRepository
-                    .findByName(ERole.ROLE_USER)
-                    .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
-
-            roles.add(userRole);
-
-        } else {
-            strRoles.forEach(role -> {
-                switch (role) {
-                    case "admin":
-                        Role adminRole = roleRepository
-                                .findByName(ERole.ROLE_ADMIN)
-                                .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
-
-                        roles.add(adminRole);
-
-                        break;
-                    case "moderator":
-                        Role modRole = roleRepository
-                                .findByName(ERole.ROLE_MODERATOR)
-                                .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
-
-                        roles.add(modRole);
-
-                        break;
-                    default:
-                        Role userRole = roleRepository
-                                .findByName(ERole.ROLE_USER)
-                                .orElseThrow(() -> new RoleNotFoundException(ExceptionMessages.ROLE_NOT_FOUND));
-
-                        roles.add(userRole);
-                }
-            });
-        }
-
-        user.setRoles(roles);
-        userRepository.save(user);
-
-        return new MessageResponse(Messages.USER_SIGN_UP);
-    }
-
-    @Override
-    public LogoutResponse logoutUser() {
+    public LogoutResponse logout() {
         Object principle = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         if (!Objects.equals(principle.toString(), "anonymousUser")) {
@@ -218,49 +126,4 @@ public class AuthServiceImpl implements AuthService {
         throw new RefreshTokenEmptyException(ExceptionMessages.REFRESH_TOKEN_EMPTY);
     }
 
-    @Override
-    public List<UserInfoResponse> findAll() {
-        return userRepository.findAll().stream()
-                .map(user -> {
-                    List<String> rolesAsStrings = user.getRoles().stream()
-                            .map(Role::getName)
-                            .map(Object::toString)
-                            .toList();
-
-                    return new UserInfoResponse(
-                            user.getId(),
-                            user.getFirstName(),
-                            user.getLastName(),
-                            user.getUsername(),
-                            user.getEmail(),
-                            user.getPassword(),
-                            user.getPhoneNumber(),
-                            rolesAsStrings
-                    );
-                })
-                .toList();
-    }
-
-    @Override
-    public UserInfoResponse findById(Long userId) {
-        return userRepository.findById(userId)
-                .map(user -> {
-                    List<String> rolesAsStrings = user.getRoles().stream()
-                            .map(Role::getName)
-                            .map(Object::toString)
-                            .toList();
-
-                    return new UserInfoResponse(
-                            user.getId(),
-                            user.getFirstName(),
-                            user.getLastName(),
-                            user.getUsername(),
-                            user.getEmail(),
-                            user.getPassword(),
-                            user.getPhoneNumber(),
-                            rolesAsStrings
-                    );
-                })
-                .orElse(null);
-    }
 }

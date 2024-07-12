@@ -13,8 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Messages {
 
-    public static final String USER_SIGN_UP = "User registered successfully!";
-    public static final String USER_SIGN_OUT = "User logged out successfully!";
-    public static final String TOKEN_REFRESHED = "Token is refreshed successfully!";
+    public static final String USER_SIGN_OUT = "User logged out successfully";
+    public static final String TOKEN_REFRESHED = "Token is refreshed successfully";
 
 }
