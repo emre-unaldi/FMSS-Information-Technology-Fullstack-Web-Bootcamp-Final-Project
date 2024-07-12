@@ -22,9 +22,12 @@ public interface UserMapper {
 
     UserMapper INSTANCE = Mappers.getMapper( UserMapper.class );
 
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "roles", ignore = true)
-    User signUpRequestToUser(SignUpRequest signUpRequest);
+    @Mappings({
+            @Mapping(target = "id", ignore = true),
+            @Mapping(target = "roles", ignore = true),
+            @Mapping(source = "encodedPassword", target = "password")
+    })
+    User signUpRequestToUser(SignUpRequest signUpRequest, String encodedPassword);
 
     @Mapping(target = "roles", ignore = true)
     UserResponse userToUserResponse(User user);
