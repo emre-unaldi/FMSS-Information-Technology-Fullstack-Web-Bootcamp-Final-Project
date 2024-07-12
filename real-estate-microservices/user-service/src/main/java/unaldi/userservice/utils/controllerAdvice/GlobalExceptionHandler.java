@@ -11,10 +11,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import unaldi.userservice.utils.constants.ExceptionMessages;
 import unaldi.userservice.utils.controllerAdvice.dto.ExceptionResponse;
-import unaldi.userservice.utils.exception.EmailAlreadyExistsException;
-import unaldi.userservice.utils.exception.RoleNotFoundException;
-import unaldi.userservice.utils.exception.UsernameAlreadyExistsException;
-import unaldi.userservice.utils.exception.UserNotFoundException;
+import unaldi.userservice.utils.exception.*;
 import unaldi.userservice.utils.result.DataResult;
 import unaldi.userservice.utils.result.ErrorDataResult;
 
@@ -65,6 +62,18 @@ public class GlobalExceptionHandler {
                 .body(new ErrorDataResult<>(
                         prepareExceptionResponse(exception, HttpStatus.NOT_FOUND, request),
                         ExceptionMessages.ROLE_NOT_FOUND)
+                );
+    }
+
+    @ExceptionHandler(RefreshTokenNotFoundException.class)
+    public ResponseEntity<DataResult<ExceptionResponse>> handleRefreshTokenNotFoundException(RefreshTokenNotFoundException exception, WebRequest request) {
+        logger.error("RefreshTokenNotFoundException occurred : {0}", exception);
+
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorDataResult<>(
+                        prepareExceptionResponse(exception, HttpStatus.NOT_FOUND, request),
+                        ExceptionMessages.REFRESH_TOKEN_NOT_FOUND)
                 );
     }
 
