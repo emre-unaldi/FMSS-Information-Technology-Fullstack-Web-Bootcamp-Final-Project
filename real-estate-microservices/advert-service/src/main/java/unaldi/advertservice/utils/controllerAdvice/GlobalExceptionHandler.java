@@ -12,6 +12,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import unaldi.advertservice.utils.constants.ExceptionMessages;
 import unaldi.advertservice.utils.controllerAdvice.dto.ExceptionResponse;
+import unaldi.advertservice.utils.exception.AddressNotFoundException;
 import unaldi.advertservice.utils.exception.AdvertNotFoundException;
 import unaldi.advertservice.utils.result.DataResult;
 import unaldi.advertservice.utils.result.ErrorDataResult;
@@ -39,6 +40,18 @@ public class GlobalExceptionHandler {
                 .body(new ErrorDataResult<>(
                         prepareExceptionResponse(exception, HttpStatus.NOT_FOUND, request),
                         ExceptionMessages.ADVERT_NOT_FOUND)
+                );
+    }
+
+    @ExceptionHandler(AddressNotFoundException.class)
+    public ResponseEntity<DataResult<ExceptionResponse>> handleAddressNotFoundException(AddressNotFoundException exception, WebRequest request) {
+        logger.error("AddressNotFoundException occurred : {0}", exception);
+
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorDataResult<>(
+                        prepareExceptionResponse(exception, HttpStatus.NOT_FOUND, request),
+                        ExceptionMessages.ADDRESS_NOT_FOUND)
                 );
     }
 
