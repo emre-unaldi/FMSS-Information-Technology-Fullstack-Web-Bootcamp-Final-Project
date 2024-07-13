@@ -25,9 +25,6 @@ import java.util.Set;
 @NoArgsConstructor
 public class AdvertSaveRequest {
 
-    @NotBlank
-    private String advertNumber;
-
     @NotNull
     private Set<String> photoIds;
 

@@ -28,9 +28,6 @@ public class AdvertUpdateRequest {
     @NotNull
     private Long id;
 
-    @NotBlank
-    private String advertNumber;
-
     @NotNull
     private Set<String> photoIds;
 
