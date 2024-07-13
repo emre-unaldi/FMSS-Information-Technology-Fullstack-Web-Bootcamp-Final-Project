@@ -7,7 +7,7 @@ import unaldi.advertservice.entity.enums.AdvertType;
 import unaldi.advertservice.entity.enums.HousingType;
 
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 
 /**
  * Copyright (c) 2024
@@ -38,7 +38,7 @@ public class Advert {
             joinColumns = @JoinColumn(name = "advert_id")
     )
     @Column(name = "photo_id", nullable = false)
-    private Set<String> photoIds;
+    private List<String> photoIds;
 
     @Column(name = "user_id", nullable = false)
     private Long userId;
@@ -61,8 +61,9 @@ public class Advert {
     @Column(name = "description", nullable = false, length = 250)
     private String description;
 
-    @Column(name = "address_id", nullable = false)
-    private Long addressId;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id", referencedColumnName = "id")
+    private Address address;
 
     @Column(name = "release_date", nullable = false)
     private LocalDate releaseDate;

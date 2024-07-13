@@ -75,7 +75,7 @@ public class GlobalExceptionHandler {
                 .status(HttpStatus.BAD_REQUEST)
                 .body(new ErrorDataResult<>(
                         prepareExceptionResponse(exception, HttpStatus.BAD_REQUEST, request),
-                        ExceptionMessages.BAD_REQUEST)
+                        ExceptionMessages.FEIGN_BAD_REQUEST)
                 );
     }
 
