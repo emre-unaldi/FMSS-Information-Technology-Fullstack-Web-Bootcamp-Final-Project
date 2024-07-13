@@ -37,7 +37,7 @@ public class Advert {
             name = "advert_photos",
             joinColumns = @JoinColumn(name = "advert_id")
     )
-    @Column(name = "photo_ids", nullable = false)
+    @Column(name = "photo_id", nullable = false)
     private Set<String> photoIds;
 
     @Column(name = "user_id", nullable = false)
@@ -75,6 +75,9 @@ public class Advert {
 
     @Column(name = "number_of_rooms", nullable = false)
     private Integer numberOfRooms;
+
+    @Column(name = "price", nullable = false)
+    private Long price;
 
     @Column(name = "is_balcony", nullable = false)
     private Boolean isBalcony;

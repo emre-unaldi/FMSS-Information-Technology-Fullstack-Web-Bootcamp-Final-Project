@@ -67,6 +67,9 @@ public class AdvertSaveRequest {
     private Integer numberOfRooms;
 
     @NotNull
+    private Long price;
+
+    @NotNull
     private Boolean isBalcony;
 
     @NotNull

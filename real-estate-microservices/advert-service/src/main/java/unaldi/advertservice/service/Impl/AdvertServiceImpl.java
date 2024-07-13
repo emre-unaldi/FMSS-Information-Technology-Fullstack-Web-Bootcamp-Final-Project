@@ -9,7 +9,9 @@ import unaldi.advertservice.entity.dto.response.AdvertResponse;
 import unaldi.advertservice.repository.AdvertRepository;
 import unaldi.advertservice.service.mapper.AdvertMapper;
 import unaldi.advertservice.service.AdvertService;
+import unaldi.advertservice.utils.constants.ExceptionMessages;
 import unaldi.advertservice.utils.constants.Messages;
+import unaldi.advertservice.utils.exception.AdvertNotFoundException;
 import unaldi.advertservice.utils.result.DataResult;
 import unaldi.advertservice.utils.result.Result;
 import unaldi.advertservice.utils.result.SuccessDataResult;
@@ -51,7 +53,7 @@ public class AdvertServiceImpl implements AdvertService {
     public DataResult<AdvertResponse> update(AdvertUpdateRequest advertUpdateRequest) {
         Advert foundAdvert = advertRepository
                 .findById(advertUpdateRequest.getId())
-                .orElseThrow(() -> new RuntimeException("Advert not found"));
+                .orElseThrow(() -> new AdvertNotFoundException(ExceptionMessages.ADVERT_NOT_FOUND));
 
         Advert advert = AdvertMapper.INSTANCE.advertUpdateRequestToAdvert(advertUpdateRequest);
         advert.setAdvertNumber(foundAdvert.getAdvertNumber());
@@ -68,7 +70,7 @@ public class AdvertServiceImpl implements AdvertService {
         AdvertResponse advertResponse = advertRepository
                 .findById(advertId)
                 .map(AdvertMapper.INSTANCE::advertToAdvertResponse)
-                .orElseThrow(() -> new RuntimeException("Advert not found"));
+                .orElseThrow(() -> new AdvertNotFoundException(ExceptionMessages.ADVERT_NOT_FOUND));
 
         return new SuccessDataResult<>(advertResponse, Messages.ADVERT_FOUND);
     }
@@ -87,7 +89,7 @@ public class AdvertServiceImpl implements AdvertService {
     public Result deleteById(Long advertId) {
         Advert advert = advertRepository
                 .findById(advertId)
-                .orElseThrow(() -> new RuntimeException("Advert not found"));
+                .orElseThrow(() -> new AdvertNotFoundException(ExceptionMessages.ADVERT_NOT_FOUND));
 
         advertRepository.deleteById(advert.getId());
 

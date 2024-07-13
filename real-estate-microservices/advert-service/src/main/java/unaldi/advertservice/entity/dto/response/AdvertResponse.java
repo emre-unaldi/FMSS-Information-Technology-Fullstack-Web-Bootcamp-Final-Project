@@ -37,6 +37,7 @@ public class AdvertResponse {
     private LocalDate validityDate;
     private Integer area;
     private Integer numberOfRooms;
+    private Long price;
     private Boolean isBalcony;
     private Boolean isCarPark;
 }
