@@ -10,7 +10,7 @@ import unaldi.advertservice.entity.enums.AdvertType;
 import unaldi.advertservice.entity.enums.HousingType;
 
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 
 /**
  * Copyright (c) 2024
@@ -26,7 +26,7 @@ import java.util.Set;
 public class AdvertSaveRequest {
 
     @NotNull
-    private Set<String> photoIds;
+    private List<String> photoIds;
 
     @NotNull
     private Long userId;

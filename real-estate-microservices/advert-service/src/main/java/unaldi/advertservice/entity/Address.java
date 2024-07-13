@@ -38,4 +38,7 @@ public class Address {
     @Column(name = "zip_code", nullable = false, length = 20)
     private String zipCode;
 
+    @OneToOne(mappedBy = "address")
+    private Advert advert;
+
 }

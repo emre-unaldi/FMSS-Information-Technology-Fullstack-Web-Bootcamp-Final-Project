@@ -7,8 +7,11 @@ import lombok.Setter;
 import unaldi.advertservice.entity.enums.AdvertStatus;
 import unaldi.advertservice.entity.enums.AdvertType;
 import unaldi.advertservice.entity.enums.HousingType;
+import unaldi.advertservice.utils.client.dto.response.PhotoResponse;
+import unaldi.advertservice.utils.client.dto.response.UserResponse;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -25,14 +28,14 @@ import java.util.Set;
 public class AdvertResponse {
     private Long id;
     private String advertNumber;
-    private Set<String> photoIds;
-    private Long userId;
+    private List<PhotoResponse> photos;
+    private UserResponse user;
     private HousingType housingType;
     private AdvertStatus advertStatus;
     private AdvertType advertType;
     private String title;
     private String description;
-    private Long addressId;
+    private AddressResponse address;
     private LocalDate releaseDate;
     private LocalDate validityDate;
     private Integer area;

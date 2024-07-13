@@ -26,13 +26,18 @@ public interface AdvertMapper {
 
     @Mappings({
             @Mapping(target = "id", ignore = true),
-            @Mapping(target = "advertNumber", ignore = true)
+            @Mapping(target = "advertNumber", ignore = true),
+            @Mapping(target = "address", ignore = true),
     })
     Advert advertSaveRequestToAdvert(AdvertSaveRequest advertSaveRequest);
 
     @Mapping(target = "advertNumber", ignore = true)
     Advert advertUpdateRequestToAdvert(AdvertUpdateRequest advertUpdateRequest);
 
+    @Mappings({
+            @Mapping(target = "photos", ignore = true),
+            @Mapping(target = "user", ignore = true)
+    })
     AdvertResponse advertToAdvertResponse(Advert advert);
 
     @IterableMapping(elementTargetType = AdvertResponse.class)

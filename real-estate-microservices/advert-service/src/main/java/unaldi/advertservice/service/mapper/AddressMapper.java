@@ -32,6 +32,8 @@ public interface AddressMapper {
 
     AddressResponse addressToAddressResponse(Address address);
 
+    Address addressResponseToAddress(AddressResponse addressResponse);
+
     @IterableMapping(elementTargetType = AddressResponse.class)
     List<AddressResponse> addressesToAddressResponses(List<Address> addresses);
 
