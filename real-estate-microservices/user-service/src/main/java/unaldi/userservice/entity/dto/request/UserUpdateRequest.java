@@ -21,7 +21,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class UserUpdateRequest {
 
-    @Min(value = 1)
+    @NotNull
     private Long id;
 
     @NotBlank
@@ -50,7 +50,7 @@ public class UserUpdateRequest {
     private String phoneNumber;
 
     @NotEmpty
-    @Size(min = 1, max = 2)
+    @Size(min = 1, max = 3)
     private Set<String> roles;
 
 }

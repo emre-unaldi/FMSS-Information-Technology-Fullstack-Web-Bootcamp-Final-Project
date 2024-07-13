@@ -1,5 +1,6 @@
 package unaldi.userservice.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import java.util.List;
  * @author Emre Ünaldı
  * @since 12.07.2024
  */
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserController {
@@ -32,14 +34,14 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<DataResult<UserResponse>> register(@RequestBody SignUpRequest signUpRequest) {
+    public ResponseEntity<DataResult<UserResponse>> register(@Valid @RequestBody SignUpRequest signUpRequest) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(userService.register(signUpRequest));
     }
 
     @PutMapping
-    public ResponseEntity<DataResult<UserResponse>> update(@RequestBody UserUpdateRequest userUpdateRequest) {
+    public ResponseEntity<DataResult<UserResponse>> update(@Valid @RequestBody UserUpdateRequest userUpdateRequest) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(userService.update(userUpdateRequest));

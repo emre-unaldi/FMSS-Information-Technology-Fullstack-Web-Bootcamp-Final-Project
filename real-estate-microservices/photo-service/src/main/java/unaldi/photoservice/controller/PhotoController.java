@@ -25,6 +25,7 @@ import java.util.List;
  * @author Emre Ünaldı
  * @since 11.07.2024
  */
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1/photos")
 public class PhotoController {
