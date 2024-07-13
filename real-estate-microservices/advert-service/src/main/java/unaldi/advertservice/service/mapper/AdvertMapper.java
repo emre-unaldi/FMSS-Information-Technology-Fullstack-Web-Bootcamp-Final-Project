@@ -26,10 +26,11 @@ public interface AdvertMapper {
 
     @Mappings({
             @Mapping(target = "id", ignore = true),
-            @Mapping(target = "advertNumber", expression = "java(UUID.randomUUID().toString())")
+            @Mapping(target = "advertNumber", ignore = true)
     })
     Advert advertSaveRequestToAdvert(AdvertSaveRequest advertSaveRequest);
 
+    @Mapping(target = "advertNumber", ignore = true)
     Advert advertUpdateRequestToAdvert(AdvertUpdateRequest advertUpdateRequest);
 
     AdvertResponse advertToAdvertResponse(Advert advert);
