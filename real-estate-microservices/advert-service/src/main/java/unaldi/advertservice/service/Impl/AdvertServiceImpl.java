@@ -7,9 +7,13 @@ import unaldi.advertservice.entity.dto.request.AdvertSaveRequest;
 import unaldi.advertservice.entity.dto.request.AdvertUpdateRequest;
 import unaldi.advertservice.entity.dto.response.AdvertResponse;
 import unaldi.advertservice.repository.AdvertRepository;
+import unaldi.advertservice.service.mapper.AdvertMapper;
 import unaldi.advertservice.service.AdvertService;
+import unaldi.advertservice.utils.constants.Messages;
 import unaldi.advertservice.utils.result.DataResult;
 import unaldi.advertservice.utils.result.Result;
+import unaldi.advertservice.utils.result.SuccessDataResult;
+import unaldi.advertservice.utils.result.SuccessResult;
 
 import java.util.List;
 
@@ -32,27 +36,59 @@ public class AdvertServiceImpl implements AdvertService {
 
     @Override
     public DataResult<AdvertResponse> save(AdvertSaveRequest advertSaveRequest) {
+        Advert advert = AdvertMapper.INSTANCE.advertSaveRequestToAdvert(advertSaveRequest);
+        advertRepository.save(advert);
 
-        return null;
+        return new SuccessDataResult<>(
+                AdvertMapper.INSTANCE.advertToAdvertResponse(advert),
+                Messages.ADVERT_SAVED
+        );
     }
 
     @Override
     public DataResult<AdvertResponse> update(AdvertUpdateRequest advertUpdateRequest) {
-        return null;
+        if(!advertRepository.existsById(advertUpdateRequest.getId())) {
+            throw new RuntimeException("Advert not found");
+        }
+
+        Advert advert = AdvertMapper.INSTANCE.advertUpdateRequestToAdvert(advertUpdateRequest);
+        advertRepository.save(advert);
+
+        return new SuccessDataResult<>(
+                AdvertMapper.INSTANCE.advertToAdvertResponse(advert),
+                Messages.ADVERT_UPDATED
+        );
     }
 
     @Override
     public DataResult<AdvertResponse> findById(Long advertId) {
-        return null;
+        AdvertResponse advertResponse = advertRepository
+                .findById(advertId)
+                .map(AdvertMapper.INSTANCE::advertToAdvertResponse)
+                .orElseThrow(() -> new RuntimeException("Advert not found"));
+
+        return new SuccessDataResult<>(advertResponse, Messages.ADVERT_FOUND);
     }
 
     @Override
     public DataResult<List<AdvertResponse>> findAll() {
-        return null;
+        List<Advert> adverts = advertRepository.findAll();
+
+        return new SuccessDataResult<>(
+                AdvertMapper.INSTANCE.advertsToAdvertResponses(adverts),
+                Messages.ADVERTS_LISTED
+        );
     }
 
     @Override
     public Result deleteById(Long advertId) {
-        return null;
+        Advert advert = advertRepository
+                .findById(advertId)
+                .orElseThrow(() -> new RuntimeException("Advert not found"));
+
+        advertRepository.existsById(advert.getId());
+
+        return new SuccessResult(Messages.ADVERT_DELETED);
     }
+
 }
