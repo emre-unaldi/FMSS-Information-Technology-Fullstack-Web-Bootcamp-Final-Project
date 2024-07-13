@@ -16,6 +16,7 @@ import unaldi.advertservice.utils.result.SuccessDataResult;
 import unaldi.advertservice.utils.result.SuccessResult;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Copyright (c) 2024
@@ -37,6 +38,7 @@ public class AdvertServiceImpl implements AdvertService {
     @Override
     public DataResult<AdvertResponse> save(AdvertSaveRequest advertSaveRequest) {
         Advert advert = AdvertMapper.INSTANCE.advertSaveRequestToAdvert(advertSaveRequest);
+        advert.setAdvertNumber(UUID.randomUUID().toString());
         advertRepository.save(advert);
 
         return new SuccessDataResult<>(
@@ -47,11 +49,12 @@ public class AdvertServiceImpl implements AdvertService {
 
     @Override
     public DataResult<AdvertResponse> update(AdvertUpdateRequest advertUpdateRequest) {
-        if(!advertRepository.existsById(advertUpdateRequest.getId())) {
-            throw new RuntimeException("Advert not found");
-        }
+        Advert foundAdvert = advertRepository
+                .findById(advertUpdateRequest.getId())
+                .orElseThrow(() -> new RuntimeException("Advert not found"));
 
         Advert advert = AdvertMapper.INSTANCE.advertUpdateRequestToAdvert(advertUpdateRequest);
+        advert.setAdvertNumber(foundAdvert.getAdvertNumber());
         advertRepository.save(advert);
 
         return new SuccessDataResult<>(
@@ -86,7 +89,7 @@ public class AdvertServiceImpl implements AdvertService {
                 .findById(advertId)
                 .orElseThrow(() -> new RuntimeException("Advert not found"));
 
-        advertRepository.existsById(advert.getId());
+        advertRepository.deleteById(advert.getId());
 
         return new SuccessResult(Messages.ADVERT_DELETED);
     }
