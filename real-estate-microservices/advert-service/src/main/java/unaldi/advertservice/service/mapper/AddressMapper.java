@@ -5,6 +5,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 import unaldi.advertservice.entity.Address;
+import unaldi.advertservice.entity.dto.request.AddressSaveRequest;
+import unaldi.advertservice.entity.dto.request.AddressUpdateRequest;
 import unaldi.advertservice.entity.dto.request.AdvertSaveRequest;
 import unaldi.advertservice.entity.dto.request.AdvertUpdateRequest;
 import unaldi.advertservice.entity.dto.response.AddressResponse;
@@ -21,12 +23,12 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface AddressMapper {
 
-    AdvertMapper INSTANCE = Mappers.getMapper( AdvertMapper.class );
+    AddressMapper INSTANCE = Mappers.getMapper( AddressMapper.class );
 
     @Mapping(target = "id", ignore = true)
-    Address addressSaveRequestToAddress(AdvertSaveRequest advertSaveRequest);
+    Address addressSaveRequestToAddress(AddressSaveRequest addressSaveRequest);
 
-    Address addressUpdateRequestToAddress(AdvertUpdateRequest advertUpdateRequest);
+    Address addressUpdateRequestToAddress(AddressUpdateRequest addressUpdateRequest);
 
     AddressResponse addressToAddressResponse(Address address);
 

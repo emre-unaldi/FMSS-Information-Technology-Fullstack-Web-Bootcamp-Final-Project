@@ -18,5 +18,10 @@ public class Messages {
     public static final String ADVERT_FOUND = "Advert found successfully";
     public static final String ADVERTS_LISTED = "Adverts listed successfully";
     public static final String ADVERT_DELETED = "Advert deleted successfully";
+    public static final String ADDRESS_SAVED = "Address saved successfully";
+    public static final String ADDRESS_UPDATED = "Address updated successfully";
+    public static final String ADDRESS_FOUND = "Address found successfully";
+    public static final String ADDRESSES_LISTED = "Addresses listed successfully";
+    public static final String ADDRESS_DELETED = "Address deleted successfully";
 
 }
