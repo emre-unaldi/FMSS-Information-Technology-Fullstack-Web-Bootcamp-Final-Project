@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="advert-service" />
+        <module name="log-service" />
         <module name="photo-service" />
         <module name="auth-service" />
         <module name="user-service" />
@@ -24,6 +25,7 @@
       <module name="api-gateway-service" options="-parameters" />
       <module name="auth-service" options="-parameters" />
       <module name="discovery-client-service" options="-parameters" />
+      <module name="log-service" options="-parameters" />
       <module name="photo-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
