@@ -2,6 +2,10 @@ package unaldi.userservice.service.Impl;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import unaldi.userservice.entity.ERole;
@@ -16,6 +20,7 @@ import unaldi.userservice.repository.RoleRepository;
 import unaldi.userservice.repository.UserRepository;
 import unaldi.userservice.service.UserService;
 import unaldi.userservice.service.mapper.UserMapper;
+import unaldi.userservice.utils.constants.Caches;
 import unaldi.userservice.utils.constants.ExceptionMessages;
 import unaldi.userservice.utils.constants.Messages;
 import unaldi.userservice.utils.exception.*;
@@ -51,6 +56,7 @@ public class UserServiceImpl implements UserService {
         this.refreshTokenRepository = refreshTokenRepository;
     }
 
+    @CacheEvict(value = Caches.USERS_CACHE, allEntries = true, condition = "#result.success != false")
     @Override
     public DataResult<UserResponse> register(SignUpRequest signUpRequest) {
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
@@ -76,6 +82,12 @@ public class UserServiceImpl implements UserService {
         );
     }
 
+
+
+    @Caching(
+            put = { @CachePut(value = Caches.USER_CACHE, key = "#userUpdateRequest.getId()", unless = "#result.success != true") },
+            evict = { @CacheEvict(value = Caches.USERS_CACHE, allEntries = true, condition = "#result.success != false") }
+    )
     @Override
     public DataResult<UserResponse> update(UserUpdateRequest userUpdateRequest) {
         if (!userRepository.existsById(userUpdateRequest.getId())) {
@@ -105,6 +117,7 @@ public class UserServiceImpl implements UserService {
         );
     }
 
+    @Cacheable(value = Caches.USERS_CACHE, key = "'all'", unless = "#result.success != true")
     @Override
     public DataResult<List<UserResponse>> findAll() {
         List<User> users = userRepository.findAll();
@@ -115,6 +128,7 @@ public class UserServiceImpl implements UserService {
         );
     }
 
+    @Cacheable(value = Caches.USER_CACHE, key = "#userId", unless = "#result.success != true")
     @Override
     public DataResult<UserResponse> findById(Long userId) {
         UserResponse userResponse = userRepository
@@ -125,6 +139,12 @@ public class UserServiceImpl implements UserService {
         return new SuccessDataResult<>(userResponse, Messages.USER_FOUND);
     }
 
+    @Caching(
+            evict = {
+                    @CacheEvict(value = Caches.USERS_CACHE, allEntries = true, condition = "#result.success != false"),
+                    @CacheEvict(value = Caches.USER_CACHE, key = "#userId", condition = "#result.success != false")
+            }
+    )
     @Transactional
     @Override
     public Result deleteById(Long userId) {
