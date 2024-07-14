@@ -1,6 +1,10 @@
 package unaldi.advertservice.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 import unaldi.advertservice.entity.Address;
 import unaldi.advertservice.entity.dto.request.AddressSaveRequest;
@@ -9,6 +13,7 @@ import unaldi.advertservice.entity.dto.response.AddressResponse;
 import unaldi.advertservice.repository.AddressRepository;
 import unaldi.advertservice.service.AddressService;
 import unaldi.advertservice.service.mapper.AddressMapper;
+import unaldi.advertservice.utils.constants.Caches;
 import unaldi.advertservice.utils.constants.ExceptionMessages;
 import unaldi.advertservice.utils.constants.Messages;
 import unaldi.advertservice.utils.exception.AddressNotFoundException;
@@ -36,6 +41,7 @@ public class AddressServiceImpl implements AddressService {
         this.addressRepository = addressRepository;
     }
 
+    @CacheEvict(value = Caches.ADDRESSES_CACHE, allEntries = true, condition = "#result.success != false")
     @Override
     public DataResult<AddressResponse> save(AddressSaveRequest addressSaveRequest) {
         Address address = AddressMapper.INSTANCE.addressSaveRequestToAddress(addressSaveRequest);
@@ -47,6 +53,10 @@ public class AddressServiceImpl implements AddressService {
         );
     }
 
+    @Caching(
+            put = { @CachePut(value = Caches.ADDRESS_CACHE, key = "#addressUpdateRequest.getId()", unless = "#result.success != true") },
+            evict = { @CacheEvict(value = Caches.ADDRESSES_CACHE, allEntries = true, condition = "#result.success != false") }
+    )
     @Override
     public DataResult<AddressResponse> update(AddressUpdateRequest addressUpdateRequest) {
         if (!addressRepository.existsById(addressUpdateRequest.getId())) {
@@ -62,6 +72,7 @@ public class AddressServiceImpl implements AddressService {
         );
     }
 
+    @Cacheable(value = Caches.ADDRESS_CACHE, key = "#addressId", unless = "#result.success != true")
     @Override
     public DataResult<AddressResponse> findById(Long addressId) {
         AddressResponse addressResponse = addressRepository
@@ -72,6 +83,7 @@ public class AddressServiceImpl implements AddressService {
         return new SuccessDataResult<>(addressResponse, Messages.ADDRESS_FOUND);
     }
 
+    @Cacheable(value = Caches.ADDRESSES_CACHE, key = "'all'", unless = "#result.success != true")
     @Override
     public DataResult<List<AddressResponse>> findAll() {
         List<Address> addresses = addressRepository.findAll();
@@ -82,6 +94,12 @@ public class AddressServiceImpl implements AddressService {
         );
     }
 
+    @Caching(
+            evict = {
+                    @CacheEvict(value = Caches.ADDRESSES_CACHE, allEntries = true, condition = "#result.success != false"),
+                    @CacheEvict(value = Caches.ADDRESS_CACHE, key = "#addressId", condition = "#result.success != false")
+            }
+    )
     @Override
     public Result deleteById(Long addressId) {
         Address address = addressRepository
