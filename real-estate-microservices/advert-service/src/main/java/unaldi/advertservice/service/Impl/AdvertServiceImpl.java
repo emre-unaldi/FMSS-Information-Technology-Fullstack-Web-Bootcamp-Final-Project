@@ -63,9 +63,8 @@ public class AdvertServiceImpl implements AdvertService {
     @Transactional
     @Override
     public DataResult<AdvertResponse> save(AdvertSaveRequest advertSaveRequest) {
-        Address managedAddress = entityManager.merge(fetchAddress(advertSaveRequest.getAddressId()));
-
         Advert advert = AdvertMapper.INSTANCE.advertSaveRequestToAdvert(advertSaveRequest);
+        Address managedAddress = entityManager.merge(fetchAddress(advertSaveRequest.getAddressId()));
         advert.setAdvertNumber(UUID.randomUUID().toString());
         advert.setAddress(managedAddress);
 
@@ -79,6 +78,7 @@ public class AdvertServiceImpl implements AdvertService {
         return new SuccessDataResult<>(advertResponse, Messages.ADVERT_SAVED);
     }
 
+    @Transactional
     @Override
     public DataResult<AdvertResponse> update(AdvertUpdateRequest advertUpdateRequest) {
         Advert foundAdvert = advertRepository
@@ -86,7 +86,9 @@ public class AdvertServiceImpl implements AdvertService {
                 .orElseThrow(() -> new AdvertNotFoundException(ExceptionMessages.ADVERT_NOT_FOUND));
 
         Advert advert = AdvertMapper.INSTANCE.advertUpdateRequestToAdvert(advertUpdateRequest);
+        Address managedAddress = entityManager.merge(fetchAddress(advertUpdateRequest.getAddressId()));
         advert.setAdvertNumber(foundAdvert.getAdvertNumber());
+        advert.setAddress(managedAddress);
 
         AdvertResponse advertResponse = AdvertMapper.INSTANCE.advertToAdvertResponse(advert);
         advertResponse.setUser(fetchUser(advert.getUserId()));
