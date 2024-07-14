@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import unaldi.advertservice.entity.enums.AdvertStatus;
 import unaldi.advertservice.entity.enums.AdvertType;
 import unaldi.advertservice.entity.enums.HousingType;
 
@@ -33,9 +32,6 @@ public class AdvertSaveRequest {
 
     @NotNull
     private HousingType housingType;
-
-    @NotNull
-    private AdvertStatus advertStatus;
 
     @NotNull
     private AdvertType advertType;
