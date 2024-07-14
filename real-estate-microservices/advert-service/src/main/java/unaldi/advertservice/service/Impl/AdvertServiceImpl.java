@@ -33,7 +33,6 @@ import unaldi.advertservice.utils.result.SuccessResult;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.UUID;
 
 /**
  * Copyright (c) 2024
@@ -63,17 +62,17 @@ public class AdvertServiceImpl implements AdvertService {
     @Transactional
     @Override
     public DataResult<AdvertResponse> save(AdvertSaveRequest advertSaveRequest) {
+        UserResponse userResponse = fetchUser(advertSaveRequest.getUserId());
+        List<PhotoResponse> photoResponses = fetchPhotos(advertSaveRequest.getPhotoIds());
+        Address address = fetchAddress(advertSaveRequest.getAddressId());
+
         Advert advert = AdvertMapper.INSTANCE.advertSaveRequestToAdvert(advertSaveRequest);
-        Address managedAddress = entityManager.merge(fetchAddress(advertSaveRequest.getAddressId()));
-        advert.setAdvertNumber(UUID.randomUUID().toString());
-        advert.setAddress(managedAddress);
+        advert.setAddress(address);
+        advertRepository.save(advert);
 
         AdvertResponse advertResponse = AdvertMapper.INSTANCE.advertToAdvertResponse(advert);
-        advertResponse.setUser(fetchUser(advert.getUserId()));
-        advertResponse.setPhotos(fetchPhotos(advert.getPhotoIds()));
-
-        advertRepository.save(advert);
-        advertResponse.setId(advert.getId());
+        advertResponse.setUser(userResponse);
+        advertResponse.setPhotos(photoResponses);
 
         return new SuccessDataResult<>(advertResponse, Messages.ADVERT_SAVED);
     }
@@ -85,17 +84,17 @@ public class AdvertServiceImpl implements AdvertService {
                 .findById(advertUpdateRequest.getId())
                 .orElseThrow(() -> new AdvertNotFoundException(ExceptionMessages.ADVERT_NOT_FOUND));
 
-        Advert advert = AdvertMapper.INSTANCE.advertUpdateRequestToAdvert(advertUpdateRequest);
-        Address managedAddress = entityManager.merge(fetchAddress(advertUpdateRequest.getAddressId()));
-        advert.setAdvertNumber(foundAdvert.getAdvertNumber());
-        advert.setAddress(managedAddress);
+        UserResponse userResponse = fetchUser(advertUpdateRequest.getUserId());
+        List<PhotoResponse> photoResponses = fetchPhotos(advertUpdateRequest.getPhotoIds());
+        Address address = fetchAddress(advertUpdateRequest.getAddressId());
+
+        Advert advert = AdvertMapper.INSTANCE.advertUpdateRequestToAdvert(advertUpdateRequest, foundAdvert.getAdvertNumber());
+        advert.setAddress(address);
+        advertRepository.save(advert);
 
         AdvertResponse advertResponse = AdvertMapper.INSTANCE.advertToAdvertResponse(advert);
-        advertResponse.setUser(fetchUser(advert.getUserId()));
-        advertResponse.setPhotos(fetchPhotos(advert.getPhotoIds()));
-
-        advertRepository.save(advert);
-        advertResponse.setId(advert.getId());
+        advertResponse.setUser(userResponse);
+        advertResponse.setPhotos(photoResponses);
 
         return new SuccessDataResult<>(advertResponse, Messages.ADVERT_UPDATED);
     }
@@ -108,9 +107,12 @@ public class AdvertServiceImpl implements AdvertService {
             throw new AdvertNotFoundException(ExceptionMessages.ADVERT_NOT_FOUND);
         }
 
+        UserResponse userResponse = fetchUser(foundAdvert.get().getUserId());
+        List<PhotoResponse> photoResponses = fetchPhotos(foundAdvert.get().getPhotoIds());
+
         AdvertResponse advertResponse = AdvertMapper.INSTANCE.advertToAdvertResponse(foundAdvert.get());
-        advertResponse.setUser(fetchUser(foundAdvert.get().getUserId()));
-        advertResponse.setPhotos(fetchPhotos(foundAdvert.get().getPhotoIds()));
+        advertResponse.setUser(userResponse);
+        advertResponse.setPhotos(photoResponses);
 
         return new SuccessDataResult<>(advertResponse, Messages.ADVERT_FOUND);
     }
@@ -145,18 +147,22 @@ public class AdvertServiceImpl implements AdvertService {
 
     private UserResponse fetchUser(Long userId) {
         ResponseEntity<RestResponse<UserResponse>> userResponse = userServiceClient.findById(userId);
+
         return Objects.requireNonNull(userResponse.getBody()).getData();
     }
 
     private List<PhotoResponse> fetchPhotos(List<String> photoIds) {
         PhotoIdsRequest photoIdsRequest = PhotoIdsRequest.builder().photoIds(photoIds).build();
         ResponseEntity<RestResponse<List<PhotoResponse>>> photoResponse = photoServiceClient.findByPhotoIds(photoIdsRequest);
+
         return Objects.requireNonNull(photoResponse.getBody()).getData();
     }
 
     private Address fetchAddress(Long addressId) {
         AddressResponse addressResponse = addressService.findById(addressId).getData();
-        return AddressMapper.INSTANCE.addressResponseToAddress(addressResponse);
+        Address address = AddressMapper.INSTANCE.addressResponseToAddress(addressResponse);
+
+        return entityManager.merge(address);
     }
 
 }
