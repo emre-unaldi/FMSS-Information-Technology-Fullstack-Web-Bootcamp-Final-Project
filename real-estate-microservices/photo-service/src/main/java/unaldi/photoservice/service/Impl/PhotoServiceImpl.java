@@ -2,6 +2,9 @@ package unaldi.photoservice.service.Impl;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -16,6 +19,7 @@ import unaldi.photoservice.entity.dto.response.PhotoResponse;
 import unaldi.photoservice.repository.PhotoRepository;
 import unaldi.photoservice.service.PhotoService;
 import unaldi.photoservice.service.mapper.PhotoMapper;
+import unaldi.photoservice.utils.constants.Caches;
 import unaldi.photoservice.utils.constants.ExceptionMessages;
 import unaldi.photoservice.utils.constants.Messages;
 import unaldi.photoservice.utils.exception.*;
@@ -47,6 +51,7 @@ public class PhotoServiceImpl implements PhotoService {
         this.photoRepository = photoRepository;
     }
 
+    @CacheEvict(value = Caches.PHOTOS_CACHE, allEntries = true, condition = "#result.success != false")
     @Override
     public DataResult<PhotoResponse> singleUpload(SingleUploadRequest request) {
         MultipartFile uploadPhoto = request.getPhoto();
@@ -88,6 +93,7 @@ public class PhotoServiceImpl implements PhotoService {
                 Messages.PHOTO_SINGLE_UPLOAD);
     }
 
+    @CacheEvict(value = Caches.PHOTOS_CACHE, allEntries = true, condition = "#result.success != false")
     @Override
     public DataResult<List<PhotoResponse>> multipleUpload(MultipleUploadRequest request) {
         List<PhotoResponse> photos = new ArrayList<>();
@@ -100,6 +106,7 @@ public class PhotoServiceImpl implements PhotoService {
         return new SuccessDataResult<>(photos, Messages.PHOTO_MULTIPLE_UPLOAD);
     }
 
+    @Cacheable(value = Caches.PHOTOS_CACHE, key = "'all'", unless = "#result.success != true")
     @Override
     public DataResult<List<PhotoResponse>> findAll() {
         List<Photo> photos = photoRepository.findAll();
@@ -109,6 +116,7 @@ public class PhotoServiceImpl implements PhotoService {
                 Messages.PHOTOS_LISTED);
     }
 
+    @Cacheable(value = Caches.PHOTOS_BY_IDS_CACHE, key = "#request.getPhotoIds()", unless = "#result.success != true")
     @Transactional
     @Override
     public DataResult<List<PhotoResponse>> findByPhotoIds(PhotoIdsRequest request) {
@@ -120,6 +128,7 @@ public class PhotoServiceImpl implements PhotoService {
         );
     }
 
+    @Cacheable(value = Caches.PHOTO_CACHE, key = "#photoId", unless = "#result.success != true")
     @Override
     public DataResult<PhotoResponse> findById(String photoId) {
         Optional<Photo> photo = photoRepository.findById(photoId);
@@ -154,6 +163,13 @@ public class PhotoServiceImpl implements PhotoService {
         }
     }
 
+    @Caching(
+            evict = {
+                    @CacheEvict(value = Caches.PHOTOS_CACHE, allEntries = true, condition = "#result.success != false"),
+                    @CacheEvict(value = Caches.PHOTOS_BY_IDS_CACHE, allEntries = true, condition = "#result.success != false"),
+                    @CacheEvict(value = Caches.PHOTO_CACHE, key = "#photoId", condition = "#result.success != false"),
+            }
+    )
     @Transactional
     @Override
     public Result deleteById(String photoId) {
