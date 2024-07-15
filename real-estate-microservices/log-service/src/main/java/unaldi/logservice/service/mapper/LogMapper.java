@@ -31,6 +31,7 @@ public interface LogMapper {
 
     LogResponse logToLogResponse(Log log);
 
+    @Mapping(target = "id", ignore = true)
     Log logDtoToLog(LogDTO logDTO);
 
     @IterableMapping(elementTargetType = LogResponse.class)

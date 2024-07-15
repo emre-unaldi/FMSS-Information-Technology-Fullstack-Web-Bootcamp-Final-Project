@@ -3,6 +3,7 @@ package unaldi.advertservice.service.mapper;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 import unaldi.advertservice.entity.Address;
 import unaldi.advertservice.entity.dto.request.AddressSaveRequest;
@@ -25,13 +26,18 @@ public interface AddressMapper {
 
     AddressMapper INSTANCE = Mappers.getMapper( AddressMapper.class );
 
-    @Mapping(target = "id", ignore = true)
+    @Mappings({
+            @Mapping(target = "id", ignore = true),
+            @Mapping(target = "advert", ignore = true)
+    })
     Address addressSaveRequestToAddress(AddressSaveRequest addressSaveRequest);
 
+    @Mapping(target = "advert", ignore = true)
     Address addressUpdateRequestToAddress(AddressUpdateRequest addressUpdateRequest);
 
     AddressResponse addressToAddressResponse(Address address);
 
+    @Mapping(target = "advert", ignore = true)
     Address addressResponseToAddress(AddressResponse addressResponse);
 
     @IterableMapping(elementTargetType = AddressResponse.class)
