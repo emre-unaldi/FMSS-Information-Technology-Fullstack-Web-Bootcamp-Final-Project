@@ -32,11 +32,16 @@ import unaldi.advertservice.utils.constants.Caches;
 import unaldi.advertservice.utils.constants.ExceptionMessages;
 import unaldi.advertservice.utils.constants.Messages;
 import unaldi.advertservice.utils.exception.AdvertNotFoundException;
+import unaldi.advertservice.utils.rabbitMQ.dto.LogDTO;
+import unaldi.advertservice.utils.rabbitMQ.enums.HttpRequestMethod;
+import unaldi.advertservice.utils.rabbitMQ.enums.LogType;
+import unaldi.advertservice.utils.rabbitMQ.producer.LogProducer;
 import unaldi.advertservice.utils.result.DataResult;
 import unaldi.advertservice.utils.result.Result;
 import unaldi.advertservice.utils.result.SuccessDataResult;
 import unaldi.advertservice.utils.result.SuccessResult;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -57,15 +62,17 @@ public class AdvertServiceImpl implements AdvertService {
     private final AddressService addressService;
     private final EntityManager entityManager;
     private final CacheManager cacheManager;
+    private final LogProducer logProducer;
 
     @Autowired
-    public AdvertServiceImpl(AdvertRepository advertRepository, UserServiceClient userServiceClient, PhotoServiceClient photoServiceClient, AddressService addressService, EntityManager entityManager, CacheManager cacheManager) {
+    public AdvertServiceImpl(AdvertRepository advertRepository, UserServiceClient userServiceClient, PhotoServiceClient photoServiceClient, AddressService addressService, EntityManager entityManager, CacheManager cacheManager, LogProducer logProducer) {
         this.advertRepository = advertRepository;
         this.userServiceClient = userServiceClient;
         this.photoServiceClient = photoServiceClient;
         this.addressService = addressService;
         this.entityManager = entityManager;
         this.cacheManager = cacheManager;
+        this.logProducer = logProducer;
     }
 
     @CacheEvict(value = Caches.ADVERTS_CACHE, allEntries = true, condition = "#result.success != false")
@@ -83,6 +90,8 @@ public class AdvertServiceImpl implements AdvertService {
         AdvertResponse advertResponse = AdvertMapper.INSTANCE.advertToAdvertResponse(advert);
         advertResponse.setUser(userResponse);
         advertResponse.setPhotos(photoResponses);
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.POST, Messages.ADVERT_SAVED));
 
         return new SuccessDataResult<>(advertResponse, Messages.ADVERT_SAVED);
     }
@@ -110,6 +119,8 @@ public class AdvertServiceImpl implements AdvertService {
         advertResponse.setUser(userResponse);
         advertResponse.setPhotos(photoResponses);
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.PUT, Messages.ADVERT_UPDATED));
+
         return new SuccessDataResult<>(advertResponse, Messages.ADVERT_UPDATED);
     }
 
@@ -129,6 +140,8 @@ public class AdvertServiceImpl implements AdvertService {
         advertResponse.setUser(userResponse);
         advertResponse.setPhotos(photoResponses);
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.ADVERT_FOUND));
+
         return new SuccessDataResult<>(advertResponse, Messages.ADVERT_FOUND);
     }
 
@@ -146,6 +159,8 @@ public class AdvertServiceImpl implements AdvertService {
                     return advertResponse;
                 })
                 .toList();
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.ADVERTS_LISTED));
 
         return new SuccessDataResult<>(advertResponses, Messages.ADVERTS_LISTED);
     }
@@ -169,6 +184,8 @@ public class AdvertServiceImpl implements AdvertService {
 
         advertRepository.deleteById(advert.getId());
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.DELETE, Messages.ADVERT_DELETED));
+
         return new SuccessResult(Messages.ADVERT_DELETED);
     }
 
@@ -190,6 +207,18 @@ public class AdvertServiceImpl implements AdvertService {
         Address address = AddressMapper.INSTANCE.addressResponseToAddress(addressResponse);
 
         return entityManager.merge(address);
+    }
+
+    private LogDTO prepareLogDTO(HttpRequestMethod httpRequestMethod, String message) {
+        return LogDTO
+                .builder()
+                .serviceName("advert-service")
+                .httpRequestMethod(httpRequestMethod)
+                .logType(LogType.INFO)
+                .message(message)
+                .timestamp(LocalDateTime.now())
+                .exception(null)
+                .build();
     }
 
 }
