@@ -1,8 +1,8 @@
-package unaldi.logservice.utils.rabbitMQ.dto;
+package unaldi.userservice.utils.rabbitMQ.dto;
 
 import lombok.*;
-import unaldi.logservice.entity.enums.HttpRequestMethod;
-import unaldi.logservice.entity.enums.LogType;
+import unaldi.userservice.utils.rabbitMQ.enums.HttpRequestMethod;
+import unaldi.userservice.utils.rabbitMQ.enums.LogType;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @ToString
 public class LogDTO {
     private String serviceName;

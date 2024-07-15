@@ -24,11 +24,16 @@ import unaldi.userservice.utils.constants.Caches;
 import unaldi.userservice.utils.constants.ExceptionMessages;
 import unaldi.userservice.utils.constants.Messages;
 import unaldi.userservice.utils.exception.*;
+import unaldi.userservice.utils.rabbitMQ.dto.LogDTO;
+import unaldi.userservice.utils.rabbitMQ.enums.HttpRequestMethod;
+import unaldi.userservice.utils.rabbitMQ.enums.LogType;
+import unaldi.userservice.utils.rabbitMQ.producer.LogProducer;
 import unaldi.userservice.utils.result.DataResult;
 import unaldi.userservice.utils.result.Result;
 import unaldi.userservice.utils.result.SuccessDataResult;
 import unaldi.userservice.utils.result.SuccessResult;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -47,13 +52,15 @@ public class UserServiceImpl implements UserService {
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
     private final RefreshTokenRepository refreshTokenRepository;
+    private final LogProducer logProducer;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, RefreshTokenRepository refreshTokenRepository) {
+    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, RefreshTokenRepository refreshTokenRepository, LogProducer logProducer) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
         this.refreshTokenRepository = refreshTokenRepository;
+        this.logProducer = logProducer;
     }
 
     @CacheEvict(value = Caches.USERS_CACHE, allEntries = true, condition = "#result.success != false")
@@ -76,13 +83,13 @@ public class UserServiceImpl implements UserService {
         userDto.setRoles(roles);
         User user = userRepository.save(userDto);
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.POST, Messages.USER_REGISTERED));
+
         return new SuccessDataResult<>(
                 UserMapper.INSTANCE.userToUserResponse(user),
                 Messages.USER_REGISTERED
         );
     }
-
-
 
     @Caching(
             put = { @CachePut(value = Caches.USER_CACHE, key = "#userUpdateRequest.getId()", unless = "#result.success != true") },
@@ -111,6 +118,8 @@ public class UserServiceImpl implements UserService {
         userDto.setRoles(roles);
         User user = userRepository.save(userDto);
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.PUT, Messages.USER_UPDATED));
+
         return new SuccessDataResult<>(
                 UserMapper.INSTANCE.userToUserResponse(user),
                 Messages.USER_UPDATED
@@ -121,6 +130,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public DataResult<List<UserResponse>> findAll() {
         List<User> users = userRepository.findAll();
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.USERS_LISTED));
 
         return new SuccessDataResult<>(
                 UserMapper.INSTANCE.usersToUserResponses(users),
@@ -135,6 +146,8 @@ public class UserServiceImpl implements UserService {
                 .findById(userId)
                 .map(UserMapper.INSTANCE::userToUserResponse)
                 .orElseThrow(() -> new UserNotFoundException(ExceptionMessages.USER_NOT_FOUND));
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.USER_FOUND));
 
         return new SuccessDataResult<>(userResponse, Messages.USER_FOUND);
     }
@@ -158,6 +171,8 @@ public class UserServiceImpl implements UserService {
 
         refreshTokenRepository.deleteById(refreshToken.getId());
         userRepository.deleteById(user.getId());
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.DELETE, Messages.USER_DELETED));
 
         return new SuccessResult(Messages.USER_DELETED);
     }
@@ -195,5 +210,17 @@ public class UserServiceImpl implements UserService {
         }
 
         return roles;
+    }
+
+    private LogDTO prepareLogDTO(HttpRequestMethod httpRequestMethod, String message) {
+        return LogDTO
+                .builder()
+                .serviceName("user-service")
+                .httpRequestMethod(httpRequestMethod)
+                .logType(LogType.INFO)
+                .message(message)
+                .timestamp(LocalDateTime.now())
+                .exception(null)
+                .build();
     }
 }
