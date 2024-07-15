@@ -162,7 +162,7 @@ public class GlobalExceptionHandler {
     private LogDTO prepareLogDTO(HttpRequestMethod httpRequestMethod, String message, String exception) {
         return LogDTO
                 .builder()
-                .serviceName("user-service")
+                .serviceName("photo-service")
                 .httpRequestMethod(httpRequestMethod)
                 .logType(LogType.ERROR)
                 .message(message)

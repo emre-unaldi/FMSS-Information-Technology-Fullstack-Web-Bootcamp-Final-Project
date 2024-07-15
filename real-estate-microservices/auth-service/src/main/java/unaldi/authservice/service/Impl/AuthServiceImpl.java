@@ -10,6 +10,10 @@ import unaldi.authservice.utils.constants.ExceptionMessages;
 import unaldi.authservice.utils.constants.Messages;
 import unaldi.authservice.utils.exception.RefreshTokenEmptyException;
 import unaldi.authservice.utils.exception.RefreshTokenNotFoundException;
+import unaldi.authservice.utils.rabbitMQ.dto.LogDTO;
+import unaldi.authservice.utils.rabbitMQ.enums.HttpRequestMethod;
+import unaldi.authservice.utils.rabbitMQ.enums.LogType;
+import unaldi.authservice.utils.rabbitMQ.producer.LogProducer;
 import unaldi.authservice.utils.result.SuccessDataResult;
 import unaldi.authservice.utils.result.SuccessResult;
 import unaldi.authservice.utils.security.jwt.JwtUtils;
@@ -23,6 +27,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
@@ -38,12 +43,14 @@ public class AuthServiceImpl implements AuthService {
     private final AuthenticationManager authenticationManager;
     private final RefreshTokenService refreshTokenService;
     private final JwtUtils jwtUtils;
+    private final LogProducer logProducer;
 
     @Autowired
-    public AuthServiceImpl(AuthenticationManager authenticationManager, RefreshTokenService refreshTokenService, JwtUtils jwtUtils) {
+    public AuthServiceImpl(AuthenticationManager authenticationManager, RefreshTokenService refreshTokenService, JwtUtils jwtUtils, LogProducer logProducer) {
         this.authenticationManager = authenticationManager;
         this.refreshTokenService = refreshTokenService;
         this.jwtUtils = jwtUtils;
+        this.logProducer = logProducer;
     }
 
     @Override
@@ -67,6 +74,8 @@ public class AuthServiceImpl implements AuthService {
         UserResponse userResponse = AuthMapper.INSTANCE.userDetailsToUserResponse(userDetails);
         SuccessDataResult<UserResponse> user = new SuccessDataResult<>(userResponse, Messages.USER_LOGGED_IN);
 
+        logProducer.sendToLog(prepareLogDTO(Messages.USER_LOGGED_IN));
+
         return AuthMapper.INSTANCE.mapToLoginResponse(user, jwtCookie, jwtRefreshCookie);
     }
 
@@ -84,6 +93,8 @@ public class AuthServiceImpl implements AuthService {
 
         SuccessResult result = new SuccessResult(Messages.USER_LOGGED_OUT);
 
+        logProducer.sendToLog(prepareLogDTO(Messages.USER_LOGGED_OUT));
+
         return AuthMapper.INSTANCE.mapToLogoutResponse(result, jwtCookie, jwtRefreshCookie);
     }
 
@@ -99,12 +110,26 @@ public class AuthServiceImpl implements AuthService {
                         SuccessResult result = new SuccessResult(Messages.TOKEN_REFRESHED);
                         ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(user);
 
+                        logProducer.sendToLog(prepareLogDTO(Messages.TOKEN_REFRESHED));
+
                         return AuthMapper.INSTANCE.mapToRefreshTokenResponse(result, jwtCookie);
                     })
                     .orElseThrow(() -> new RefreshTokenNotFoundException(refreshToken, ExceptionMessages.REFRESH_TOKEN_NOT_FOUND));
         }
 
         throw new RefreshTokenEmptyException(ExceptionMessages.REFRESH_TOKEN_EMPTY);
+    }
+
+    private LogDTO prepareLogDTO(String message) {
+        return LogDTO
+                .builder()
+                .serviceName("auth-service")
+                .httpRequestMethod(HttpRequestMethod.POST)
+                .logType(LogType.INFO)
+                .message(message)
+                .timestamp(LocalDateTime.now())
+                .exception(null)
+                .build();
     }
 
 }
