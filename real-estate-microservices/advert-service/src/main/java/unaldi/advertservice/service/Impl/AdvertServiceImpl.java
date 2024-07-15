@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import unaldi.advertservice.entity.Address;
 import unaldi.advertservice.entity.Advert;
 import unaldi.advertservice.entity.dto.request.AdvertSaveRequest;
+import unaldi.advertservice.entity.dto.request.AdvertStatusUpdateRequest;
 import unaldi.advertservice.entity.dto.request.AdvertUpdateRequest;
 import unaldi.advertservice.entity.dto.response.AddressResponse;
 import unaldi.advertservice.entity.dto.response.AdvertResponse;
@@ -44,7 +45,6 @@ import unaldi.advertservice.utils.result.SuccessResult;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 /**
  * Copyright (c) 2024
@@ -87,10 +87,7 @@ public class AdvertServiceImpl implements AdvertService {
         advert.setAddress(address);
         advertRepository.save(advert);
 
-        AdvertResponse advertResponse = AdvertMapper.INSTANCE.advertToAdvertResponse(advert);
-        advertResponse.setUser(userResponse);
-        advertResponse.setPhotos(photoResponses);
-
+        AdvertResponse advertResponse = prepareAdvertResponse(advert, userResponse, photoResponses);
         logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.POST, Messages.ADVERT_SAVED));
 
         return new SuccessDataResult<>(advertResponse, Messages.ADVERT_SAVED);
@@ -115,10 +112,7 @@ public class AdvertServiceImpl implements AdvertService {
         advert.setAddress(address);
         advertRepository.save(advert);
 
-        AdvertResponse advertResponse = AdvertMapper.INSTANCE.advertToAdvertResponse(advert);
-        advertResponse.setUser(userResponse);
-        advertResponse.setPhotos(photoResponses);
-
+        AdvertResponse advertResponse = prepareAdvertResponse(advert, userResponse, photoResponses);
         logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.PUT, Messages.ADVERT_UPDATED));
 
         return new SuccessDataResult<>(advertResponse, Messages.ADVERT_UPDATED);
@@ -127,18 +121,13 @@ public class AdvertServiceImpl implements AdvertService {
     @Cacheable(value = Caches.ADVERT_CACHE, key = "#advertId", unless = "#result.success != true")
     @Override
     public DataResult<AdvertResponse> findById(Long advertId) {
-        Optional<Advert> foundAdvert = advertRepository.findById(advertId);
+        Advert foundAdvert = advertRepository
+                .findById(advertId)
+                .orElseThrow(() -> new AdvertNotFoundException(ExceptionMessages.ADVERT_NOT_FOUND));
 
-        if (foundAdvert.isEmpty()) {
-            throw new AdvertNotFoundException(ExceptionMessages.ADVERT_NOT_FOUND);
-        }
-
-        UserResponse userResponse = fetchUser(foundAdvert.get().getUserId());
-        List<PhotoResponse> photoResponses = fetchPhotos(foundAdvert.get().getPhotoIds());
-
-        AdvertResponse advertResponse = AdvertMapper.INSTANCE.advertToAdvertResponse(foundAdvert.get());
-        advertResponse.setUser(userResponse);
-        advertResponse.setPhotos(photoResponses);
+        UserResponse userResponse = fetchUser(foundAdvert.getUserId());
+        List<PhotoResponse> photoResponses = fetchPhotos(foundAdvert.getPhotoIds());
+        AdvertResponse advertResponse = prepareAdvertResponse(foundAdvert, userResponse, photoResponses);
 
         logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.ADVERT_FOUND));
 
@@ -149,14 +138,12 @@ public class AdvertServiceImpl implements AdvertService {
     @Override
     public DataResult<List<AdvertResponse>> findAll() {
         List<Advert> adverts = advertRepository.findAll();
-
         List<AdvertResponse> advertResponses = adverts.stream()
                 .map(advert -> {
-                    AdvertResponse advertResponse = AdvertMapper.INSTANCE.advertToAdvertResponse(advert);
-                    advertResponse.setUser(fetchUser(advert.getUserId()));
-                    advertResponse.setPhotos(fetchPhotos(advert.getPhotoIds()));
+                    UserResponse userResponse = fetchUser(advert.getUserId());
+                    List<PhotoResponse> photoResponses = fetchPhotos(advert.getPhotoIds());
 
-                    return advertResponse;
+                    return prepareAdvertResponse(advert, userResponse, photoResponses);
                 })
                 .toList();
 
@@ -183,10 +170,32 @@ public class AdvertServiceImpl implements AdvertService {
         }
 
         advertRepository.deleteById(advert.getId());
-
         logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.DELETE, Messages.ADVERT_DELETED));
 
         return new SuccessResult(Messages.ADVERT_DELETED);
+    }
+
+    @Caching(
+            put = { @CachePut(value = Caches.ADVERT_CACHE, key = "#advertStatusUpdateRequest.getId()", unless = "#result.success != true") },
+            evict = { @CacheEvict(value = Caches.ADVERTS_CACHE, allEntries = true, condition = "#result.success != false") }
+    )
+    @Override
+    public DataResult<AdvertResponse> changeStatus(AdvertStatusUpdateRequest advertStatusUpdateRequest) {
+        Advert foundAdvert = advertRepository
+                .findById(advertStatusUpdateRequest.getId())
+                .orElseThrow(() -> new AdvertNotFoundException(ExceptionMessages.ADVERT_NOT_FOUND));
+
+        UserResponse userResponse = fetchUser(foundAdvert.getUserId());
+        List<PhotoResponse> photoResponses = fetchPhotos(foundAdvert.getPhotoIds());
+
+        foundAdvert.setAdvertStatus(advertStatusUpdateRequest.getAdvertStatus());
+        advertRepository.save(foundAdvert);
+
+        AdvertResponse advertResponse = prepareAdvertResponse(foundAdvert, userResponse, photoResponses);
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.PATCH, Messages.ADVERT_STATUS_UPDATED));
+
+        return new SuccessDataResult<>(advertResponse, Messages.ADVERT_STATUS_UPDATED);
+
     }
 
     private UserResponse fetchUser(Long userId) {
@@ -207,6 +216,14 @@ public class AdvertServiceImpl implements AdvertService {
         Address address = AddressMapper.INSTANCE.addressResponseToAddress(addressResponse);
 
         return entityManager.merge(address);
+    }
+
+    private AdvertResponse prepareAdvertResponse(Advert advert, UserResponse userResponse, List<PhotoResponse> photoResponses) {
+        AdvertResponse advertResponse = AdvertMapper.INSTANCE.advertToAdvertResponse(advert);
+        advertResponse.setUser(userResponse);
+        advertResponse.setPhotos(photoResponses);
+
+        return advertResponse;
     }
 
     private LogDTO prepareLogDTO(HttpRequestMethod httpRequestMethod, String message) {

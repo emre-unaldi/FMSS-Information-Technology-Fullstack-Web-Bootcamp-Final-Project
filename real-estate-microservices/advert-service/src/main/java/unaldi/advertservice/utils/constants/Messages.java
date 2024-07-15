@@ -23,6 +23,7 @@ public class Messages {
     public static final String ADDRESS_FOUND = "Address found successfully";
     public static final String ADDRESSES_LISTED = "Addresses listed successfully";
     public static final String ADDRESS_DELETED = "Address deleted successfully";
+    public static final String ADVERT_STATUS_UPDATED = "Advert status updated successfully";
     public static final String LOG_WRITE_QUEUE = "Log record written to queue";
 
 }
