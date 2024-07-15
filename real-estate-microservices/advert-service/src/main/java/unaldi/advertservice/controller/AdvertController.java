@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import unaldi.advertservice.entity.dto.request.AdvertSaveRequest;
+import unaldi.advertservice.entity.dto.request.AdvertStatusUpdateRequest;
 import unaldi.advertservice.entity.dto.request.AdvertUpdateRequest;
 import unaldi.advertservice.entity.dto.response.AdvertResponse;
 import unaldi.advertservice.service.AdvertService;
@@ -195,6 +196,37 @@ public class AdvertController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(advertService.deleteById(advertId));
+    }
+
+    @PatchMapping("/changeStatus")
+    @Operation(
+            summary = "Change advert status",
+            description = "Change the status of an advert identified by id",
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "Advert status update details",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(
+                                    implementation = AdvertStatusUpdateRequest.class
+                            ),
+                            examples = {
+                                    @ExampleObject(
+                                            name = "Advert Status Update",
+                                            summary = "Update advert status",
+                                            description = "Update the status of an existing advert",
+                                            value = "{\n"
+                                                    + "  \"id\": 1,\n"
+                                                    + "  \"advertStatus\": \"ACTIVE\"\n"
+                                                    + "}"
+                                    )
+                            }
+                    )
+            )
+    )
+    public ResponseEntity<DataResult<AdvertResponse>> changeStatus(@Valid @RequestBody AdvertStatusUpdateRequest advertStatusUpdateRequest) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(advertService.changeStatus(advertStatusUpdateRequest));
     }
 
 }
