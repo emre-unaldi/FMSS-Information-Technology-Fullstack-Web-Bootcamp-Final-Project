@@ -1,5 +1,10 @@
 package unaldi.photoservice.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -28,6 +33,7 @@ import java.util.List;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1/photos")
+@Tag(name="Photo Controller", description = "Photo Management")
 public class PhotoController {
 
     private final PhotoService photoService;
@@ -38,22 +44,56 @@ public class PhotoController {
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<DataResult<PhotoResponse>> singleUpload(@RequestParam("photo") MultipartFile photo) throws Exception {
-
+    @Operation(
+            description = "Single photo upload",
+            summary = "Upload a single photo",
+            requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "The photo file to upload",
+                    content = @Content(
+                            mediaType = "multipart/form-data",
+                            schema = @Schema(
+                                    implementation = SingleUploadRequest.class
+                            )
+                    )
+            )
+    )
+    public ResponseEntity<DataResult<PhotoResponse>> singleUpload(MultipartFile photo) throws Exception {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(photoService.singleUpload(new SingleUploadRequest(photo)));
     }
 
     @PostMapping("/uploads")
-    public ResponseEntity<DataResult<List<PhotoResponse>>> multipleUpload(@RequestParam("photos") MultipartFile[] photos) {
-
+    @Operation(
+            description = "Multiple photo upload",
+            summary = "Upload multiple photos",
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "The photo files to upload",
+                    content = @Content(
+                            mediaType = "multipart/form-data",
+                            schema = @Schema(
+                                    implementation = MultipleUploadRequest.class
+                            )
+                    )
+            )
+    )
+    public ResponseEntity<DataResult<List<PhotoResponse>>> multipleUpload(MultipartFile[] photos) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(photoService.multipleUpload(new MultipleUploadRequest(photos)));
     }
 
     @GetMapping
+    @Operation(
+            description = "Find all photos",
+            summary = "Find all",
+            requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "Photo Infos",
+                    content = @Content(
+                            mediaType = "application/json"
+                    )
+            )
+    )
     public ResponseEntity<DataResult<List<PhotoResponse>>> findAll() {
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -61,6 +101,19 @@ public class PhotoController {
     }
 
     @PostMapping("/findByIds")
+    @Operation(
+            description = "Find photos by ids",
+            summary = "Find by ids",
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "Photo ids",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(
+                                    implementation = PhotoIdsRequest.class
+                            )
+                    )
+            )
+    )
     public ResponseEntity<DataResult<List<PhotoResponse>>> findByPhotoIds(@RequestBody PhotoIdsRequest photoIdsRequest) {
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -68,6 +121,16 @@ public class PhotoController {
     }
 
     @GetMapping("/{photoId}")
+    @Operation(
+            description = "Find photo by id",
+            summary = "Find by id",
+            requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "Photo id",
+                    content = @Content(
+                            mediaType = "application/json"
+                    )
+            )
+    )
     public ResponseEntity<DataResult<PhotoResponse>> findById(@PathVariable("photoId") String photoId) {
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -75,6 +138,16 @@ public class PhotoController {
     }
 
     @DeleteMapping("/{photoId}")
+    @Operation(
+            description = "Delete Photo by id",
+            summary = "Delete a photo",
+            requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "Photo id",
+                    content = @Content(
+                            mediaType = "application/json"
+                    )
+            )
+    )
     public ResponseEntity<Result> deleteById(@PathVariable("photoId") String photoId) {
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -82,6 +155,18 @@ public class PhotoController {
     }
 
     @GetMapping("/download/{photoId}")
+    @Operation(
+            description = "Download Photo by ID",
+            summary = "Download by ID",
+            responses = {
+                    @ApiResponse(
+                            description = "Downloaded Photo",
+                            content = @Content(
+                                    mediaType = "application/octet-stream"
+                            )
+                    )
+            }
+    )
     public ResponseEntity<Resource> downloadById(@PathVariable("photoId") String photoId) {
         DownloadResponse downloaded = photoService.downloadById(photoId).getData();
 
