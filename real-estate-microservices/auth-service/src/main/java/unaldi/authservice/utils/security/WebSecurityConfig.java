@@ -76,6 +76,8 @@ public class WebSecurityConfig {
                                 .requestMatchers("/api/v1/auth/logout", "/api/v1/auth/refreshToken").hasAnyRole("USER", "ADMIN")
                                 .requestMatchers("/api/v1/users/**").hasAnyRole("USER", "ADMIN")
                                 .requestMatchers("/api/v1/photos/**").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/api/v1/adverts/**", "/api/v1/addresses/**").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/api/v1/logs/**").hasAnyRole("USER", "ADMIN")
                                 .anyRequest().authenticated()
                 );
 
