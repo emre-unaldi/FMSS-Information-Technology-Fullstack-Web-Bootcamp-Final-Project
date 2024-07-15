@@ -18,5 +18,6 @@ public class Messages {
     public static final String USER_FOUND = "User found successfully";
     public static final String USERS_LISTED = "Users listed successfully";
     public static final String USER_DELETED = "User deleted successfully";
+    public static final String LOG_WRITE_QUEUE = "Log record written to queue";
 
 }
