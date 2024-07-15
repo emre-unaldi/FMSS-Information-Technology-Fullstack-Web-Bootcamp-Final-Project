@@ -23,12 +23,17 @@ import unaldi.photoservice.utils.constants.Caches;
 import unaldi.photoservice.utils.constants.ExceptionMessages;
 import unaldi.photoservice.utils.constants.Messages;
 import unaldi.photoservice.utils.exception.*;
+import unaldi.photoservice.utils.rabbitMQ.dto.LogDTO;
+import unaldi.photoservice.utils.rabbitMQ.enums.HttpRequestMethod;
+import unaldi.photoservice.utils.rabbitMQ.enums.LogType;
+import unaldi.photoservice.utils.rabbitMQ.producer.LogProducer;
 import unaldi.photoservice.utils.result.DataResult;
 import unaldi.photoservice.utils.result.Result;
 import unaldi.photoservice.utils.result.SuccessDataResult;
 import unaldi.photoservice.utils.result.SuccessResult;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -45,10 +50,12 @@ import java.util.Optional;
 public class PhotoServiceImpl implements PhotoService {
 
     private final PhotoRepository photoRepository;
+    private final LogProducer logProducer;
 
     @Autowired
-    public PhotoServiceImpl(PhotoRepository photoRepository) {
+    public PhotoServiceImpl(PhotoRepository photoRepository, LogProducer logProducer) {
         this.photoRepository = photoRepository;
+        this.logProducer = logProducer;
     }
 
     @CacheEvict(value = Caches.PHOTOS_CACHE, allEntries = true, condition = "#result.success != false")
@@ -88,6 +95,8 @@ public class PhotoServiceImpl implements PhotoService {
         Photo photoDto = PhotoMapper.INSTANCE.uploadRequestToPhoto(photoName, contentType, sourceData);
         Photo photo = photoRepository.save(photoDto);
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.POST, Messages.PHOTO_SINGLE_UPLOAD));
+
         return new SuccessDataResult<>(
                 PhotoMapper.INSTANCE.photoToPhotoResponse(photo),
                 Messages.PHOTO_SINGLE_UPLOAD);
@@ -99,9 +108,9 @@ public class PhotoServiceImpl implements PhotoService {
         List<PhotoResponse> photos = new ArrayList<>();
 
         Arrays.stream(request.getPhotos())
-                .forEach(photo -> {
-                    photos.add(singleUpload(PhotoMapper.INSTANCE.multipartFileToSingleUploadRequest(photo)).getData());
-                });
+                .forEach(photo -> photos.add(singleUpload(PhotoMapper.INSTANCE.multipartFileToSingleUploadRequest(photo)).getData()));
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.POST, Messages.PHOTO_MULTIPLE_UPLOAD));
 
         return new SuccessDataResult<>(photos, Messages.PHOTO_MULTIPLE_UPLOAD);
     }
@@ -110,6 +119,8 @@ public class PhotoServiceImpl implements PhotoService {
     @Override
     public DataResult<List<PhotoResponse>> findAll() {
         List<Photo> photos = photoRepository.findAll();
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.PHOTOS_LISTED));
 
         return new SuccessDataResult<>(
                 PhotoMapper.INSTANCE.photosToPhotoResponses(photos),
@@ -122,9 +133,11 @@ public class PhotoServiceImpl implements PhotoService {
     public DataResult<List<PhotoResponse>> findByPhotoIds(PhotoIdsRequest request) {
         List<Photo> photos = photoRepository.findByPhotoIds(request.getPhotoIds());
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.POST, Messages.PHOTO_IDS_LISTED));
+
         return new SuccessDataResult<>(
                 PhotoMapper.INSTANCE.photosToPhotoResponses(photos),
-                Messages.PHOTOS_LISTED
+                Messages.PHOTO_IDS_LISTED
         );
     }
 
@@ -136,6 +149,8 @@ public class PhotoServiceImpl implements PhotoService {
         if (photo.isEmpty()) {
             throw new PhotoNotFoundException(ExceptionMessages.PHOTO_NOT_FOUND);
         }
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.PHOTO_FOUND));
 
         return new SuccessDataResult<>(
                 PhotoMapper.INSTANCE.photoToPhotoResponse(photo.get()),
@@ -154,10 +169,10 @@ public class PhotoServiceImpl implements PhotoService {
         byte[] data = photo.get().getSourceData();
         ByteArrayResource resource = new ByteArrayResource(data);
 
-        if (resource.exists() || resource.isReadable()) {
-            return new SuccessDataResult<>(
-                    PhotoMapper.INSTANCE.photoToDownloadResponse(photo.get(), resource)
-            );
+        if (resource.exists() && resource.isReadable()) {
+            logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.PHOTO_DOWNLOADED));
+
+            return new SuccessDataResult<>(PhotoMapper.INSTANCE.photoToDownloadResponse(photo.get(), resource));
         } else {
             throw new PhotoNotReadException(ExceptionMessages.PHOTO_NOT_READ);
         }
@@ -180,6 +195,7 @@ public class PhotoServiceImpl implements PhotoService {
         }
 
         photoRepository.deleteById(photo.get().getId());
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.DELETE, Messages.PHOTO_DELETED));
 
         return new SuccessResult(Messages.PHOTO_DELETED);
     }
@@ -197,6 +213,18 @@ public class PhotoServiceImpl implements PhotoService {
         );
 
         return allowedImageFormats.contains(contentType);
+    }
+
+    private LogDTO prepareLogDTO(HttpRequestMethod httpRequestMethod, String message) {
+        return LogDTO
+                .builder()
+                .serviceName("user-service")
+                .httpRequestMethod(httpRequestMethod)
+                .logType(LogType.INFO)
+                .message(message)
+                .timestamp(LocalDateTime.now())
+                .exception(null)
+                .build();
     }
 
 }
