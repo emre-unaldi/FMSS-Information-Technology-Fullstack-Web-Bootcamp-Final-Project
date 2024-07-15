@@ -1,13 +1,6 @@
-package unaldi.logservice.entity.dto.request;
+package unaldi.logservice.utils.rabbitMQ.dto;
 
-import jakarta.annotation.Nullable;
-import jakarta.validation.constraints.FutureOrPresent;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import unaldi.logservice.entity.enums.HttpRequestMethod;
 import unaldi.logservice.entity.enums.LogType;
 
@@ -24,25 +17,11 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LogSaveRequest {
-
-    @NotBlank
+public class LogDTO {
     private String serviceName;
-
-    @NotNull
     private HttpRequestMethod httpRequestMethod;
-
-    @NotNull
     private LogType logType;
-
-    @NotBlank
     private String message;
-
-    @NotNull
-    @FutureOrPresent
     private LocalDateTime timestamp;
-
-    @Nullable
     private String exception;
-
 }

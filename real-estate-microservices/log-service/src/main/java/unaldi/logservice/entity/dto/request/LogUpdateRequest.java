@@ -1,5 +1,6 @@
 package unaldi.logservice.entity.dto.request;
 
+import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -44,6 +45,7 @@ public class LogUpdateRequest {
     @FutureOrPresent
     private LocalDateTime timestamp;
 
-    @NotBlank
+    @Nullable
     private String exception;
+
 }
