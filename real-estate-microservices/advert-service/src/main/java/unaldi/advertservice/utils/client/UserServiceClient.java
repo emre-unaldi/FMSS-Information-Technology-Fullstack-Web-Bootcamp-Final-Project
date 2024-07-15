@@ -14,7 +14,7 @@ import unaldi.advertservice.utils.client.dto.response.UserResponse;
  * @author Emre Ünaldı
  * @since 13.07.2024
  */
-@FeignClient(name = "user-service", url = "http://${USER_SERVICE_HOST:localhost}:8080")
+@FeignClient(name = "user-service", url = "http://${USER_SERVICE_HOST:localhost}:8081")
 public interface UserServiceClient {
 
     @GetMapping("/api/v1/users/{userId}")

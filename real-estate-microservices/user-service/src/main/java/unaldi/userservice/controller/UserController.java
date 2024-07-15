@@ -1,6 +1,7 @@
 package unaldi.userservice.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -41,8 +42,8 @@ public class UserController {
 
     @PostMapping("/register")
     @Operation(
-            description = "Register New User",
-            summary = "Register a new User",
+            description = "Register new user",
+            summary = "Register a new user",
             requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "User Infos",
                     content = @Content(
@@ -77,7 +78,7 @@ public class UserController {
 
     @PutMapping
     @Operation(
-            description = "Update User",
+            description = "Update user",
             summary = "Update a user",
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "User Infos",
@@ -131,8 +132,17 @@ public class UserController {
 
     @GetMapping("/{userId}")
     @Operation(
-            description = "Find with id a User",
+            description = "Find with id a user",
             summary = "Find by id",
+            parameters = {
+                    @Parameter(
+                            name = "userId",
+                            description = "Id of the user to retrieve",
+                            required = true,
+                            example = "1",
+                            schema = @Schema(type = "integer")
+                    )
+            },
             requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "User id",
                     content = @Content(
@@ -150,6 +160,15 @@ public class UserController {
     @Operation(
             description = " Delete by id a user",
             summary = "Delete a user",
+            parameters = {
+                    @Parameter(
+                            name = "userId",
+                            description = "Id of the user to retrieve",
+                            required = true,
+                            example = "1",
+                            schema = @Schema(type = "integer")
+                    )
+            },
             requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "User id",
                     content = @Content(

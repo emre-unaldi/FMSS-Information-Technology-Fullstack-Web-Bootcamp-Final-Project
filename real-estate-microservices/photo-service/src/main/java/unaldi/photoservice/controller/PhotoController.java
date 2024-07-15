@@ -1,6 +1,7 @@
 package unaldi.photoservice.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -88,7 +89,7 @@ public class PhotoController {
             description = "Find all photos",
             summary = "Find all",
             requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
-                    description = "Photo Infos",
+                    description = "Photos Infos",
                     content = @Content(
                             mediaType = "application/json"
                     )
@@ -124,6 +125,15 @@ public class PhotoController {
     @Operation(
             description = "Find photo by id",
             summary = "Find by id",
+            parameters = {
+                    @Parameter(
+                            name = "photoId",
+                            description = "Id of the photo to retrieve",
+                            required = true,
+                            example = "uuid",
+                            schema = @Schema(type = "string")
+                    )
+            },
             requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "Photo id",
                     content = @Content(
@@ -139,8 +149,17 @@ public class PhotoController {
 
     @DeleteMapping("/{photoId}")
     @Operation(
-            description = "Delete Photo by id",
+            description = "Delete photo by id",
             summary = "Delete a photo",
+            parameters = {
+                    @Parameter(
+                            name = "photoId",
+                            description = "Id of the photo to retrieve",
+                            required = true,
+                            example = "uuid",
+                            schema = @Schema(type = "string")
+                    )
+            },
             requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "Photo id",
                     content = @Content(
@@ -156,8 +175,17 @@ public class PhotoController {
 
     @GetMapping("/download/{photoId}")
     @Operation(
-            description = "Download Photo by ID",
-            summary = "Download by ID",
+            description = "Download photo by id",
+            summary = "Download by id",
+            parameters = {
+                    @Parameter(
+                            name = "photoId",
+                            description = "Id of the photo to retrieve",
+                            required = true,
+                            example = "uuid",
+                            schema = @Schema(type = "string")
+                    )
+            },
             responses = {
                     @ApiResponse(
                             description = "Downloaded Photo",

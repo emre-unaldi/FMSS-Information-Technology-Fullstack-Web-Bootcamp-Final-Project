@@ -17,7 +17,7 @@ import java.util.List;
  * @author Emre Ünaldı
  * @since 13.07.2024
  */
-@FeignClient(name = "photo-service", url = "http://${PHOTO_SERVICE_HOST:localhost}:8080")
+@FeignClient(name = "photo-service", url = "http://${PHOTO_SERVICE_HOST:localhost}:8082")
 public interface PhotoServiceClient {
 
     @PostMapping("/api/v1/photos/findByIds")
