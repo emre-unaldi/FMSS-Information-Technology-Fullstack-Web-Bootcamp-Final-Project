@@ -6,6 +6,7 @@
         <language minSize="53" name="Java" />
       </Languages>
     </inspection_tool>
+    <inspection_tool class="LoggingPlaceholderCountMatchesArgumentCount" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SpringBootApplicationProperties" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="VulnerableLibrariesLocal" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="isIgnoringEnabled" value="true" />
@@ -19,6 +20,10 @@
           <option value="log-service" />
           <option value="log-service" />
           <option value="log-service" />
+          <option value="photo-service" />
+          <option value="photo-service" />
+          <option value="photo-service" />
+          <option value="photo-service" />
         </list>
       </option>
       <option name="ignoredPackages">
@@ -31,10 +36,18 @@
           <option value="com.thoughtworks.xstream:xstream:1.4.19" />
           <option value="org.apache.httpcomponents:httpclient:4.5.3" />
           <option value="com.fasterxml.woodstox:woodstox-core:6.2.1" />
+          <option value="com.google.guava:guava:19.0" />
+          <option value="com.thoughtworks.xstream:xstream:1.4.19" />
+          <option value="com.fasterxml.woodstox:woodstox-core:6.2.1" />
+          <option value="org.apache.httpcomponents:httpclient:4.5.3" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
