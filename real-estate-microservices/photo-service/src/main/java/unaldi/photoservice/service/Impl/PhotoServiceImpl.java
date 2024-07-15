@@ -218,7 +218,7 @@ public class PhotoServiceImpl implements PhotoService {
     private LogDTO prepareLogDTO(HttpRequestMethod httpRequestMethod, String message) {
         return LogDTO
                 .builder()
-                .serviceName("user-service")
+                .serviceName("photo-service")
                 .httpRequestMethod(httpRequestMethod)
                 .logType(LogType.INFO)
                 .message(message)
