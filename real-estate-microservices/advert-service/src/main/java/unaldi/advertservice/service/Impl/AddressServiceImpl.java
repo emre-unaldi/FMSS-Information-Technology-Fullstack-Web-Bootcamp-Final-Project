@@ -17,11 +17,16 @@ import unaldi.advertservice.utils.constants.Caches;
 import unaldi.advertservice.utils.constants.ExceptionMessages;
 import unaldi.advertservice.utils.constants.Messages;
 import unaldi.advertservice.utils.exception.AddressNotFoundException;
+import unaldi.advertservice.utils.rabbitMQ.dto.LogDTO;
+import unaldi.advertservice.utils.rabbitMQ.enums.HttpRequestMethod;
+import unaldi.advertservice.utils.rabbitMQ.enums.LogType;
+import unaldi.advertservice.utils.rabbitMQ.producer.LogProducer;
 import unaldi.advertservice.utils.result.DataResult;
 import unaldi.advertservice.utils.result.Result;
 import unaldi.advertservice.utils.result.SuccessDataResult;
 import unaldi.advertservice.utils.result.SuccessResult;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -35,10 +40,12 @@ import java.util.List;
 public class AddressServiceImpl implements AddressService {
 
     private final AddressRepository addressRepository;
+    private final LogProducer logProducer;
 
     @Autowired
-    public AddressServiceImpl(AddressRepository addressRepository) {
+    public AddressServiceImpl(AddressRepository addressRepository, LogProducer logProducer) {
         this.addressRepository = addressRepository;
+        this.logProducer = logProducer;
     }
 
     @CacheEvict(value = Caches.ADDRESSES_CACHE, allEntries = true, condition = "#result.success != false")
@@ -46,6 +53,8 @@ public class AddressServiceImpl implements AddressService {
     public DataResult<AddressResponse> save(AddressSaveRequest addressSaveRequest) {
         Address address = AddressMapper.INSTANCE.addressSaveRequestToAddress(addressSaveRequest);
         addressRepository.save(address);
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.POST, Messages.ADDRESS_SAVED));
 
         return new SuccessDataResult<>(
                 AddressMapper.INSTANCE.addressToAddressResponse(address),
@@ -66,6 +75,8 @@ public class AddressServiceImpl implements AddressService {
         Address address = AddressMapper.INSTANCE.addressUpdateRequestToAddress(addressUpdateRequest);
         addressRepository.save(address);
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.PUT, Messages.ADDRESS_UPDATED));
+
         return new SuccessDataResult<>(
                 AddressMapper.INSTANCE.addressToAddressResponse(address),
                 Messages.ADDRESS_UPDATED
@@ -80,6 +91,8 @@ public class AddressServiceImpl implements AddressService {
                 .map(AddressMapper.INSTANCE::addressToAddressResponse)
                 .orElseThrow(() -> new AddressNotFoundException(ExceptionMessages.ADDRESS_NOT_FOUND));
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.ADDRESS_FOUND));
+
         return new SuccessDataResult<>(addressResponse, Messages.ADDRESS_FOUND);
     }
 
@@ -87,6 +100,8 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public DataResult<List<AddressResponse>> findAll() {
         List<Address> addresses = addressRepository.findAll();
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.ADDRESSES_LISTED));
 
         return new SuccessDataResult<>(
                 AddressMapper.INSTANCE.addressesToAddressResponses(addresses),
@@ -108,6 +123,20 @@ public class AddressServiceImpl implements AddressService {
 
         addressRepository.deleteById(address.getId());
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.DELETE, Messages.ADDRESS_DELETED));
+
         return new SuccessResult(Messages.ADDRESS_DELETED);
+    }
+
+    private LogDTO prepareLogDTO(HttpRequestMethod httpRequestMethod, String message) {
+        return LogDTO
+                .builder()
+                .serviceName("advert-service")
+                .httpRequestMethod(httpRequestMethod)
+                .logType(LogType.INFO)
+                .message(message)
+                .timestamp(LocalDateTime.now())
+                .exception(null)
+                .build();
     }
 }
