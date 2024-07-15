@@ -8,6 +8,7 @@ import unaldi.logservice.entity.Log;
 import unaldi.logservice.entity.dto.request.LogSaveRequest;
 import unaldi.logservice.entity.dto.request.LogUpdateRequest;
 import unaldi.logservice.entity.dto.response.LogResponse;
+import unaldi.logservice.utils.rabbitMQ.dto.LogDTO;
 
 import java.util.List;
 
@@ -30,7 +31,7 @@ public interface LogMapper {
 
     LogResponse logToLogResponse(Log log);
 
-    Log logResponseToLog(LogResponse logResponse);
+    Log logDtoToLog(LogDTO logDTO);
 
     @IterableMapping(elementTargetType = LogResponse.class)
     List<LogResponse> convertLogDTOs(List<Log> logs);
