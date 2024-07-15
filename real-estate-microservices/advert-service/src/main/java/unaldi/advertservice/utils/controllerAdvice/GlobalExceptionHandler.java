@@ -13,6 +13,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import unaldi.advertservice.utils.constants.ExceptionMessages;
 import unaldi.advertservice.utils.controllerAdvice.dto.ExceptionResponse;
+import unaldi.advertservice.utils.exception.AddressAssociationException;
 import unaldi.advertservice.utils.exception.AddressNotFoundException;
 import unaldi.advertservice.utils.exception.AdvertNotFoundException;
 import unaldi.advertservice.utils.rabbitMQ.dto.LogDTO;
@@ -65,6 +66,18 @@ public class GlobalExceptionHandler {
                 .body(new ErrorDataResult<>(
                         prepareExceptionResponse(exception, HttpStatus.NOT_FOUND, request),
                         ExceptionMessages.ADDRESS_NOT_FOUND)
+                );
+    }
+
+    @ExceptionHandler(AddressAssociationException.class)
+    public ResponseEntity<DataResult<ExceptionResponse>> handleAddressAssociationException(AddressAssociationException exception, WebRequest request) {
+        logger.error("AddressAssociationException occurred : {0}", exception);
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(new ErrorDataResult<>(
+                        prepareExceptionResponse(exception, HttpStatus.BAD_REQUEST, request),
+                        ExceptionMessages.ADDRESS_ASSOCIATION_FOUND)
                 );
     }
 

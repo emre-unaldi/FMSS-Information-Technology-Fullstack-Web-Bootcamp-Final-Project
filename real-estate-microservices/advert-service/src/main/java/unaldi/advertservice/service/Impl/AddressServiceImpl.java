@@ -11,11 +11,13 @@ import unaldi.advertservice.entity.dto.request.AddressSaveRequest;
 import unaldi.advertservice.entity.dto.request.AddressUpdateRequest;
 import unaldi.advertservice.entity.dto.response.AddressResponse;
 import unaldi.advertservice.repository.AddressRepository;
+import unaldi.advertservice.repository.AdvertRepository;
 import unaldi.advertservice.service.AddressService;
 import unaldi.advertservice.service.mapper.AddressMapper;
 import unaldi.advertservice.utils.constants.Caches;
 import unaldi.advertservice.utils.constants.ExceptionMessages;
 import unaldi.advertservice.utils.constants.Messages;
+import unaldi.advertservice.utils.exception.AddressAssociationException;
 import unaldi.advertservice.utils.exception.AddressNotFoundException;
 import unaldi.advertservice.utils.rabbitMQ.dto.LogDTO;
 import unaldi.advertservice.utils.rabbitMQ.enums.HttpRequestMethod;
@@ -40,11 +42,13 @@ import java.util.List;
 public class AddressServiceImpl implements AddressService {
 
     private final AddressRepository addressRepository;
+    private final AdvertRepository advertRepository;
     private final LogProducer logProducer;
 
     @Autowired
-    public AddressServiceImpl(AddressRepository addressRepository, LogProducer logProducer) {
+    public AddressServiceImpl(AddressRepository addressRepository, AdvertRepository advertRepository, LogProducer logProducer) {
         this.addressRepository = addressRepository;
+        this.advertRepository = advertRepository;
         this.logProducer = logProducer;
     }
 
@@ -121,8 +125,11 @@ public class AddressServiceImpl implements AddressService {
                 .findById(addressId)
                 .orElseThrow(() -> new AddressNotFoundException(ExceptionMessages.ADDRESS_NOT_FOUND));
 
-        addressRepository.deleteById(address.getId());
+        if (advertRepository.existsByAddress(addressId)) {
+            throw new AddressAssociationException(ExceptionMessages.ADDRESS_ASSOCIATION_FOUND);
+        }
 
+        addressRepository.deleteById(address.getId());
         logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.DELETE, Messages.ADDRESS_DELETED));
 
         return new SuccessResult(Messages.ADDRESS_DELETED);
