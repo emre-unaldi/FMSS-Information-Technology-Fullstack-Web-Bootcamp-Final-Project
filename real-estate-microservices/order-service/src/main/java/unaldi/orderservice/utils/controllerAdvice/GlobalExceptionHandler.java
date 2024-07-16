@@ -1,5 +1,6 @@
 package unaldi.orderservice.utils.controllerAdvice;
 
+import feign.FeignException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +53,30 @@ public class GlobalExceptionHandler {
                 .body(new ErrorDataResult<>(
                         prepareExceptionResponse(exception, HttpStatus.NOT_FOUND, request),
                         ExceptionMessages.USER_NOT_FOUND)
+                );
+    }
+
+    @ExceptionHandler(FeignException.NotFound.class)
+    public ResponseEntity<DataResult<ExceptionResponse>> handleFeignNotFoundException(FeignException.NotFound exception, WebRequest request) {
+        logger.error("Feign NotFoundException occurred : {0}", exception);
+
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorDataResult<>(
+                        prepareExceptionResponse(exception, HttpStatus.NOT_FOUND, request),
+                        ExceptionMessages.RESOURCE_NOT_FOUND)
+                );
+    }
+
+    @ExceptionHandler(FeignException.class)
+    public ResponseEntity<DataResult<ExceptionResponse>> handleAllFeignException(FeignException exception, WebRequest request) {
+        logger.error("Feign exception occurred : {0}", exception);
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(new ErrorDataResult<>(
+                        prepareExceptionResponse(exception, HttpStatus.BAD_REQUEST, request),
+                        ExceptionMessages.FEIGN_BAD_REQUEST)
                 );
     }
 
