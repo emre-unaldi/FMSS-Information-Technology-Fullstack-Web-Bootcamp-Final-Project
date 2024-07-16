@@ -20,7 +20,7 @@ public interface OrderService {
     DataResult<OrderResponse> save(OrderSaveRequest orderSaveRequest);
     DataResult<OrderResponse> update(OrderUpdateRequest orderUpdateRequest);
     DataResult<List<OrderResponse>> findAll();
-    DataResult<OrderResponse> findById(Long id);
+    DataResult<OrderResponse> findById(Long orderId);
     Result deleteById(Long orderId);
 
 }

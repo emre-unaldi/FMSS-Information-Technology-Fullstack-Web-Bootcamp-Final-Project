@@ -1,6 +1,12 @@
 package unaldi.orderservice.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import unaldi.orderservice.entity.Order;
@@ -15,6 +21,7 @@ import unaldi.orderservice.service.mapper.OrderMapper;
 import unaldi.orderservice.utils.client.UserServiceClient;
 import unaldi.orderservice.utils.client.dto.response.RestResponse;
 import unaldi.orderservice.utils.client.dto.response.UserResponse;
+import unaldi.orderservice.utils.constants.Caches;
 import unaldi.orderservice.utils.constants.ExceptionMessages;
 import unaldi.orderservice.utils.constants.Messages;
 import unaldi.orderservice.utils.exception.OrderNotFoundException;
@@ -25,6 +32,7 @@ import unaldi.orderservice.utils.result.SuccessResult;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Copyright (c) 2024
@@ -39,14 +47,17 @@ public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
     private final UserServiceClient userServiceClient;
     private final EmailService emailService;
+    private final CacheManager cacheManager;
 
     @Autowired
-    public OrderServiceImpl(OrderRepository orderRepository, UserServiceClient userServiceClient, EmailService emailService) {
+    public OrderServiceImpl(OrderRepository orderRepository, UserServiceClient userServiceClient, EmailService emailService, CacheManager cacheManager) {
         this.orderRepository = orderRepository;
         this.userServiceClient = userServiceClient;
         this.emailService = emailService;
+        this.cacheManager = cacheManager;
     }
 
+    @CacheEvict(value = Caches.ORDERS_CACHE, allEntries = true, condition = "#result.success != false")
     @Override
     public DataResult<OrderResponse> save(OrderSaveRequest request) {
         UserResponse userResponse = fetchUser(request.getUserId());
@@ -59,6 +70,11 @@ public class OrderServiceImpl implements OrderService {
         return new SuccessDataResult<>(orderResponse, Messages.ORDER_SAVED);
     }
 
+
+    @Caching(
+            put = { @CachePut(value = Caches.ORDER_CACHE, key = "#request.getId()", unless = "#result.success != true") },
+            evict = { @CacheEvict(value = Caches.ORDERS_CACHE, allEntries = true, condition = "#result.success != false") }
+    )
     @Override
     public DataResult<OrderResponse> update(OrderUpdateRequest request) {
         if (!orderRepository.existsById(request.getId())) {
@@ -75,6 +91,7 @@ public class OrderServiceImpl implements OrderService {
         );
     }
 
+    @Cacheable(value = Caches.ORDERS_CACHE, key = "'all'", unless = "#result.success != true")
     @Override
     public DataResult<List<OrderResponse>> findAll() {
         List<Order> orders = orderRepository.findAll();
@@ -89,10 +106,11 @@ public class OrderServiceImpl implements OrderService {
         return new SuccessDataResult<>(orderResponses, Messages.ORDERS_LISTED);
     }
 
+    @Cacheable(value = Caches.ORDER_CACHE, key = "#orderId", unless = "#result.success != true")
     @Override
-    public DataResult<OrderResponse> findById(Long id) {
+    public DataResult<OrderResponse> findById(Long orderId) {
         Order order = orderRepository
-                .findById(id)
+                .findById(orderId)
                 .orElseThrow(() -> new OrderNotFoundException(ExceptionMessages.ORDER_NOT_FOUND));
 
         UserResponse userResponse = fetchUser(order.getUserId());
@@ -103,6 +121,12 @@ public class OrderServiceImpl implements OrderService {
         );
     }
 
+    @Caching(
+            evict = {
+                    @CacheEvict(value = Caches.ORDERS_CACHE, allEntries = true, condition = "#result.success != false"),
+                    @CacheEvict(value = Caches.ORDER_CACHE, key = "#orderId", condition = "#result.success != false")
+            }
+    )
     @Override
     public Result deleteById(Long orderId) {
         Order order = orderRepository
