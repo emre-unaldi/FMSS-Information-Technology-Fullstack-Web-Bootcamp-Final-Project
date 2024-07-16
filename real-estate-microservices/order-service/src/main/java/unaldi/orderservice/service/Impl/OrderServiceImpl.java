@@ -1,8 +1,6 @@
 package unaldi.orderservice.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.Cache;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -25,14 +23,18 @@ import unaldi.orderservice.utils.constants.Caches;
 import unaldi.orderservice.utils.constants.ExceptionMessages;
 import unaldi.orderservice.utils.constants.Messages;
 import unaldi.orderservice.utils.exception.OrderNotFoundException;
+import unaldi.orderservice.utils.rabbitMQ.dto.LogDTO;
+import unaldi.orderservice.utils.rabbitMQ.enums.HttpRequestMethod;
+import unaldi.orderservice.utils.rabbitMQ.enums.LogType;
+import unaldi.orderservice.utils.rabbitMQ.producer.LogProducer;
 import unaldi.orderservice.utils.result.DataResult;
 import unaldi.orderservice.utils.result.Result;
 import unaldi.orderservice.utils.result.SuccessDataResult;
 import unaldi.orderservice.utils.result.SuccessResult;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * Copyright (c) 2024
@@ -47,14 +49,14 @@ public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
     private final UserServiceClient userServiceClient;
     private final EmailService emailService;
-    private final CacheManager cacheManager;
+    private final LogProducer logProducer;
 
     @Autowired
-    public OrderServiceImpl(OrderRepository orderRepository, UserServiceClient userServiceClient, EmailService emailService, CacheManager cacheManager) {
+    public OrderServiceImpl(OrderRepository orderRepository, UserServiceClient userServiceClient, EmailService emailService, LogProducer logProducer) {
         this.orderRepository = orderRepository;
         this.userServiceClient = userServiceClient;
         this.emailService = emailService;
-        this.cacheManager = cacheManager;
+        this.logProducer = logProducer;
     }
 
     @CacheEvict(value = Caches.ORDERS_CACHE, allEntries = true, condition = "#result.success != false")
@@ -66,6 +68,8 @@ public class OrderServiceImpl implements OrderService {
 
         OrderResponse orderResponse = OrderMapper.INSTANCE.orderToOrderResponse(order, userResponse);
         emailService.sendEmail(prepareEmailDetailsDTO(orderResponse));
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.POST, Messages.ORDER_SAVED));
 
         return new SuccessDataResult<>(orderResponse, Messages.ORDER_SAVED);
     }
@@ -85,6 +89,8 @@ public class OrderServiceImpl implements OrderService {
         Order order = OrderMapper.INSTANCE.orderUpdateRequestToOrder(request);
         orderRepository.save(order);
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.PUT, Messages.ORDER_UPDATED));
+
         return new SuccessDataResult<>(
                 OrderMapper.INSTANCE.orderToOrderResponse(order, userResponse),
                 Messages.ORDER_UPDATED
@@ -103,6 +109,8 @@ public class OrderServiceImpl implements OrderService {
                 })
                 .toList();
 
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.ORDERS_LISTED));
+
         return new SuccessDataResult<>(orderResponses, Messages.ORDERS_LISTED);
     }
 
@@ -114,6 +122,8 @@ public class OrderServiceImpl implements OrderService {
                 .orElseThrow(() -> new OrderNotFoundException(ExceptionMessages.ORDER_NOT_FOUND));
 
         UserResponse userResponse = fetchUser(order.getUserId());
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.ORDER_FOUND));
 
         return new SuccessDataResult<>(
                 OrderMapper.INSTANCE.orderToOrderResponse(order, userResponse),
@@ -134,6 +144,8 @@ public class OrderServiceImpl implements OrderService {
                 .orElseThrow(() -> new OrderNotFoundException(ExceptionMessages.ORDER_NOT_FOUND));
 
         orderRepository.deleteById(order.getId());
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.DELETE, Messages.ORDER_DELETED));
 
         return new SuccessResult(Messages.ORDER_DELETED);
     }
@@ -168,6 +180,18 @@ public class OrderServiceImpl implements OrderService {
                 .recipient(order.getUser().getEmail())
                 .subject(Messages.ORDER_MAIL_SUBJECT)
                 .body(orderDetails)
+                .build();
+    }
+
+    private LogDTO prepareLogDTO(HttpRequestMethod httpRequestMethod, String message) {
+        return LogDTO
+                .builder()
+                .serviceName("order-service")
+                .httpRequestMethod(httpRequestMethod)
+                .logType(LogType.INFO)
+                .message(message)
+                .timestamp(LocalDateTime.now())
+                .exception(null)
                 .build();
     }
 
