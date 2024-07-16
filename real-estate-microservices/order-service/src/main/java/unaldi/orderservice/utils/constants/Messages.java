@@ -18,5 +18,6 @@ public class Messages {
     public static final String ORDER_FOUND = "Order found successfully";
     public static final String ORDERS_LISTED = "Orders listed successfully";
     public static final String ORDER_DELETED = "Order deleted successfully";
+    public static final String ORDER_MAIL_SUBJECT = "Package Order Invoice";
 
 }
