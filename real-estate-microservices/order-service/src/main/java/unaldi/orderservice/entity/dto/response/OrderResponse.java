@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 /**
  * Copyright (c) 2024
@@ -24,6 +24,6 @@ public class OrderResponse {
     private Integer packageCount;
     private Double price;
     private Double totalPrice;
-    private LocalDateTime orderDate;
-    private LocalDateTime expirationDate;
+    private LocalDate orderDate;
+    private LocalDate expirationDate;
 }
