@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import unaldi.orderservice.utils.client.dto.response.UserResponse;
 
 import java.time.LocalDate;
 
@@ -20,7 +21,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class OrderResponse {
     private Long id;
-    private Long userId;
+    private UserResponse user;
     private Integer packageCount;
     private Double price;
     private Double totalPrice;

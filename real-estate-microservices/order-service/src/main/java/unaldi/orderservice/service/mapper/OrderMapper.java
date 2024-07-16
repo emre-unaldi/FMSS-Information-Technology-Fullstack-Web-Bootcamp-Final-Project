@@ -6,6 +6,7 @@ import unaldi.orderservice.entity.Order;
 import unaldi.orderservice.entity.dto.request.OrderSaveRequest;
 import unaldi.orderservice.entity.dto.request.OrderUpdateRequest;
 import unaldi.orderservice.entity.dto.response.OrderResponse;
+import unaldi.orderservice.utils.client.dto.response.UserResponse;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -45,7 +46,9 @@ public interface OrderMapper {
         return LocalDate.now().plusMonths(packageCount);
     }
 
-    OrderResponse orderToOrderResponse(Order order);
+    @Mapping(target = "user", source = "user")
+    @Mapping(target = "id", source = "order.id")
+    OrderResponse orderToOrderResponse(Order order, UserResponse user);
 
     @IterableMapping(elementTargetType = OrderResponse.class)
     List<OrderResponse> ordersToOrderResponses(List<Order> orders);
