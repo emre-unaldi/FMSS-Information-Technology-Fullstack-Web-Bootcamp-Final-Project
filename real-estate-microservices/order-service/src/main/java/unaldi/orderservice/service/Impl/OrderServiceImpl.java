@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import unaldi.orderservice.entity.Order;
+import unaldi.orderservice.entity.dto.EmailDetailsDTO;
 import unaldi.orderservice.entity.dto.request.OrderSaveRequest;
 import unaldi.orderservice.entity.dto.request.OrderUpdateRequest;
 import unaldi.orderservice.entity.dto.response.OrderResponse;
 import unaldi.orderservice.repository.OrderRepository;
+import unaldi.orderservice.service.EmailService;
 import unaldi.orderservice.service.OrderService;
 import unaldi.orderservice.service.mapper.OrderMapper;
 import unaldi.orderservice.utils.client.UserServiceClient;
@@ -36,11 +38,13 @@ public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
     private final UserServiceClient userServiceClient;
+    private final EmailService emailService;
 
     @Autowired
-    public OrderServiceImpl(OrderRepository orderRepository, UserServiceClient userServiceClient) {
+    public OrderServiceImpl(OrderRepository orderRepository, UserServiceClient userServiceClient, EmailService emailService) {
         this.orderRepository = orderRepository;
         this.userServiceClient = userServiceClient;
+        this.emailService = emailService;
     }
 
     @Override
@@ -49,10 +53,10 @@ public class OrderServiceImpl implements OrderService {
         Order order = OrderMapper.INSTANCE.orderSaveRequestToOrder(request);
         orderRepository.save(order);
 
-        return new SuccessDataResult<>(
-                OrderMapper.INSTANCE.orderToOrderResponse(order, userResponse),
-                Messages.ORDER_SAVED
-        );
+        OrderResponse orderResponse = OrderMapper.INSTANCE.orderToOrderResponse(order, userResponse);
+        emailService.sendEmail(prepareEmailDetailsDTO(orderResponse));
+
+        return new SuccessDataResult<>(orderResponse, Messages.ORDER_SAVED);
     }
 
     @Override
@@ -114,6 +118,33 @@ public class OrderServiceImpl implements OrderService {
         ResponseEntity<RestResponse<UserResponse>> userResponse = userServiceClient.findById(userId);
 
         return Objects.requireNonNull(userResponse.getBody()).getData();
+    }
+
+    private EmailDetailsDTO prepareEmailDetailsDTO(OrderResponse order) {
+        String orderDetails = String.format(
+                "Order Details%n" +
+                        "Order number = %d%n" +
+                        "User = %s %s%n" +
+                        "Number of packages purchased = %d%n" +
+                        "Price = %f%n" +
+                        "Total Price = %f%n" +
+                        "Order Date = %s%n" +
+                        "Package Expiration Time = %s",
+                order.getId(),
+                order.getUser().getFirstName(),
+                order.getUser().getLastName(),
+                order.getPackageCount(),
+                order.getPrice(),
+                order.getTotalPrice(),
+                order.getOrderDate(),
+                order.getExpirationDate()
+        );
+
+        return EmailDetailsDTO.builder()
+                .recipient(order.getUser().getEmail())
+                .subject(Messages.ORDER_MAIL_SUBJECT)
+                .body(orderDetails)
+                .build();
     }
 
 }
