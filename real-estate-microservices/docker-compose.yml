@@ -151,13 +151,50 @@ services:
       timeout: 10s
       retries: 3
 
+  order-service:
+    build:
+      context: ./order-service
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8084"
+    environment:
+      - EUREKA_SERVER_URL=http://discovery-client-service:8761/eureka
+      - POSTGRES_HOST=postgres-db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=eu1189
+      - RABBITMQ_HOST=rabbitmq-log
+      - RABBITMQ_PORT=5672
+      - RABBITMQ_USER=unaldi
+      - RABBITMQ_PASSWORD=eu1189
+      - REDIS_DB=1
+      - REDIS_HOST=redis-db
+      - REDIS_PORT=6379
+      - USER_SERVICE_HOST=user-service
+    networks:
+      - real-estate-microservices-network
+    depends_on:
+      discovery-client-service:
+        condition: service_healthy
+      postgres-db:
+        condition: service_healthy
+      redis-db:
+        condition: service_healthy
+      rabbitmq-log:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://order-service:8084/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   log-service:
     build:
       context: ./log-service
       dockerfile: Dockerfile
     ports:
-      - "8084:8084"
-    #restart: unless-stopped
+      - "8085:8085"
+    restart: unless-stopped
     environment:
       - EUREKA_SERVER_URL=http://discovery-client-service:8761/eureka
       - MONGODB_HOST=mongo
@@ -180,12 +217,14 @@ services:
         condition: service_healthy
       advert-service:
         condition: service_healthy
+      order-service:
+        condition: service_healthy
       rabbitmq-log:
         condition: service_healthy
       mongo:
         condition: service_healthy
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://log-service:8084/actuator/health" ]
+      test: [ "CMD", "curl", "-f", "http://log-service:8085/actuator/health" ]
       interval: 30s
       timeout: 10s
       retries: 3
