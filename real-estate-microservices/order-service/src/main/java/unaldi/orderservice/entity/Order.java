@@ -39,8 +39,8 @@ public class Order {
     @Column(name = "total_price", nullable = false)
     private Double totalPrice;
 
-    @Column(name = "purchase_date", nullable = false)
-    private LocalDate purchaseDate;
+    @Column(name = "order_date", nullable = false)
+    private LocalDate orderDate;
 
     @Column(name = "expiration_date", nullable = false)
     private LocalDate expirationDate;

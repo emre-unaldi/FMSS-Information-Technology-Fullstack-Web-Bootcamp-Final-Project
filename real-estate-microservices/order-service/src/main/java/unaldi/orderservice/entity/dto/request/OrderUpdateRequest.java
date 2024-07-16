@@ -1,7 +1,8 @@
 package unaldi.orderservice.entity.dto.request;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,7 +27,8 @@ public class OrderUpdateRequest {
     @NotNull
     private Long userId;
 
-    @Size(min = 1, max = 10)
+    @Min(1)
+    @Max(10)
     @NotNull
     private Integer packageCount;
 
