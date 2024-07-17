@@ -26,7 +26,7 @@ public interface AccountMapper {
     @Mappings({
             @Mapping(target = "id", ignore = true),
             @Mapping(target = "user", ignore = true),
-            @Mapping(target = "advertCount", expression = "java(Integer.valueOf(10))"),
+            @Mapping(target = "advertCount", expression = "java(Integer.valueOf(0))"),
             @Mapping(target = "expirationDate", expression = "java(setExpirationDate())"),
             @Mapping(target = "isSubscribe", expression = "java(Boolean.FALSE)")
     })
@@ -40,7 +40,7 @@ public interface AccountMapper {
             @Mapping(target = "id", expression = "java(foundAccount.getId())"),
             @Mapping(target = "userId", expression = "java(foundAccount.getUserId())"),
             @Mapping(target = "expirationDate", expression = "java(setExpirationDate(orderDTO, foundAccount.getExpirationDate()))"),
-            @Mapping(target = "advertCount", expression = "java(foundAccount.getAdvertCount())"),
+            @Mapping(target = "advertCount", expression = "java(Integer.valueOf(10))"),
             @Mapping(target = "isSubscribe", expression = "java(Boolean.TRUE)"),
             @Mapping(target = "user", ignore = true)
     })
@@ -52,7 +52,11 @@ public interface AccountMapper {
 
         long daysBetween = ChronoUnit.DAYS.between(orderDate, expirationDate);
 
-        return accountExpirationDate.plusDays(daysBetween);
+        if (accountExpirationDate.isBefore(LocalDate.now())) {
+            return LocalDate.now().plusDays(daysBetween);
+        } else {
+            return accountExpirationDate.plusDays(daysBetween);
+        }
     }
 
     AccountResponse accountToAccountResponse(Account account);
