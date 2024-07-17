@@ -29,7 +29,4 @@ public class OrderSaveRequest {
     @NotNull
     private Integer packageCount;
 
-    @NotNull
-    private Integer price;
-
 }

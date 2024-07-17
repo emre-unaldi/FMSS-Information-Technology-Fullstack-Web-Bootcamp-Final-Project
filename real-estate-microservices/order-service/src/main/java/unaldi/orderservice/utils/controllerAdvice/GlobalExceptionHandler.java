@@ -15,6 +15,7 @@ import org.springframework.web.context.request.WebRequest;
 import unaldi.orderservice.utils.constants.ExceptionMessages;
 import unaldi.orderservice.utils.controllerAdvice.dto.ExceptionResponse;
 import unaldi.orderservice.utils.exception.OrderNotFoundException;
+import unaldi.orderservice.utils.exception.PackageNotFoundException;
 import unaldi.orderservice.utils.exception.UserNotFoundException;
 import unaldi.orderservice.utils.rabbitMQ.dto.LogDTO;
 import unaldi.orderservice.utils.rabbitMQ.enums.HttpRequestMethod;
@@ -66,6 +67,18 @@ public class GlobalExceptionHandler {
                 .body(new ErrorDataResult<>(
                         prepareExceptionResponse(exception, HttpStatus.NOT_FOUND, request),
                         ExceptionMessages.USER_NOT_FOUND)
+                );
+    }
+
+    @ExceptionHandler(PackageNotFoundException.class)
+    public ResponseEntity<DataResult<ExceptionResponse>> handlePackageNotFoundException(PackageNotFoundException exception, WebRequest request) {
+        logger.error("PackageNotFoundException occurred : {}", exception);
+
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorDataResult<>(
+                        prepareExceptionResponse(exception, HttpStatus.NOT_FOUND, request),
+                        ExceptionMessages.PACKAGE_NOT_FOUND)
                 );
     }
 

@@ -7,8 +7,11 @@ import unaldi.orderservice.entity.dto.request.OrderSaveRequest;
 import unaldi.orderservice.entity.dto.request.OrderUpdateRequest;
 import unaldi.orderservice.entity.dto.response.OrderResponse;
 import unaldi.orderservice.utils.client.dto.response.UserResponse;
+import unaldi.orderservice.entity.Package;
+import unaldi.orderservice.utils.rabbitMQ.dto.OrderDTO;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -25,25 +28,31 @@ public interface OrderMapper {
 
     @Mappings({
             @Mapping(target = "id", ignore = true),
-            @Mapping(target = "totalPrice", expression = "java(request.getPackageCount().doubleValue() * request.getPrice())"),
+            @Mapping(target = "price", expression = "java(foundPackage.getPrice())"),
+            @Mapping(target = "totalPrice", expression = "java(request.getPackageCount().doubleValue() * foundPackage.getPrice())"),
             @Mapping(target = "orderDate", expression = "java(setOrderDate())"),
-            @Mapping(target = "expirationDate", expression = "java(setExpirationDate(request.getPackageCount()))")
+            @Mapping(target = "expirationDate", expression = "java(setExpirationDate(request.getPackageCount(), foundPackage.getPackageTime()))")
     })
-    Order orderSaveRequestToOrder(OrderSaveRequest request);
+    Order orderSaveRequestToOrder(OrderSaveRequest request, Package foundPackage);
 
     @Mappings({
-            @Mapping(target = "totalPrice", expression = "java(request.getPackageCount().doubleValue() * request.getPrice())"),
+            @Mapping(target = "id", source = "request.id"),
+            @Mapping(target = "price", expression = "java(foundPackage.getPrice())"),
+            @Mapping(target = "totalPrice", expression = "java(request.getPackageCount().doubleValue() * foundPackage.getPrice())"),
             @Mapping(target = "orderDate", expression = "java(setOrderDate())"),
-            @Mapping(target = "expirationDate", expression = "java(setExpirationDate(request.getPackageCount()))")
+            @Mapping(target = "expirationDate", expression = "java(setExpirationDate(request.getPackageCount(), foundPackage.getPackageTime()))")
     })
-    Order orderUpdateRequestToOrder(OrderUpdateRequest request);
+    Order orderUpdateRequestToOrder(OrderUpdateRequest request, Package foundPackage);
 
     default LocalDate setOrderDate() {
         return LocalDate.now();
     }
 
-    default LocalDate setExpirationDate(Integer packageCount) {
-        return LocalDate.now().plusMonths(packageCount);
+    default LocalDate setExpirationDate(Integer packageCount, Long packageTime) {
+        LocalDateTime currentDate = LocalDateTime.now();
+        currentDate = currentDate.plusSeconds(packageCount * packageTime);
+
+        return currentDate.toLocalDate();
     }
 
     @Mapping(target = "user", source = "user")
@@ -52,5 +61,7 @@ public interface OrderMapper {
 
     @IterableMapping(elementTargetType = OrderResponse.class)
     List<OrderResponse> ordersToOrderResponses(List<Order> orders);
+
+    OrderDTO orderToOrderDTO(Order order);
 
 }

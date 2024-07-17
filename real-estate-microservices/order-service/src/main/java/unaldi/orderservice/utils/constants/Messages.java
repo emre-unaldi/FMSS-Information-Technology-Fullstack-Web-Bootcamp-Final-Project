@@ -20,5 +20,6 @@ public class Messages {
     public static final String ORDER_DELETED = "Order deleted successfully";
     public static final String ORDER_MAIL_SUBJECT = "Package Order Invoice";
     public static final String LOG_WRITE_QUEUE = "Log record written to queue";
+    public static final String ORDER_WRITE_QUEUE = "Order record written to queue";
 
 }
