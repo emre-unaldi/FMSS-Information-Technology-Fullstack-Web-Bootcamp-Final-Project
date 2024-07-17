@@ -8,11 +8,13 @@ import org.springframework.cache.annotation.Caching;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import unaldi.orderservice.entity.Order;
+import unaldi.orderservice.entity.Package;
 import unaldi.orderservice.entity.dto.EmailDetailsDTO;
 import unaldi.orderservice.entity.dto.request.OrderSaveRequest;
 import unaldi.orderservice.entity.dto.request.OrderUpdateRequest;
 import unaldi.orderservice.entity.dto.response.OrderResponse;
 import unaldi.orderservice.repository.OrderRepository;
+import unaldi.orderservice.repository.PackageRepository;
 import unaldi.orderservice.service.EmailService;
 import unaldi.orderservice.service.OrderService;
 import unaldi.orderservice.service.mapper.OrderMapper;
@@ -23,10 +25,13 @@ import unaldi.orderservice.utils.constants.Caches;
 import unaldi.orderservice.utils.constants.ExceptionMessages;
 import unaldi.orderservice.utils.constants.Messages;
 import unaldi.orderservice.utils.exception.OrderNotFoundException;
+import unaldi.orderservice.utils.exception.PackageNotFoundException;
 import unaldi.orderservice.utils.rabbitMQ.dto.LogDTO;
+import unaldi.orderservice.utils.rabbitMQ.dto.OrderDTO;
 import unaldi.orderservice.utils.rabbitMQ.enums.HttpRequestMethod;
 import unaldi.orderservice.utils.rabbitMQ.enums.LogType;
 import unaldi.orderservice.utils.rabbitMQ.producer.LogProducer;
+import unaldi.orderservice.utils.rabbitMQ.producer.OrderProducer;
 import unaldi.orderservice.utils.result.DataResult;
 import unaldi.orderservice.utils.result.Result;
 import unaldi.orderservice.utils.result.SuccessDataResult;
@@ -35,6 +40,7 @@ import unaldi.orderservice.utils.result.SuccessResult;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Copyright (c) 2024
@@ -47,27 +53,36 @@ import java.util.Objects;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
+    private final PackageRepository packageRepository;
     private final UserServiceClient userServiceClient;
     private final EmailService emailService;
     private final LogProducer logProducer;
+    private final OrderProducer orderProducer;
 
     @Autowired
-    public OrderServiceImpl(OrderRepository orderRepository, UserServiceClient userServiceClient, EmailService emailService, LogProducer logProducer) {
+    public OrderServiceImpl(OrderRepository orderRepository, PackageRepository packageRepository, UserServiceClient userServiceClient, EmailService emailService, LogProducer logProducer, OrderProducer orderProducer) {
         this.orderRepository = orderRepository;
+        this.packageRepository = packageRepository;
         this.userServiceClient = userServiceClient;
         this.emailService = emailService;
         this.logProducer = logProducer;
+        this.orderProducer = orderProducer;
     }
 
     @CacheEvict(value = Caches.ORDERS_CACHE, allEntries = true, condition = "#result.success != false")
     @Override
     public DataResult<OrderResponse> save(OrderSaveRequest request) {
         UserResponse userResponse = fetchUser(request.getUserId());
-        Order order = OrderMapper.INSTANCE.orderSaveRequestToOrder(request);
+        Package foundPackage = fetchPackage();
+
+        Order order = OrderMapper.INSTANCE.orderSaveRequestToOrder(request, foundPackage);
         orderRepository.save(order);
 
         OrderResponse orderResponse = OrderMapper.INSTANCE.orderToOrderResponse(order, userResponse);
         emailService.sendEmail(prepareEmailDetailsDTO(orderResponse));
+
+        OrderDTO orderDTO = OrderMapper.INSTANCE.orderToOrderDTO(order);
+        orderProducer.sendToOrder(orderDTO);
 
         logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.POST, Messages.ORDER_SAVED));
 
@@ -76,8 +91,8 @@ public class OrderServiceImpl implements OrderService {
 
 
     @Caching(
-            put = { @CachePut(value = Caches.ORDER_CACHE, key = "#request.getId()", unless = "#result.success != true") },
-            evict = { @CacheEvict(value = Caches.ORDERS_CACHE, allEntries = true, condition = "#result.success != false") }
+            put = {@CachePut(value = Caches.ORDER_CACHE, key = "#request.getId()", unless = "#result.success != true")},
+            evict = {@CacheEvict(value = Caches.ORDERS_CACHE, allEntries = true, condition = "#result.success != false")}
     )
     @Override
     public DataResult<OrderResponse> update(OrderUpdateRequest request) {
@@ -86,8 +101,13 @@ public class OrderServiceImpl implements OrderService {
         }
 
         UserResponse userResponse = fetchUser(request.getUserId());
-        Order order = OrderMapper.INSTANCE.orderUpdateRequestToOrder(request);
+        Package foundPackage = fetchPackage();
+
+        Order order = OrderMapper.INSTANCE.orderUpdateRequestToOrder(request, foundPackage);
         orderRepository.save(order);
+
+        OrderDTO orderDTO = OrderMapper.INSTANCE.orderToOrderDTO(order);
+        orderProducer.sendToOrder(orderDTO);
 
         logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.PUT, Messages.ORDER_UPDATED));
 
@@ -193,6 +213,12 @@ public class OrderServiceImpl implements OrderService {
                 .timestamp(LocalDateTime.now())
                 .exception(null)
                 .build();
+    }
+
+    private Package fetchPackage() {
+        return packageRepository
+                .findById(1)
+                .orElseThrow(() -> new PackageNotFoundException(ExceptionMessages.PACKAGE_NOT_FOUND));
     }
 
 }

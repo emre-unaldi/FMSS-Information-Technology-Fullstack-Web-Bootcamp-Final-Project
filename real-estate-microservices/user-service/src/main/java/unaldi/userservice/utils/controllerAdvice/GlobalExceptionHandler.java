@@ -34,7 +34,6 @@ import java.util.Optional;
 public class GlobalExceptionHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
-
     private final LogProducer logProducer;
 
     @Autowired
@@ -44,7 +43,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(UsernameAlreadyExistsException.class)
     public ResponseEntity<DataResult<ExceptionResponse>> handleUsernameAlreadyExistsException(UsernameAlreadyExistsException exception, WebRequest request) {
-        logger.error("UsernameAlreadyExistsException occurred : {0}", exception);
+        logger.error("UsernameAlreadyExistsException occurred : {}", exception);
 
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
@@ -56,7 +55,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(EmailAlreadyExistsException.class)
     public ResponseEntity<DataResult<ExceptionResponse>> handleEmailAlreadyExistsException(EmailAlreadyExistsException exception, WebRequest request) {
-        logger.error("EmailAlreadyExistsException occurred : {0}", exception);
+        logger.error("EmailAlreadyExistsException occurred : {}", exception);
 
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
@@ -68,7 +67,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(RoleNotFoundException.class)
     public ResponseEntity<DataResult<ExceptionResponse>> handleRoleNotFoundException(RoleNotFoundException exception, WebRequest request) {
-        logger.error("RoleNotFoundException occurred : {0}", exception);
+        logger.error("RoleNotFoundException occurred : {}", exception);
 
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
@@ -80,7 +79,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(RefreshTokenNotFoundException.class)
     public ResponseEntity<DataResult<ExceptionResponse>> handleRefreshTokenNotFoundException(RefreshTokenNotFoundException exception, WebRequest request) {
-        logger.error("RefreshTokenNotFoundException occurred : {0}", exception);
+        logger.error("RefreshTokenNotFoundException occurred : {}", exception);
 
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
@@ -92,7 +91,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(UserNotFoundException.class)
     public ResponseEntity<DataResult<ExceptionResponse>> handleUserNotFoundException(UserNotFoundException exception, WebRequest request) {
-        logger.error("UserNotFoundException occurred : {0}", exception);
+        logger.error("UserNotFoundException occurred : {}", exception);
 
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
@@ -102,9 +101,21 @@ public class GlobalExceptionHandler {
                 );
     }
 
+    @ExceptionHandler(AccountNotFoundException.class)
+    public ResponseEntity<DataResult<ExceptionResponse>> handleAccountNotFoundException(AccountNotFoundException exception, WebRequest request) {
+        logger.error("AccountNotFoundException occurred : {}", exception);
+
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorDataResult<>(
+                        prepareExceptionResponse(exception, HttpStatus.NOT_FOUND, request),
+                        ExceptionMessages.ACCOUNT_NOT_FOUND)
+                );
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<DataResult<ExceptionResponse>> handleAllException(Exception exception, WebRequest request) {
-        logger.error("Exception occurred : {0}", exception);
+        logger.error("Exception occurred : {}", exception);
 
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)

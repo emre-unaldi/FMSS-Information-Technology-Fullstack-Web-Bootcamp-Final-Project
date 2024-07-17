@@ -32,7 +32,4 @@ public class OrderUpdateRequest {
     @NotNull
     private Integer packageCount;
 
-    @NotNull
-    private Integer price;
-
 }

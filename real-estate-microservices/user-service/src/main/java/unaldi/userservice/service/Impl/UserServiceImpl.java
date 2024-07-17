@@ -8,16 +8,15 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import unaldi.userservice.entity.ERole;
-import unaldi.userservice.entity.RefreshToken;
-import unaldi.userservice.entity.Role;
-import unaldi.userservice.entity.User;
+import unaldi.userservice.entity.*;
+import unaldi.userservice.entity.dto.request.AccountSaveRequest;
 import unaldi.userservice.entity.dto.request.SignUpRequest;
 import unaldi.userservice.entity.dto.request.UserUpdateRequest;
 import unaldi.userservice.entity.dto.response.UserResponse;
 import unaldi.userservice.repository.RefreshTokenRepository;
 import unaldi.userservice.repository.RoleRepository;
 import unaldi.userservice.repository.UserRepository;
+import unaldi.userservice.service.AccountService;
 import unaldi.userservice.service.UserService;
 import unaldi.userservice.service.mapper.UserMapper;
 import unaldi.userservice.utils.constants.Caches;
@@ -53,17 +52,20 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
     private final RefreshTokenRepository refreshTokenRepository;
     private final LogProducer logProducer;
+    private final AccountService accountService;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, RefreshTokenRepository refreshTokenRepository, LogProducer logProducer) {
+    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, RefreshTokenRepository refreshTokenRepository, LogProducer logProducer, AccountService accountService) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
         this.refreshTokenRepository = refreshTokenRepository;
         this.logProducer = logProducer;
+        this.accountService = accountService;
     }
 
     @CacheEvict(value = Caches.USERS_CACHE, allEntries = true, condition = "#result.success != false")
+    @Transactional
     @Override
     public DataResult<UserResponse> register(SignUpRequest signUpRequest) {
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
@@ -82,6 +84,10 @@ public class UserServiceImpl implements UserService {
 
         userDto.setRoles(roles);
         User user = userRepository.save(userDto);
+
+        Account account = accountService.save(AccountSaveRequest.builder().userId(user.getId()).build());
+        user.setAccount(account);
+        userRepository.save(user);
 
         logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.POST, Messages.USER_REGISTERED));
 
@@ -114,8 +120,10 @@ public class UserServiceImpl implements UserService {
 
         Set<String> strRoles = userUpdateRequest.getRoles();
         Set<Role> roles = mapToUserRoles(strRoles);
+        Account account = accountService.findByUserId(userUpdateRequest.getId());
 
         userDto.setRoles(roles);
+        userDto.setAccount(account);
         User user = userRepository.save(userDto);
 
         logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.PUT, Messages.USER_UPDATED));

@@ -26,12 +26,14 @@ public interface UserMapper {
     @Mappings({
             @Mapping(target = "id", ignore = true),
             @Mapping(target = "roles", ignore = true),
+            @Mapping(target = "account", ignore = true),
             @Mapping(source = "encodedPassword", target = "password")
     })
     User signUpRequestToUser(SignUpRequest signUpRequest, String encodedPassword);
 
     @Mappings({
             @Mapping(target = "roles", ignore = true),
+            @Mapping(target = "account", ignore = true),
             @Mapping(source = "encodedPassword", target = "password")
     })
     User userUpdateRequestToUser(UserUpdateRequest userUpdateRequest, String encodedPassword);
