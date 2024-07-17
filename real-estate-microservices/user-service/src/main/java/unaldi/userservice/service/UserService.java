@@ -21,6 +21,7 @@ public interface UserService {
     DataResult<UserResponse> update(UserUpdateRequest userUpdateRequest);
     DataResult<List<UserResponse>> findAll();
     DataResult<UserResponse> findById(Long userId);
+    DataResult<UserResponse> findByUsername(String username);
     Result deleteById(Long userId);
 
 }

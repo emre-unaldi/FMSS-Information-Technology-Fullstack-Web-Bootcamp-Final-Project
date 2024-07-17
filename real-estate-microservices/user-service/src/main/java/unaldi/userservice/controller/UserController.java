@@ -156,6 +156,32 @@ public class UserController {
                 .body(userService.findById(userId));
     }
 
+    @GetMapping("/findByUsername/{username}")
+    @Operation(
+            description = "Find with username a user",
+            summary = "Find by username",
+            parameters = {
+                    @Parameter(
+                            name = "username",
+                            description = "Username of the user to retrieve",
+                            required = true,
+                            example = "unaldi",
+                            schema = @Schema(type = "string")
+                    )
+            },
+            requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "User username",
+                    content = @Content(
+                            mediaType = "application/json"
+                    )
+            )
+    )
+    public ResponseEntity<DataResult<UserResponse>> findByUsername(@PathVariable("username") String username) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(userService.findByUsername(username));
+    }
+
     @DeleteMapping("/{userId}")
     @Operation(
             description = " Delete by id a user",

@@ -160,6 +160,19 @@ public class UserServiceImpl implements UserService {
         return new SuccessDataResult<>(userResponse, Messages.USER_FOUND);
     }
 
+    @Cacheable(value = Caches.USER_CACHE, key = "#username", unless = "#result.success != true")
+    @Override
+    public DataResult<UserResponse> findByUsername(String username) {
+        UserResponse userResponse = userRepository
+                .findByUsername(username)
+                .map(UserMapper.INSTANCE::userToUserResponse)
+                .orElseThrow(() -> new UserNotFoundException(ExceptionMessages.USER_NOT_FOUND));
+
+        logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.GET, Messages.USER_FOUND));
+
+        return new SuccessDataResult<>(userResponse, Messages.USER_FOUND);
+    }
+
     @Caching(
             evict = {
                     @CacheEvict(value = Caches.USERS_CACHE, allEntries = true, condition = "#result.success != false"),
