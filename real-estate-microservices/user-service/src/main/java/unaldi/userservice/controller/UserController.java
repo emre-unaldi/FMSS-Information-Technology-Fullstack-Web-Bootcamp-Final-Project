@@ -27,7 +27,7 @@ import java.util.List;
  * @author Emre Ünaldı
  * @since 12.07.2024
  */
-@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/v1/users")
 @Tag(name="User Controller", description = "User Management")

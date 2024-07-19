@@ -1,5 +1,6 @@
 package unaldi.authservice.utils.security;
 
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import unaldi.authservice.utils.security.jwt.AuthEntryPointJwt;
@@ -68,12 +69,13 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable)
+        http.cors(Customizer.withDefaults())
+                .csrf(AbstractHttpConfigurer::disable)
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/api/v1/auth/login", "/api/v1/users/register").permitAll()
-                                .requestMatchers("/api/v1/auth/logout", "/api/v1/auth/refreshToken").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/api/v1/auth/logout").hasAnyRole("USER", "ADMIN")
                                 .requestMatchers("/api/v1/users/**").hasAnyRole("USER", "ADMIN")
                                 .requestMatchers("/api/v1/photos/**").hasAnyRole("USER", "ADMIN")
                                 .requestMatchers("/api/v1/adverts/**", "/api/v1/addresses/**").hasAnyRole("USER", "ADMIN")

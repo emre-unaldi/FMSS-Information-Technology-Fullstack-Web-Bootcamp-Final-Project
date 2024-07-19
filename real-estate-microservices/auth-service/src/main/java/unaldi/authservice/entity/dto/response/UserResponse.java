@@ -28,5 +28,6 @@ public class UserResponse {
 	private String password;
 	private String phoneNumber;
 	private List<String> roles;
+	private String accessToken;
 
 }
