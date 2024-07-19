@@ -13,9 +13,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ExceptionMessages {
 
-    public static final String REFRESH_TOKEN_EMPTY = "Refresh token is empty";
-    public static final String REFRESH_TOKEN_NOT_FOUND = "Refresh token is not in database";
-    public static final String REFRESH_TOKEN_EXPIRED = "Refresh token was expired. Please make a new signin request";
     public static final String USERNAME_NOT_FOUND = "User Not Found with username: ";
     public static final String USER_NOT_FOUND = "User not found in database";
     public static final String USER_UNAUTHORIZED = "Unauthorized user request denied";

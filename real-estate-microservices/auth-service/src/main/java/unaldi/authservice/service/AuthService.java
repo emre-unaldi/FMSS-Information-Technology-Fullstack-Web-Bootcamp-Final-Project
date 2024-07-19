@@ -1,8 +1,9 @@
 package unaldi.authservice.service;
 
-import jakarta.servlet.http.HttpServletRequest;
 import unaldi.authservice.entity.dto.request.LoginRequest;
 import unaldi.authservice.entity.dto.response.*;
+import unaldi.authservice.utils.result.DataResult;
+import unaldi.authservice.utils.result.Result;
 
 /**
  * Copyright (c) 2024
@@ -13,8 +14,7 @@ import unaldi.authservice.entity.dto.response.*;
  */
 public interface AuthService {
 
-    LoginResponse login(LoginRequest loginRequest);
-    LogoutResponse logout();
-    RefreshTokenResponse refreshToken(HttpServletRequest request);
+    DataResult<UserResponse> login(LoginRequest loginRequest);
+    Result logout();
 
 }

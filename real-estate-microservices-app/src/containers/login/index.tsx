@@ -1,20 +1,23 @@
 import React from 'react';
 import Link from "next/link";
-import {Card, Divider, Flex, Space} from 'antd';
+import {Button, Card, Divider, Flex, Space} from 'antd';
 import LoginForm from "@/components/loginForm";
 
 const LoginContainer: React.FC = () => {
     return (
         <Card
             title={
-                <h4 style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    paddingTop: 5,
-                    color: "darkslategray"
-                }}>
-                    Hesabınıza Giriş Yapın
-                </h4>
+                <span
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        paddingTop: 5,
+                        color: "darkslategray",
+                        fontSize: 25,
+                    }}
+                >
+                    Login to Your Account
+                </span>
             }
             style={{width: 500}}
         >
@@ -22,12 +25,20 @@ const LoginContainer: React.FC = () => {
             <Divider/>
             <Flex flex={"center"} justify={"space-evenly"} style={{fontSize: 16}}>
                 <Space>
-                    Hesabınız yok mu ?
+                    Don't have an account?
                 </Space>
                 <Space>
-                    <Link href={"/register"}>
-                        Hesap Oluştur
-                    </Link>
+                    <Button
+                        type={"text"}
+                        style={{
+                            color: "#077bff",
+                            fontSize: 16
+                        }}
+                    >
+                        <Link href={"/register"}>
+                            Create Account
+                        </Link>
+                    </Button>
                 </Space>
             </Flex>
         </Card>

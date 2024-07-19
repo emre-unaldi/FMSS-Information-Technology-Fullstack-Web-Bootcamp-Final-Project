@@ -1,8 +1,9 @@
 "use client"
 import React from "react";
-import {Button, Col, Form, Input, Row} from "antd";
+import {Button, Col, Form, Input, message, Row} from "antd";
 import {LockOutlined, MailOutlined, PhoneOutlined, UserOutlined} from "@ant-design/icons";
 import {useRouter} from "next/navigation";
+import {IUserRegisterData, register} from "@/services/user";
 
 type RegisterFormValues = {
     "firstName": "string",
@@ -10,17 +11,79 @@ type RegisterFormValues = {
     "username": "string",
     "email": "string",
     "password": "string",
+    "confirmPassword": "string",
     "phoneNumber": "string"
 }
 
 const RegisterForm: React.FC = () => {
-
+    const [buttonLoading, setButtonLoading] = React.useState(false);
+    const [messageApi, contextHolder] = message.useMessage();
+    const key = 'register';
     const router = useRouter();
 
-    const onFinish = (values: RegisterFormValues) => {
-        console.log('Success:', values);
-        alert(JSON.stringify(values));
-        router.push("/login")
+    const onFinish = async (values: RegisterFormValues) => {
+        setButtonLoading(true)
+        messageApi.open({
+            key,
+            type: 'loading',
+            content: 'Registering user...',
+        });
+        const {
+            firstName,
+            lastName,
+            username,
+            email,
+            password,
+            phoneNumber
+        } = values;
+        const formData: IUserRegisterData = {
+            firstName,
+            lastName,
+            username,
+            email,
+            password,
+            phoneNumber,
+            roles: ["user"]
+        }
+
+        try {
+            const response = await register(formData)
+            console.log(response)
+
+            if (response?.success) {
+                setButtonLoading(false)
+                setTimeout(() => {
+                    messageApi.open({
+                        key,
+                        type: 'success',
+                        content: 'User registration successful. Redirecting...',
+                        duration: 2,
+                    });
+                }, 1000);
+                router.push("/login")
+            } else {
+                setButtonLoading(false)
+                setTimeout(() => {
+                    messageApi.open({
+                        key,
+                        type: 'error',
+                        content: 'User registration failed. Please try again',
+                        duration: 2,
+                    });
+                }, 1000);
+            }
+        } catch (error) {
+            setButtonLoading(false)
+            setTimeout(() => {
+                messageApi.open({
+                    key,
+                    type: 'error',
+                    content: 'User registration failed. Please try again',
+                    duration: 2,
+                });
+            }, 1000);
+            console.error(error)
+        }
     };
 
     const onFinishFailed = (errorInfo: any) => {
@@ -28,106 +91,109 @@ const RegisterForm: React.FC = () => {
     };
 
     return (
-        <Form
-            name="register"
-            initialValues={{ }}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            layout="vertical"
-        >
-            <Row gutter={[16, 16]}>
-                <Col span={12}>
-                    <Form.Item
-                        name="firstName"
-                        rules={[{ required: true, message: 'Lütfen adınızı giriniz!' }]}
-                        hasFeedback
-                    >
-                        <Input placeholder="Adınız" prefix={<UserOutlined />} size={"large"} />
-                    </Form.Item>
-                </Col>
-                <Col span={12}>
-                    <Form.Item
-                        name="lastName"
-                        rules={[{ required: true, message: 'Lütfen soyadınızı giriniz!' }]}
-                        hasFeedback
-                    >
-                        <Input placeholder="Soyadınız" prefix={<UserOutlined />} size={"large"} />
-                    </Form.Item>
-                </Col>
-            </Row>
-
-            <Form.Item
-                name="username"
-                rules={[{ required: true, message: 'Kullanıcı adı gereklidir!' }]}
-                hasFeedback
+        <>
+            {contextHolder}
+            <Form
+                name="register"
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}
+                layout="vertical"
             >
-                <Input placeholder="Kullanıcı Adı" prefix={<UserOutlined />} size={"large"} />
-            </Form.Item>
+                <Row gutter={[16, 16]}>
+                    <Col span={12}>
+                        <Form.Item
+                            name="firstName"
+                            rules={[{required: true, message: 'Please enter your name!'}]}
+                            hasFeedback
+                        >
+                            <Input placeholder="First name" prefix={<UserOutlined/>} size={"large"}/>
+                        </Form.Item>
+                    </Col>
+                    <Col span={12}>
+                        <Form.Item
+                            name="lastName"
+                            rules={[{required: true, message: 'Please enter your last name!'}]}
+                            hasFeedback
+                        >
+                            <Input placeholder="Last name" prefix={<UserOutlined/>} size={"large"}/>
+                        </Form.Item>
+                    </Col>
+                </Row>
 
-            <Form.Item
-                name="email"
-                rules={[
-                    { required: true, message: 'E-posta adresi gereklidir!' },
-                    { type: 'email', message: 'Geçersiz e-posta adresi!' }
-                ]}
-                hasFeedback
-            >
-                <Input placeholder="E-posta" prefix={<MailOutlined />} size={"large"} />
-            </Form.Item>
-
-            <Form.Item
-                name="password"
-                rules={[
-                    { required: true, message: 'Şifre gereklidir!' },
-                    { min: 8, message: 'Şifreniz en az 8 karakter olmalıdır.' }
-                ]}
-                hasFeedback
-            >
-                <Input.Password placeholder="Şifre" prefix={<LockOutlined />} size={"large"} />
-            </Form.Item>
-
-            <Form.Item
-                name="confirmPassword"
-                dependencies={['password']}
-                rules={[
-                    { required: true, message: 'Şifre onayı gereklidir!' },
-                    ({ getFieldValue }) => ({
-                        validator(_, value) {
-                            if (!value || getFieldValue('password') === value) {
-                                return Promise.resolve();
-                            }
-                            return Promise.reject(new Error('Girdiğiniz yeni şifre eşleşmiyor!'));
-                        },
-                    }),
-                ]}
-                hasFeedback
-            >
-                <Input.Password placeholder="Şifre Onayı" prefix={<LockOutlined />} size={"large"} />
-            </Form.Item>
-
-            <Form.Item
-                name="phoneNumber"
-                rules={[{ required: true, message: 'Telefon numarası gereklidir!' }]}
-                hasFeedback
-            >
-                <Input placeholder="Telefon Numarası" prefix={<PhoneOutlined />} size={"large"} />
-            </Form.Item>
-
-            <Form.Item>
-                <Button
-                    type="primary"
-                    htmlType="submit"
-                    block
-                    size={"large"}
-                    style={{
-                        fontSize: 20,
-                        marginTop: 20
-                    }}
+                <Form.Item
+                    name="username"
+                    rules={[{required: true, message: 'Username required!'}]}
+                    hasFeedback
                 >
-                    Kayıt Ol
-                </Button>
-            </Form.Item>
-        </Form>
+                    <Input placeholder="Username" prefix={<UserOutlined/>} size={"large"}/>
+                </Form.Item>
+
+                <Form.Item
+                    name="email"
+                    rules={[
+                        {required: true, message: 'Email address required!'},
+                        {type: 'email', message: 'Invalid e-mail address!'}
+                    ]}
+                    hasFeedback
+                >
+                    <Input placeholder="Email" prefix={<MailOutlined/>} size={"large"}/>
+                </Form.Item>
+
+                <Form.Item
+                    name="password"
+                    rules={[
+                        {required: true, message: 'Password required!'},
+                        {min: 8, message: 'Your password must be at least 8 characters'}
+                    ]}
+                    hasFeedback
+                >
+                    <Input.Password placeholder="Password" prefix={<LockOutlined/>} size={"large"}/>
+                </Form.Item>
+
+                <Form.Item
+                    name="confirmPassword"
+                    dependencies={['password']}
+                    rules={[
+                        {required: true, message: 'Password confirmation required!'},
+                        ({getFieldValue}) => ({
+                            validator(_, value) {
+                                if (!value || getFieldValue('password') === value) {
+                                    return Promise.resolve();
+                                }
+                                return Promise.reject(new Error('The new password you entered does not match!'));
+                            },
+                        }),
+                    ]}
+                    hasFeedback
+                >
+                    <Input.Password placeholder="Confirm Password" prefix={<LockOutlined/>} size={"large"}/>
+                </Form.Item>
+
+                <Form.Item
+                    name="phoneNumber"
+                    rules={[{required: true, message: 'Phone number is required!'}]}
+                    hasFeedback
+                >
+                    <Input placeholder="Phone number" prefix={<PhoneOutlined/>} size={"large"}/>
+                </Form.Item>
+
+                <Form.Item>
+                    <Button
+                        type="primary"
+                        htmlType="submit"
+                        loading={buttonLoading}
+                        block
+                        size={"large"}
+                        style={{
+                            fontSize: 20,
+                            marginTop: 20
+                        }}
+                    >
+                        Register
+                    </Button>
+                </Form.Item>
+            </Form>
+        </>
     )
 }
 

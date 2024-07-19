@@ -1,21 +1,12 @@
 package unaldi.authservice.service.mapper;
 
-import org.mapstruct.AfterMapping;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
-import org.springframework.http.ResponseCookie;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import unaldi.authservice.entity.Token;
 import unaldi.authservice.entity.User;
-import unaldi.authservice.entity.dto.response.LoginResponse;
-import unaldi.authservice.entity.dto.response.LogoutResponse;
-import unaldi.authservice.entity.dto.response.RefreshTokenResponse;
 import unaldi.authservice.entity.dto.response.UserResponse;
-import unaldi.authservice.utils.result.SuccessDataResult;
-import unaldi.authservice.utils.result.SuccessResult;
 import unaldi.authservice.utils.security.services.UserDetailsImpl;
 
 import java.util.List;
@@ -34,7 +25,8 @@ public interface AuthMapper {
     AuthMapper INSTANCE = Mappers.getMapper( AuthMapper.class );
 
     @Mapping(target = "roles", ignore = true)
-    UserResponse userDetailsToUserResponse(UserDetailsImpl userDetails);
+    @Mapping(target = "accessToken", source = "accessToken")
+    UserResponse userDetailsToUserResponse(UserDetailsImpl userDetails, String accessToken);
 
     @AfterMapping
     default void setRoles(UserDetailsImpl userDetails, @MappingTarget UserResponse userResponse) {
@@ -47,12 +39,6 @@ public interface AuthMapper {
         userResponse.setRoles(roles);
     }
 
-    LoginResponse mapToLoginResponse(SuccessDataResult<UserResponse> user, ResponseCookie jwtCookie, ResponseCookie jwtRefreshCookie);
-
-    LogoutResponse mapToLogoutResponse(SuccessResult result, ResponseCookie jwtCookie, ResponseCookie jwtRefreshCookie);
-
-    RefreshTokenResponse mapToRefreshTokenResponse(SuccessResult result, ResponseCookie jwtCookie);
-
     @Mapping(target = "authorities", ignore = true)
     UserDetailsImpl userToUserDetailsImpl(User user);
 
@@ -64,4 +50,11 @@ public interface AuthMapper {
 
         userDetailsImpl.setAuthorities(authorities);
     }
+
+    @Mappings({
+            @Mapping(target = "id", ignore = true),
+            @Mapping(target = "userId", source = "userId"),
+            @Mapping(target = "accessToken", source = "accessToken")
+    })
+    Token mapToToken(Long userId, String accessToken);
 }

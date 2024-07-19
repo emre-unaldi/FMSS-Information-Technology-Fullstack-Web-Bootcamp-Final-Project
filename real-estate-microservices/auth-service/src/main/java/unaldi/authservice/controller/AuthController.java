@@ -1,12 +1,10 @@
 package unaldi.authservice.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -26,7 +24,7 @@ import unaldi.authservice.utils.result.Result;
  * @author Emre Ünaldı
  * @since 10.07.2024
  */
-@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/v1/auth")
 @Tag(name = "Authentication Controller", description = "User Authentication")
@@ -66,13 +64,14 @@ public class AuthController {
             )
     )
     public ResponseEntity<DataResult<UserResponse>> login(@Valid @RequestBody LoginRequest loginRequest) {
-        LoginResponse login = authService.login(loginRequest);
+        DataResult<UserResponse> userResponse = authService.login(loginRequest);
+
+        System.out.println("JWT Cookie: " + userResponse.getData().getAccessToken());
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .header(HttpHeaders.SET_COOKIE, login.getJwtCookie().toString())
-                .header(HttpHeaders.SET_COOKIE, login.getJwtRefreshCookie().toString())
-                .body(login.getUser());
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + userResponse.getData().getAccessToken())
+                .body(userResponse);
     }
 
     @PostMapping("/logout")
@@ -87,39 +86,9 @@ public class AuthController {
             )
     )
     public ResponseEntity<Result> logout() {
-        LogoutResponse logout = authService.logout();
-
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .header(HttpHeaders.SET_COOKIE, logout.getJwtCookie().toString())
-                .header(HttpHeaders.SET_COOKIE, logout.getJwtRefreshCookie().toString())
-                .body(logout.getResult());
-    }
-
-    @PostMapping("/refreshToken")
-    @Operation(
-            summary = "Refresh JWT token",
-            description = "Refresh JWT token using refresh token stored in cookies",
-            parameters = {
-                    @Parameter(
-                            name = "request",
-                            description = "HTTP servlet request containing refresh token cookie"
-                    )
-            },
-            requestBody =@io.swagger.v3.oas.annotations.parameters.RequestBody(
-                    description = "Refresh token",
-                    content = @Content(
-                            mediaType = "application/json"
-                    )
-            )
-    )
-    public ResponseEntity<Result> refreshToken(HttpServletRequest request) {
-        RefreshTokenResponse refreshToken = authService.refreshToken(request);
-
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .header(HttpHeaders.SET_COOKIE, refreshToken.getJwtCookie().toString())
-                .body(refreshToken.getResult());
+                .body(authService.logout());
     }
 
 }
