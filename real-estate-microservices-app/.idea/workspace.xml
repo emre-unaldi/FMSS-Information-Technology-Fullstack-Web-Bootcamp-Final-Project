@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84224efc-ba5b-46f9-91f3-6dd8ee138c5a" name="Changes" comment="" />
+    <list default="true" id="84224efc-ba5b-46f9-91f3-6dd8ee138c5a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/(user)/home/advert/[id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(user)/home/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/geocode/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/googleMap/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/advert/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/google/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/advert-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/log/project.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/auth-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/auth-service/log/project.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/discovery-client-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/discovery-client-service/log/project.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/log-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/log-service/log/project.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/order-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/order-service/log/project.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/photo-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/photo-service/log/project.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/log/project.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -79,6 +98,7 @@
       <workItem from="1721268107287" duration="6864000" />
       <workItem from="1721305102635" duration="1261000" />
       <workItem from="1721399148527" duration="13720000" />
+      <workItem from="1721470465271" duration="18809000" />
     </task>
     <servers />
   </component>

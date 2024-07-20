@@ -1,12 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async rewrites() {
-        return [
+    images: {
+        remotePatterns: [
             {
-                source: "/:path*",
-                destination: "http://localhost:8080/api/:path*"
+                protocol: 'https',
+                hostname: 'picsum.photos',
+                pathname: '**'
+            },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                pathname: '**'
             }
-        ];
+        ]
     },
     async headers() {
         return [
