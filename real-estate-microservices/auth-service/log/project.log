@@ -1597,3 +1597,1149 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
 
 2024-07-20T03:00:01.285+03:00  INFO 23488 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2024-07-20T03:24:37.257+03:00  INFO 17624 --- [auth-service] [restartedMain] u.authservice.AuthServiceApplication     : Starting AuthServiceApplication using Java 22.0.1 with PID 17624 (D:\workspace\java\fmss-bootcamp-final-project\real-estate-microservices\auth-service\target\classes started by emree in D:\workspace\java\fmss-bootcamp-final-project\real-estate-microservices)
+2024-07-20T03:24:37.262+03:00  INFO 17624 --- [auth-service] [restartedMain] u.authservice.AuthServiceApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-07-20T03:24:37.329+03:00  INFO 17624 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-20T03:24:37.329+03:00  INFO 17624 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-20T03:24:39.988+03:00  INFO 17624 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-20T03:24:40.338+03:00  INFO 17624 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 336 ms. Found 2 JPA repository interfaces.
+2024-07-20T03:24:40.959+03:00  INFO 17624 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=60189e9e-bdb5-3a42-8fd8-7d8a67c854c8
+2024-07-20T03:24:41.873+03:00  WARN 17624 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-20T03:24:41.879+03:00  WARN 17624 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-20T03:24:42.739+03:00  INFO 17624 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-20T03:24:42.757+03:00  INFO 17624 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-20T03:24:42.757+03:00  INFO 17624 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-20T03:24:42.877+03:00  INFO 17624 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-20T03:24:42.877+03:00  INFO 17624 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5547 ms
+2024-07-20T03:24:43.599+03:00  INFO 17624 --- [auth-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-20T03:24:43.718+03:00  INFO 17624 --- [auth-service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-20T03:24:43.789+03:00  INFO 17624 --- [auth-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-20T03:24:44.480+03:00  INFO 17624 --- [auth-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-20T03:24:44.535+03:00  INFO 17624 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-20T03:24:45.037+03:00  INFO 17624 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@24ffccfe
+2024-07-20T03:24:45.039+03:00  INFO 17624 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-20T03:24:45.106+03:00  WARN 17624 --- [auth-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-20T03:24:47.869+03:00  INFO 17624 --- [auth-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-20T03:24:48.022+03:00  WARN 17624 --- [auth-service] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-20T03:24:48.022+03:00  WARN 17624 --- [auth-service] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk3e62p73if48w7x1suekjasiw7" of relation "tokens" does not exist, skipping
+2024-07-20T03:24:48.030+03:00  WARN 17624 --- [auth-service] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-20T03:24:48.031+03:00  WARN 17624 --- [auth-service] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "ukr43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2024-07-20T03:24:48.036+03:00  WARN 17624 --- [auth-service] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-20T03:24:48.036+03:00  WARN 17624 --- [auth-service] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2024-07-20T03:24:48.052+03:00  INFO 17624 --- [auth-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-20T03:24:48.674+03:00  INFO 17624 --- [auth-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-20T03:24:50.719+03:00  INFO 17624 --- [auth-service] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-20T03:24:50.722+03:00  WARN 17624 --- [auth-service] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-20T03:24:51.157+03:00  WARN 17624 --- [auth-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-20T03:24:52.999+03:00  INFO 17624 --- [auth-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-20T03:24:55.270+03:00  WARN 17624 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-07-20T03:24:55.362+03:00  INFO 17624 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2024-07-20T03:24:55.727+03:00  WARN 17624 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-07-20T03:24:55.909+03:00  INFO 17624 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-07-20T03:24:55.977+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-07-20T03:24:55.985+03:00  INFO 17624 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T03:24:56.045+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-07-20T03:24:56.046+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-07-20T03:24:56.046+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-07-20T03:24:56.046+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-07-20T03:24:56.047+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-07-20T03:24:56.047+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2024-07-20T03:24:56.048+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-07-20T03:24:56.512+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-07-20T03:24:56.515+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2024-07-20T03:24:56.519+03:00  INFO 17624 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-07-20T03:24:56.526+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1721435096524 with initial instances count: 0
+2024-07-20T03:24:56.544+03:00  INFO 17624 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2024-07-20T03:24:56.545+03:00  INFO 17624 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721435096544, current=UP, previous=STARTING]
+2024-07-20T03:24:56.547+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080: registering service...
+2024-07-20T03:24:56.574+03:00  INFO 17624 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-20T03:24:56.577+03:00  INFO 17624 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2024-07-20T03:24:56.635+03:00  INFO 17624 --- [auth-service] [restartedMain] u.authservice.AuthServiceApplication     : Started AuthServiceApplication in 20.097 seconds (process running for 21.5)
+2024-07-20T03:24:56.640+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080 - registration status: 204
+2024-07-20T03:24:57.289+03:00  INFO 17624 --- [auth-service] [RMI TCP Connection(2)-192.168.1.178] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-07-20T03:24:57.290+03:00  INFO 17624 --- [auth-service] [RMI TCP Connection(1)-192.168.1.178] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-20T03:24:57.292+03:00  INFO 17624 --- [auth-service] [RMI TCP Connection(1)-192.168.1.178] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-20T03:24:57.296+03:00  INFO 17624 --- [auth-service] [RMI TCP Connection(1)-192.168.1.178] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-07-20T03:24:57.408+03:00  INFO 17624 --- [auth-service] [RMI TCP Connection(2)-192.168.1.178] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#4fb9a157:0/SimpleConnection@632f67fd [delegate=amqp://admin@127.0.0.1:5672/, localPort=58751]
+2024-07-20T03:24:57.423+03:00  INFO 17624 --- [auth-service] [RMI TCP Connection(2)-192.168.1.178] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (logs.queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2024-07-20T03:25:14.208+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-1] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:25:14.330+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:25:14.330690100, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:25:23.374+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-2] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:25:23.375+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:25:23.375040, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:25:26.516+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-07-20T03:25:26.517+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-07-20T03:25:26.517+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-07-20T03:25:26.517+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-07-20T03:25:26.517+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-07-20T03:25:26.517+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2024-07-20T03:25:26.517+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-07-20T03:25:26.549+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-07-20T03:25:29.167+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-3] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:25:29.168+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:25:29.168517200, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:25:29.668+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-4] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:25:29.668+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:25:29.668695900, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:25:32.979+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-5] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:25:32.979+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:25:32.979879, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:25:33.430+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-6] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:25:33.431+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:25:33.430777100, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:25:37.840+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-7] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:25:37.840+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:25:37.840555300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:25:59.864+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-10] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:25:59.864+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:25:59.864972700, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:26:07.859+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T03:26:07.859000200, exception=null)
+2024-07-20T03:26:09.171+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-7] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:26:09.172+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:26:09.172781400, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:26:19.850+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T03:26:19.850721500, exception=null)
+2024-07-20T03:26:19.966+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-2] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:26:19.966+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:26:19.966612500, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:26:29.967+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T03:26:29.967474800, exception=null)
+2024-07-20T03:26:45.114+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T03:26:45.114867800, exception=null)
+2024-07-20T03:26:45.311+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-8] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:26:45.312+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:26:45.312621400, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:26:47.184+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T03:26:47.184298300, exception=null)
+2024-07-20T03:26:47.400+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-10] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:26:47.400+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:26:47.400932, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:26:50.733+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T03:26:50.733180400, exception=null)
+2024-07-20T03:26:56.451+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-4] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:26:56.451+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:26:56.451997500, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:26:57.334+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T03:26:57.334519200, exception=null)
+2024-07-20T03:26:57.934+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-6] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:26:57.934+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:26:57.934878, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:01.131+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T03:27:01.131394, exception=null)
+2024-07-20T03:27:01.187+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-8] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:01.187+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:01.187730, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:02.954+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T03:27:02.954567800, exception=null)
+2024-07-20T03:27:03.063+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-10] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:03.063+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:03.063793700, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:05.826+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T03:27:05.826212700, exception=null)
+2024-07-20T03:27:05.898+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-2] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:05.898+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:05.898397300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:07.457+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T03:27:07.457432900, exception=null)
+2024-07-20T03:27:07.536+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-4] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:07.538+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:07.538364900, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:09.922+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T03:27:09.922688600, exception=null)
+2024-07-20T03:27:10.264+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-6] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:10.264+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:10.264065400, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:11.798+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T03:27:11.798130100, exception=null)
+2024-07-20T03:27:11.889+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-8] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:11.889+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:11.889932200, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:14.705+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T03:27:14.705296300, exception=null)
+2024-07-20T03:27:14.749+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-2] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:14.749+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:14.749621500, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:16.215+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T03:27:16.215401700, exception=null)
+2024-07-20T03:27:16.299+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-4] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:16.299+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:16.299685100, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:20.483+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-5] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:20.483+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:20.483511200, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:42.506+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T03:27:42.506531700, exception=null)
+2024-07-20T03:27:42.657+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-1] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:42.658+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:42.658494200, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:44.045+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T03:27:44.045769600, exception=null)
+2024-07-20T03:27:44.154+03:00 ERROR 17624 --- [auth-service] [http-nio-8080-exec-3] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T03:27:44.154+03:00  INFO 17624 --- [auth-service] [http-nio-8080-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T03:27:44.154570800, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T03:27:49.386+03:00  INFO 17624 --- [auth-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application AUTH-SERVICE with eureka with status DOWN
+2024-07-20T03:27:49.387+03:00  INFO 17624 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721435269387, current=DOWN, previous=UP]
+2024-07-20T03:27:49.387+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080: registering service...
+2024-07-20T03:27:49.419+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/AUTH-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/AUTH-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 21 more
+
+2024-07-20T03:27:49.419+03:00  WARN 17624 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/AUTH-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-20T03:27:49.447+03:00  INFO 17624 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/AUTH-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/AUTH-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 22 more
+
+2024-07-20T03:27:49.448+03:00  WARN 17624 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/AUTH-SERVICE": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-20T03:27:49.449+03:00  WARN 17624 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-20T03:27:49.459+03:00  WARN 17624 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-20T03:27:49.526+03:00  INFO 17624 --- [auth-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-20T03:27:49.538+03:00  INFO 17624 --- [auth-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-20T03:27:49.574+03:00  INFO 17624 --- [auth-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-20T03:27:49.575+03:00  INFO 17624 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-07-20T03:27:52.579+03:00  INFO 17624 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2024-07-20T03:27:52.598+03:00  INFO 17624 --- [auth-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 38 more
+
+2024-07-20T03:27:52.598+03:00  WARN 17624 --- [auth-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-20T03:27:52.598+03:00 ERROR 17624 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.1.3.jar:4.1.3]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.1.3.jar:4.1.3]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-3.3.1.jar:3.3.1]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-3.3.1.jar:3.3.1]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-20T03:27:52.605+03:00  INFO 17624 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2024-07-20T04:07:04.567+03:00  INFO 17804 --- [auth-service] [restartedMain] u.authservice.AuthServiceApplication     : Starting AuthServiceApplication using Java 22.0.1 with PID 17804 (D:\workspace\java\fmss-bootcamp-final-project\real-estate-microservices\auth-service\target\classes started by emree in D:\workspace\java\fmss-bootcamp-final-project\real-estate-microservices)
+2024-07-20T04:07:04.578+03:00  INFO 17804 --- [auth-service] [restartedMain] u.authservice.AuthServiceApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-07-20T04:07:04.657+03:00  INFO 17804 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-20T04:07:04.657+03:00  INFO 17804 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-20T04:07:07.276+03:00  INFO 17804 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-20T04:07:07.650+03:00  INFO 17804 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 360 ms. Found 2 JPA repository interfaces.
+2024-07-20T04:07:08.232+03:00  INFO 17804 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=60189e9e-bdb5-3a42-8fd8-7d8a67c854c8
+2024-07-20T04:07:08.989+03:00  WARN 17804 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-20T04:07:08.995+03:00  WARN 17804 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-20T04:07:09.894+03:00  INFO 17804 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-20T04:07:09.912+03:00  INFO 17804 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-20T04:07:09.912+03:00  INFO 17804 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-20T04:07:10.048+03:00  INFO 17804 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-20T04:07:10.048+03:00  INFO 17804 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5390 ms
+2024-07-20T04:07:11.012+03:00  INFO 17804 --- [auth-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-20T04:07:11.145+03:00  INFO 17804 --- [auth-service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-20T04:07:11.211+03:00  INFO 17804 --- [auth-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-20T04:07:11.805+03:00  INFO 17804 --- [auth-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-20T04:07:11.849+03:00  INFO 17804 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-20T04:07:12.177+03:00  INFO 17804 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f051e86
+2024-07-20T04:07:12.179+03:00  INFO 17804 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-20T04:07:12.234+03:00  WARN 17804 --- [auth-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-20T04:07:14.602+03:00  INFO 17804 --- [auth-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-20T04:07:14.848+03:00  INFO 17804 --- [auth-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-20T04:07:15.427+03:00  INFO 17804 --- [auth-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-20T04:07:17.599+03:00  INFO 17804 --- [auth-service] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-20T04:07:17.601+03:00  WARN 17804 --- [auth-service] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-20T04:07:18.016+03:00  WARN 17804 --- [auth-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-20T04:07:21.729+03:00  INFO 17804 --- [auth-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-20T04:07:24.497+03:00  WARN 17804 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-07-20T04:07:24.592+03:00  INFO 17804 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2024-07-20T04:07:24.927+03:00  WARN 17804 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-07-20T04:07:25.117+03:00  INFO 17804 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-07-20T04:07:25.204+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-07-20T04:07:25.211+03:00  INFO 17804 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T04:07:25.260+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-07-20T04:07:25.261+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-07-20T04:07:25.262+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-07-20T04:07:25.262+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-07-20T04:07:25.263+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-07-20T04:07:25.263+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2024-07-20T04:07:25.263+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-07-20T04:07:25.900+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-07-20T04:07:25.906+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2024-07-20T04:07:25.912+03:00  INFO 17804 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-07-20T04:07:25.923+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1721437645921 with initial instances count: 0
+2024-07-20T04:07:25.956+03:00  INFO 17804 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2024-07-20T04:07:25.958+03:00  INFO 17804 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721437645958, current=UP, previous=STARTING]
+2024-07-20T04:07:25.963+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080: registering service...
+2024-07-20T04:07:25.994+03:00  INFO 17804 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-20T04:07:25.997+03:00  INFO 17804 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2024-07-20T04:07:26.070+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080 - registration status: 204
+2024-07-20T04:07:26.072+03:00  INFO 17804 --- [auth-service] [restartedMain] u.authservice.AuthServiceApplication     : Started AuthServiceApplication in 22.271 seconds (process running for 24.277)
+2024-07-20T04:07:26.575+03:00  INFO 17804 --- [auth-service] [RMI TCP Connection(1)-192.168.1.178] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-20T04:07:26.575+03:00  INFO 17804 --- [auth-service] [RMI TCP Connection(1)-192.168.1.178] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-20T04:07:26.580+03:00  INFO 17804 --- [auth-service] [RMI TCP Connection(1)-192.168.1.178] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-07-20T04:07:26.583+03:00  INFO 17804 --- [auth-service] [RMI TCP Connection(2)-192.168.1.178] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-07-20T04:07:26.696+03:00  INFO 17804 --- [auth-service] [RMI TCP Connection(2)-192.168.1.178] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#5f941ad:0/SimpleConnection@49313a0 [delegate=amqp://admin@127.0.0.1:5672/, localPort=60265]
+2024-07-20T04:07:26.712+03:00  INFO 17804 --- [auth-service] [RMI TCP Connection(2)-192.168.1.178] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (logs.queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2024-07-20T04:07:55.908+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-07-20T04:07:55.908+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-07-20T04:07:55.908+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-07-20T04:07:55.908+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-07-20T04:07:55.908+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-07-20T04:07:55.908+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2024-07-20T04:07:55.908+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-07-20T04:07:55.936+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-07-20T04:12:25.268+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T04:14:31.906+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:14:31.932+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:14:31.932155300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:14:42.559+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T04:14:42.559940200, exception=null)
+2024-07-20T04:14:47.826+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:14:47.826+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:14:47.826461800, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:17:25.269+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T04:18:51.438+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:18:51.439+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:18:51.439677800, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:22:25.271+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T04:27:25.272+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T04:27:31.961+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-5] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:27:31.961+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:27:31.961264700, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:32:25.273+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T04:32:29.145+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-8] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:32:29.146+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:32:29.146028300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:32:37.716+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-7] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:32:37.716+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:32:37.716990, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:37:03.311+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-4] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:37:03.311+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:37:03.311301200, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:37:20.935+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-5] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:37:20.936+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:37:20.936382700, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:37:25.275+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T04:37:56.763+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:37:56.763+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:37:56.763610900, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:38:04.314+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-9] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:38:04.314+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:38:04.314224800, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:42:25.277+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T04:44:21.970+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:44:21.970+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:44:21.970732200, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:44:29.774+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-2] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:44:29.775+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:44:29.775798800, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:45:09.761+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-3] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:45:09.761+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:45:09.761501800, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:45:14.061+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T04:45:14.061929200, exception=null)
+2024-07-20T04:45:14.709+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-9] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:45:14.709+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:45:14.709766900, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:45:27.430+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T04:45:27.430584200, exception=null)
+2024-07-20T04:45:27.514+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:45:27.514+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:45:27.514658600, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:45:31.631+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T04:45:31.631259300, exception=null)
+2024-07-20T04:45:31.736+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-2] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:45:31.736+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:45:31.736348200, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:45:35.866+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T04:45:35.866453100, exception=null)
+2024-07-20T04:45:35.933+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-3] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:45:35.934+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:45:35.934578600, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:47:25.284+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T04:47:55.955+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-10] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:47:55.955+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:47:55.955067300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:48:07.762+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-4] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:48:07.762+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:48:07.762297, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:49:02.168+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-5] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:49:02.168+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:49:02.168624800, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:49:24.188+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:49:24.188+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:49:24.188811900, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:52:25.286+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T04:54:40.427+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-7] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:54:40.428+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:54:40.428558500, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:54:49.730+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T04:54:49.731+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T04:54:49.731055300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T04:57:25.287+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:02:25.288+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:07:25.290+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:07:42.885+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-5] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T05:07:42.886+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T05:07:42.886376300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T05:08:01.039+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T05:08:01.039+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T05:08:01.039759700, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T05:08:10.253+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-9] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T05:08:10.254+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T05:08:10.254097300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T05:12:25.299+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:17:25.305+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:22:25.306+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:26:54.787+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T05:26:54.788+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T05:26:54.788387600, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T05:26:56.031+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-2] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T05:26:56.031+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T05:26:56.031660300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T05:26:56.310+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-3] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T05:26:56.311+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T05:26:56.311088600, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T05:26:56.424+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T05:26:56.425+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T05:26:56.425833300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T05:27:05.034+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-9] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T05:27:05.034+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T05:27:05.034881500, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T05:27:05.174+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-7] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T05:27:05.174+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T05:27:05.174378300, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T05:27:25.308+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:32:25.309+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:37:25.311+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:42:25.326+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:47:25.347+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:52:25.349+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T05:57:25.361+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:02:25.373+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:07:25.381+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:12:25.385+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:17:25.399+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:22:25.410+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:22:35.898+03:00 ERROR 17804 --- [auth-service] [http-nio-8080-exec-9] u.a.u.security.jwt.AuthEntryPointJwt     : Unauthorized error: Full authentication is required to access this resource
+2024-07-20T06:22:35.900+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=GET, logType=ERROR, message=Full authentication is required to access this resource, timestamp=2024-07-20T06:22:35.900312800, exception=401 UNAUTHORIZED - InsufficientAuthenticationException)
+2024-07-20T06:27:25.422+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:32:25.424+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:37:12.961+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged out successfully, timestamp=2024-07-20T06:37:12.961611700, exception=null)
+2024-07-20T06:37:21.576+03:00  INFO 17804 --- [auth-service] [http-nio-8080-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T06:37:21.576136700, exception=null)
+2024-07-20T06:37:25.439+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:42:25.448+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:47:25.458+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:52:25.468+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T06:57:25.478+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T07:02:25.481+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T07:07:25.494+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T07:12:25.503+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T07:17:25.511+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T07:22:25.514+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T07:27:25.517+03:00  INFO 17804 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T07:31:32.842+03:00  INFO 17804 --- [auth-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application AUTH-SERVICE with eureka with status DOWN
+2024-07-20T07:31:32.845+03:00  INFO 17804 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721449892845, current=DOWN, previous=UP]
+2024-07-20T07:31:32.857+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080: registering service...
+2024-07-20T07:31:32.976+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080 - registration status: 204
+2024-07-20T07:31:33.544+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-HeartbeatExecutor-0] o.a.h.c.h.i.c.HttpRequestRetryExec       : Recoverable I/O exception (java.net.SocketException) caught when processing request to {}->http://localhost:8761
+2024-07-20T07:31:33.547+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 22 more
+
+2024-07-20T07:31:33.548+03:00  WARN 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-20T07:31:33.560+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 23 more
+
+2024-07-20T07:31:33.560+03:00  WARN 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-20T07:31:33.562+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-20T07:31:33.572+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 19 more
+
+2024-07-20T07:31:33.572+03:00  WARN 17804 --- [auth-service] [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-20T07:31:33.583+03:00  INFO 17804 --- [auth-service] [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 20 more
+
+2024-07-20T07:31:33.583+03:00  WARN 17804 --- [auth-service] [DiscoveryClient-HeartbeatExecutor-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-20T07:31:33.601+03:00  INFO 17804 --- [auth-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-20T07:31:33.583+03:00 ERROR 17804 --- [auth-service] [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080 - was unable to send heartbeat!
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-20T07:31:33.680+03:00  INFO 17804 --- [auth-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-20T07:31:33.714+03:00  INFO 17804 --- [auth-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-20T07:31:33.716+03:00  INFO 17804 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-07-20T07:31:36.730+03:00  INFO 17804 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2024-07-20T07:31:36.808+03:00  INFO 17804 --- [auth-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 38 more
+
+2024-07-20T07:31:36.809+03:00  WARN 17804 --- [auth-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-20T07:31:36.809+03:00 ERROR 17804 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.1.3.jar:4.1.3]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.1.3.jar:4.1.3]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-3.3.1.jar:3.3.1]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-3.3.1.jar:3.3.1]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-20T07:31:36.838+03:00  INFO 17804 --- [auth-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2024-07-20T14:03:21.275+03:00  INFO 26112 --- [auth-service] [restartedMain] u.authservice.AuthServiceApplication     : Starting AuthServiceApplication using Java 22.0.1 with PID 26112 (D:\workspace\java\fmss-bootcamp-final-project\real-estate-microservices\auth-service\target\classes started by emree in D:\workspace\java\fmss-bootcamp-final-project\real-estate-microservices)
+2024-07-20T14:03:21.279+03:00  INFO 26112 --- [auth-service] [restartedMain] u.authservice.AuthServiceApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-07-20T14:03:21.370+03:00  INFO 26112 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-20T14:03:21.371+03:00  INFO 26112 --- [auth-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-20T14:03:24.587+03:00  INFO 26112 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-20T14:03:24.876+03:00  INFO 26112 --- [auth-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 275 ms. Found 2 JPA repository interfaces.
+2024-07-20T14:03:25.756+03:00  INFO 26112 --- [auth-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=60189e9e-bdb5-3a42-8fd8-7d8a67c854c8
+2024-07-20T14:03:26.615+03:00  WARN 26112 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-20T14:03:26.622+03:00  WARN 26112 --- [auth-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-20T14:03:27.547+03:00  INFO 26112 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-20T14:03:27.574+03:00  INFO 26112 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-20T14:03:27.577+03:00  INFO 26112 --- [auth-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-20T14:03:27.736+03:00  INFO 26112 --- [auth-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-20T14:03:27.736+03:00  INFO 26112 --- [auth-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6365 ms
+2024-07-20T14:03:28.595+03:00  INFO 26112 --- [auth-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-20T14:03:28.713+03:00  INFO 26112 --- [auth-service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-20T14:03:28.782+03:00  INFO 26112 --- [auth-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-20T14:03:29.353+03:00  INFO 26112 --- [auth-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-20T14:03:29.501+03:00  INFO 26112 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-20T14:03:29.923+03:00  INFO 26112 --- [auth-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6997ea47
+2024-07-20T14:03:29.931+03:00  INFO 26112 --- [auth-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-20T14:03:29.992+03:00  WARN 26112 --- [auth-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-20T14:03:32.299+03:00  INFO 26112 --- [auth-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-20T14:03:32.501+03:00  INFO 26112 --- [auth-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-20T14:03:32.978+03:00  INFO 26112 --- [auth-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-20T14:03:35.658+03:00  INFO 26112 --- [auth-service] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-20T14:03:35.666+03:00  WARN 26112 --- [auth-service] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-20T14:03:36.106+03:00  WARN 26112 --- [auth-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-20T14:03:37.913+03:00  INFO 26112 --- [auth-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-20T14:03:39.887+03:00  WARN 26112 --- [auth-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-07-20T14:03:40.003+03:00  INFO 26112 --- [auth-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2024-07-20T14:03:40.412+03:00  WARN 26112 --- [auth-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-07-20T14:03:40.607+03:00  INFO 26112 --- [auth-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-07-20T14:03:40.717+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-07-20T14:03:40.726+03:00  INFO 26112 --- [auth-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:03:40.768+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-07-20T14:03:40.768+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-07-20T14:03:40.768+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-07-20T14:03:40.768+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-07-20T14:03:40.768+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-07-20T14:03:40.768+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2024-07-20T14:03:40.769+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-07-20T14:03:41.300+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-07-20T14:03:41.302+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2024-07-20T14:03:41.304+03:00  INFO 26112 --- [auth-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-07-20T14:03:41.312+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1721473421310 with initial instances count: 1
+2024-07-20T14:03:41.330+03:00  INFO 26112 --- [auth-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2024-07-20T14:03:41.332+03:00  INFO 26112 --- [auth-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721473421332, current=UP, previous=STARTING]
+2024-07-20T14:03:41.335+03:00  INFO 26112 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080: registering service...
+2024-07-20T14:03:41.364+03:00  INFO 26112 --- [auth-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-20T14:03:41.365+03:00  INFO 26112 --- [auth-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2024-07-20T14:03:41.423+03:00  INFO 26112 --- [auth-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/DESKTOP-AV28T9D.mshome.net:auth-service:8080 - registration status: 204
+2024-07-20T14:03:41.431+03:00  INFO 26112 --- [auth-service] [restartedMain] u.authservice.AuthServiceApplication     : Started AuthServiceApplication in 21.386 seconds (process running for 24.525)
+2024-07-20T14:03:41.812+03:00  INFO 26112 --- [auth-service] [RMI TCP Connection(5)-192.168.1.178] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-20T14:03:41.812+03:00  INFO 26112 --- [auth-service] [RMI TCP Connection(5)-192.168.1.178] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-20T14:03:41.818+03:00  INFO 26112 --- [auth-service] [RMI TCP Connection(5)-192.168.1.178] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-07-20T14:03:41.820+03:00  INFO 26112 --- [auth-service] [RMI TCP Connection(6)-192.168.1.178] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-07-20T14:03:42.007+03:00  INFO 26112 --- [auth-service] [RMI TCP Connection(6)-192.168.1.178] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7e07355c:0/SimpleConnection@aed317e [delegate=amqp://admin@127.0.0.1:5672/, localPort=52138]
+2024-07-20T14:03:42.024+03:00  INFO 26112 --- [auth-service] [RMI TCP Connection(6)-192.168.1.178] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (logs.queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2024-07-20T14:05:24.526+03:00  INFO 26112 --- [auth-service] [http-nio-8080-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-20T14:05:24.526826500, exception=null)
+2024-07-20T14:08:40.774+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:13:40.788+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:18:40.798+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:23:40.800+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:28:40.814+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:33:40.824+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:38:40.840+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:43:40.881+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:48:40.896+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:53:40.913+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T14:58:40.922+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:03:40.937+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:08:40.954+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:13:40.965+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:18:40.976+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:23:40.990+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:28:41.001+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:33:41.013+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:38:41.025+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:43:41.040+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:48:41.047+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:53:41.058+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T15:58:41.074+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:03:41.080+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:08:41.091+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:13:41.101+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:18:41.115+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:23:41.144+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:28:41.149+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:33:41.161+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:38:41.176+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:43:41.186+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:48:41.195+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:53:41.212+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T16:58:41.228+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:03:41.232+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:08:41.237+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:13:41.240+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:18:41.250+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:23:41.269+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:28:41.283+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:33:41.285+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:38:41.287+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:43:41.291+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:48:41.309+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:53:41.333+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-20T17:58:41.344+03:00  INFO 26112 --- [auth-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
