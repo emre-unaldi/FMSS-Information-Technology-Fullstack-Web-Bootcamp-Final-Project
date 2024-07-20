@@ -13,7 +13,6 @@ import unaldi.userservice.entity.dto.request.AccountSaveRequest;
 import unaldi.userservice.entity.dto.request.SignUpRequest;
 import unaldi.userservice.entity.dto.request.UserUpdateRequest;
 import unaldi.userservice.entity.dto.response.UserResponse;
-import unaldi.userservice.repository.RefreshTokenRepository;
 import unaldi.userservice.repository.RoleRepository;
 import unaldi.userservice.repository.UserRepository;
 import unaldi.userservice.service.AccountService;
@@ -50,16 +49,14 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
-    private final RefreshTokenRepository refreshTokenRepository;
     private final LogProducer logProducer;
     private final AccountService accountService;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, RefreshTokenRepository refreshTokenRepository, LogProducer logProducer, AccountService accountService) {
+    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, LogProducer logProducer, AccountService accountService) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
-        this.refreshTokenRepository = refreshTokenRepository;
         this.logProducer = logProducer;
         this.accountService = accountService;
     }
@@ -186,11 +183,6 @@ public class UserServiceImpl implements UserService {
                 .findById(userId)
                 .orElseThrow(() -> new UserNotFoundException(ExceptionMessages.USER_NOT_FOUND));
 
-        RefreshToken refreshToken = refreshTokenRepository
-                .findByUserId(userId)
-                .orElseThrow(() -> new RefreshTokenNotFoundException(ExceptionMessages.REFRESH_TOKEN_NOT_FOUND));
-
-        refreshTokenRepository.deleteById(refreshToken.getId());
         userRepository.deleteById(user.getId());
 
         logProducer.sendToLog(prepareLogDTO(HttpRequestMethod.DELETE, Messages.USER_DELETED));

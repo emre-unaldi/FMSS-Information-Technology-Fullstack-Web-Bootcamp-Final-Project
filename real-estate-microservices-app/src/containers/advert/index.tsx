@@ -7,6 +7,7 @@ import GoogleMap from "@/components/googleMap";
 import { FcOk } from "react-icons/fc";
 import { IoIosCloseCircle } from "react-icons/io";
 import { FaTurkishLiraSign } from "react-icons/fa6";
+import PhotoUploader from "@/components/photoUploader";
 
 type AdvertDetailsContainerProps = {
     id: string
