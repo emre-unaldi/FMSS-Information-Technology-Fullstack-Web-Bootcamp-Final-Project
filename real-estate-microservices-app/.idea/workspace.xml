@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84224efc-ba5b-46f9-91f3-6dd8ee138c5a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/entity/dto/request/TokenValidRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loginForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loginForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/auth/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/auth/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/auth/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/advert-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/auth-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/auth-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/auth-service/log/project.log.2024-07-12.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/service/Impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/service/Impl/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/utils/constants/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/utils/constants/Messages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/utils/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/auth-service/src/main/java/unaldi/authservice/utils/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/discovery-client-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/discovery-client-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/discovery-client-service/log/project.log.2024-07-12.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/log-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/log-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/order-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/order-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/photo-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/photo-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/photo-service/log/project.log.2024-07-12.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/log/project.log.2024-07-12.0.gz" beforeDir="false" />
-    </list>
+    <list default="true" id="84224efc-ba5b-46f9-91f3-6dd8ee138c5a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
