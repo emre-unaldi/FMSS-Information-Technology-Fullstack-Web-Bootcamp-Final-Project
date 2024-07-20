@@ -15,7 +15,7 @@ public class Messages {
 
     public static final String USER_LOGGED_IN = "User logged in successfully";
     public static final String USER_LOGGED_OUT = "User logged out successfully";
-    public static final String TOKEN_REFRESHED = "Token is refreshed successfully";
+    public static final String TOKEN_VALIDATE = "Token is validated successfully";
     public static final String LOG_WRITE_QUEUE = "Log record written to queue";
 
 }

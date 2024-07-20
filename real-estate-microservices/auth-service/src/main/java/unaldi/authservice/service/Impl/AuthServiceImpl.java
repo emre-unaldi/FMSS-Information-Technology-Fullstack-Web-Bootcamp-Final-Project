@@ -102,6 +102,13 @@ public class AuthServiceImpl implements AuthService {
         return result;
     }
 
+    @Override
+    public DataResult<Boolean> verifyToken(String accessToken) {
+        boolean isValid = jwtUtils.validateJwtToken(accessToken);
+
+        return new SuccessDataResult<>(isValid, Messages.TOKEN_VALIDATE);
+    }
+
     private LogDTO prepareLogDTO(String message) {
         return LogDTO
                 .builder()
