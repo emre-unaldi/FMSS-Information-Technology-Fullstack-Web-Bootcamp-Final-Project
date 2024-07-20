@@ -2,17 +2,19 @@
 import React from "react";
 import {logout} from "@/services/auth";
 import {useRouter} from "next/navigation";
+import Cookies from "universal-cookie";
 
 const HomeContainer: React.FC = () => {
     const router = useRouter();
+    const cookies = new Cookies();
 
     const handleLogout = async () => {
         try {
-            const accessToken: string = localStorage.getItem("jwt-access-token") ?? "";
+            const accessToken: string = cookies.get("jwt-access-token");
             const response = await logout(accessToken);
 
             if (response?.success) {
-                localStorage.removeItem("jwt-access-token");
+                cookies.remove("jwt-access-token");
                 router.push("/login");
             }
         } catch (error) {

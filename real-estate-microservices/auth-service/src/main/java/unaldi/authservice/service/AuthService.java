@@ -16,5 +16,6 @@ public interface AuthService {
 
     DataResult<UserResponse> login(LoginRequest loginRequest);
     Result logout();
+    DataResult<Boolean> verifyToken(String accessToken);
 
 }

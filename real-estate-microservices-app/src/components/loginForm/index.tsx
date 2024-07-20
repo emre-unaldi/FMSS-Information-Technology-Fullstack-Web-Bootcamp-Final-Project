@@ -4,6 +4,7 @@ import {Button, Form, Input, message} from "antd";
 import {LockOutlined, UserOutlined} from "@ant-design/icons";
 import {useRouter} from "next/navigation";
 import {IUserLoginData, login} from "@/services/auth";
+import Cookies from "universal-cookie";
 
 type LoginFormValues = {
     username: string,
@@ -15,6 +16,7 @@ const LoginForm: React.FC = () => {
     const [messageApi, contextHolder] = message.useMessage();
     const key = 'login';
     const router = useRouter()
+    const cookies = new Cookies
 
     const onFinish = async (values: LoginFormValues) => {
         setButtonLoading(true)
@@ -32,7 +34,7 @@ const LoginForm: React.FC = () => {
 
             if (response?.success) {
                 const accessToken = response?.data?.accessToken;
-                localStorage.setItem("jwt-access-token", accessToken);
+                cookies.set("jwt-access-token", accessToken)
 
                 setButtonLoading(false)
                 setTimeout(() => {

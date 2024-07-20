@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import unaldi.authservice.entity.dto.request.LoginRequest;
+import unaldi.authservice.entity.dto.request.TokenValidRequest;
 import unaldi.authservice.entity.dto.response.*;
 import unaldi.authservice.service.AuthService;
 import unaldi.authservice.utils.result.DataResult;
@@ -89,6 +90,37 @@ public class AuthController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(authService.logout());
+    }
+
+    @PostMapping("/verifyToken")
+    @Operation(
+            summary = "Verify JWT token",
+            description = "Verify the validity of a JWT token",
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    description = "JWT token to be verified",
+                    required = true,
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(
+                                    implementation = TokenValidRequest.class
+                            ),
+                            examples = {
+                                    @ExampleObject(
+                                            name = "Verify Token Example",
+                                            summary = "Token Verification",
+                                            description = "Complete request with JWT token",
+                                            value = "{\n"
+                                                    + "  \"accessToken\": \"your-jwt-token\"\n"
+                                                    + "}"
+                                    )
+                            }
+                    )
+            )
+    )
+    public ResponseEntity<DataResult<Boolean>> verifyToken(@RequestBody TokenValidRequest tokenValidRequest) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(authService.verifyToken(tokenValidRequest.getAccessToken()));
     }
 
 }
