@@ -20,7 +20,7 @@ const HomeLayout: React.FC<HomeLayoutProps> = ({children}) => {
 
     const handleLogout = async () => {
         try {
-            const accessToken: string = cookies.get("jwt-access-token");
+            const accessToken: string = await cookies.get("jwt-access-token");
             const response = await logout(accessToken);
 
             if (response?.success) {

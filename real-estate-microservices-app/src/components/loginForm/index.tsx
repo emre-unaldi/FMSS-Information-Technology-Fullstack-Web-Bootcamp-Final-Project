@@ -30,7 +30,6 @@ const LoginForm: React.FC = () => {
 
         try {
             const response = await login(formData)
-            console.log(response)
 
             if (response?.success) {
                 const accessToken = response?.data?.accessToken;

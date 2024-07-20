@@ -31,7 +31,7 @@ import java.util.List;
  * @author Emre Ünaldı
  * @since 11.07.2024
  */
-@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/v1/photos")
 @Tag(name="Photo Controller", description = "Photo Management")
@@ -58,7 +58,7 @@ public class PhotoController {
                     )
             )
     )
-    public ResponseEntity<DataResult<PhotoResponse>> singleUpload(MultipartFile photo) throws Exception {
+    public ResponseEntity<DataResult<PhotoResponse>> singleUpload(@RequestPart("photo") MultipartFile photo) throws Exception {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(photoService.singleUpload(new SingleUploadRequest(photo)));
@@ -78,7 +78,7 @@ public class PhotoController {
                     )
             )
     )
-    public ResponseEntity<DataResult<List<PhotoResponse>>> multipleUpload(MultipartFile[] photos) {
+    public ResponseEntity<DataResult<List<PhotoResponse>>> multipleUpload(@RequestPart("photos") MultipartFile[] photos) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(photoService.multipleUpload(new MultipleUploadRequest(photos)));
