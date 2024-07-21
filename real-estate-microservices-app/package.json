@@ -13,6 +13,7 @@
     "@vis.gl/react-google-maps": "^1.1.0",
     "antd": "^5.19.2",
     "axios": "^1.7.2",
+    "jwt-decode": "^4.0.0",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
