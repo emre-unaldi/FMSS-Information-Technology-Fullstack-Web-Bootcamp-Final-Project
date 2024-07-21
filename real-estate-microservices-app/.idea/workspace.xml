@@ -5,30 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84224efc-ba5b-46f9-91f3-6dd8ee138c5a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/advertModal/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/createAddressForm/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/createAdvertForm/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/createAdvertSteps/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/advert/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(user)/dashboard/profile/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/profile/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/photoUploader/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/photoUploader/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(user)/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(user)/dashboard/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(user)/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(user)/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createAdvertForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createAdvertForm/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/createAdvertSteps/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createAdvertSteps/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/googleMap/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/googleMap/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/advert/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/advert/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/auth/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/auth/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/address/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/address/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/advert/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/advert/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/user/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../real-estate-microservices/advert-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/controller/AddressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/controller/AdvertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/controller/AdvertController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../real-estate-microservices/auth-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/auth-service/log/project.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../real-estate-microservices/discovery-client-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/discovery-client-service/log/project.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../real-estate-microservices/log-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/log-service/log/project.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../real-estate-microservices/order-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/order-service/log/project.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../real-estate-microservices/photo-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/photo-service/log/project.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/utils/WebConfig.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

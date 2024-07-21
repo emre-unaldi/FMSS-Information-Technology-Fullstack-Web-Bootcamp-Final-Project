@@ -84,7 +84,7 @@ const CreateAdvertSteps: React.FC<CreateAdvertStepsProps> = ({ setIsOpen }) => {
         } else if (photoIds.length == 0) {
             message.error("İlan fotoğraflarını yüklemelisiniz")
         } else {
-            router.refresh()
+            window.location.reload()
             setIsOpen(false);
             setCurrent(0);
             setAddressId(0)

@@ -5,7 +5,27 @@ interface IUserRegisterData {
     "email": "string",
     "password": "string",
     "phoneNumber": "string",
-    roles: string[]
+     roles: string[]
+}
+
+interface IAccount {
+    id: number;
+    userId: number;
+    advertCount: number;
+    expirationDate: string;
+    isSubscribe: boolean;
+}
+
+interface IUser {
+    id: number;
+    firstName: string;
+    lastName: string;
+    username: string;
+    email: string;
+    password: string;
+    phoneNumber: string;
+    roles: string[];
+    account: IAccount
 }
 
 const register = async (data: IUserRegisterData) => {
@@ -49,4 +69,4 @@ const findByUsername = async (username: string, accessToken: string) => {
 }
 
 export { register, findByUsername };
-export type { IUserRegisterData };
+export type { IUserRegisterData, IAccount, IUser };

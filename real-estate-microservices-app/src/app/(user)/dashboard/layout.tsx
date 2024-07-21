@@ -36,7 +36,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({children}) => {
         {
             key: '1',
             label: (
-                <Link href={"/dashboard"}>
+                <Link href={"/dashboard/profile"}>
                     Profile
                 </Link>
             ),

@@ -53,7 +53,7 @@ const CreateAdvertForm: React.FC<CreateAdvertFormProps> = ({userId,addressId, ph
             isCarPark
         } = values
 
-        const formattedValidityDate = convertDateTime(values.validityDate)
+        const formattedValidityDate = convertDateTime(validityDate)
         const formattedReleaseDate = convertDateTime(dayjs())
 
         const advertData: IAdvert = {
