@@ -1,9 +1,9 @@
-interface Location {
+interface ILocation {
     lat: number;
     lng: number;
 }
 
-const getLocation = async (address: string): Promise<Location> => {
+const getLocation = async (address: string): Promise<ILocation> => {
     try {
         const response = await fetch(`/api/geocode?address=${encodeURIComponent(address)}`, {
             method: "GET",
@@ -32,4 +32,4 @@ const getLocation = async (address: string): Promise<Location> => {
 }
 
 export { getLocation };
-export type { Location };
+export type { ILocation };

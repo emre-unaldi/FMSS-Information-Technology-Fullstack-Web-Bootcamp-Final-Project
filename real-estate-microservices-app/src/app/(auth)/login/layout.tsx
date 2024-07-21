@@ -39,7 +39,7 @@ const LoginPageLayout: React.FC<LoginPageLayoutProps> = ({children}) => {
                     fontWeight: "lighter"
                 }}
             >
-                ©2024 - Designed By Emre Unaldi
+                ©{new Date().getFullYear()} - Designed By Emre Unaldi
             </Footer>
         </Layout>
     )

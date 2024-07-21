@@ -6,7 +6,7 @@ const RootPage = () => {
     const router = useRouter();
 
     useEffect(() => {
-        router.push("/home");
+        router.push("/dashboard");
     }, [])
 
 }

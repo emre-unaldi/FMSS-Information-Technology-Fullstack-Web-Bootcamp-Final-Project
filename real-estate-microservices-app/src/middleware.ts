@@ -13,8 +13,6 @@ const middleware = async (request: NextRequest) => {
     const hasVerifiedToken = accessToken && (await verifyJwtToken(accessToken));
     const isAuthPageRequested = isAuthPages(nextUrl.pathname);
 
-    console.log("hasVerifiedToken : " + hasVerifiedToken);
-
     if (isAuthPageRequested) {
         if (!hasVerifiedToken?.success) {
             const response = NextResponse.next();
@@ -23,7 +21,7 @@ const middleware = async (request: NextRequest) => {
             return response;
         }
 
-        return NextResponse.redirect(new URL("/home", url));
+        return NextResponse.redirect(new URL("/dashboard", url));
     }
 
     if(!hasVerifiedToken?.success) {
@@ -39,6 +37,6 @@ const middleware = async (request: NextRequest) => {
     return NextResponse.next();
 }
 
-export const config = { matcher: ["/login", "/home/:path*"] };
+export const config = { matcher: ["/login", "/dashboard/:path*"] };
 
 export default middleware;
