@@ -6,7 +6,7 @@ interface IAddress {
     zipCode: string
 }
 
-const saveAddress = async (data: IAddress, accessToken: string) => {
+const createAddress = async (data: IAddress, accessToken: string) => {
     try {
         const response = await fetch("http://localhost:8080/api/v1/addresses", {
             method: "POST",
@@ -27,3 +27,6 @@ const saveAddress = async (data: IAddress, accessToken: string) => {
         throw new Error(error instanceof Error ? error.message : String(error));
     }
 }
+
+export { createAddress }
+export type { IAddress }

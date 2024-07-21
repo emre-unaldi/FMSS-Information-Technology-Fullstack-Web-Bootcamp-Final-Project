@@ -2,17 +2,31 @@
 import React, {useState} from 'react';
 import Cookies from "universal-cookie";
 import {Button, message, Upload, UploadProps} from 'antd';
-import {UploadOutlined} from '@ant-design/icons';
 import type {UploadFile} from 'antd/es/upload/interface';
+import {UploadOutlined} from '@ant-design/icons';
 import {uploadPhotos} from '@/services/photo';
 
-const PhotoUploader: React.FC = () => {
+interface IPhoto {
+    id: string,
+    name: string,
+    downloadUrl: string,
+    type: string,
+    size: number
+}
+
+type PhotoUploaderProps = {
+    setPhotoIds: React.Dispatch<React.SetStateAction<string[]>>
+}
+
+const PhotoUploader: React.FC<PhotoUploaderProps> = ({ setPhotoIds }) => {
     const [photos, setPhotos] = useState<UploadFile[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const [messageApi, contextHolder] = message.useMessage();
     const key = 'uploads';
     const cookies = new Cookies();
 
     const handleUpload = async () => {
+        setIsLoading(true)
         messageApi.open({
             key,
             type: 'loading',
@@ -30,6 +44,10 @@ const PhotoUploader: React.FC = () => {
             const response = await uploadPhotos(formData, accessToken);
 
             if (response?.success) {
+                response?.data.forEach((photo: IPhoto) => {
+                    setPhotoIds(photoIds => [...photoIds, photo.id]);
+                })
+                setIsLoading(false)
                 setTimeout(() => {
                     messageApi.open({
                         key,
@@ -40,6 +58,7 @@ const PhotoUploader: React.FC = () => {
                 }, 1000);
                 setPhotos([]);
             } else {
+                setIsLoading(false)
                 setTimeout(() => {
                     messageApi.open({
                         key,
@@ -50,6 +69,7 @@ const PhotoUploader: React.FC = () => {
                 }, 1000);
             }
         } catch (error) {
+            setIsLoading(false)
             setTimeout(() => {
                 messageApi.open({
                     key,
@@ -59,7 +79,7 @@ const PhotoUploader: React.FC = () => {
                 });
             }, 1000);
         }
-    };
+    }
 
     const photoUploaderProps: UploadProps = {
         name: 'photos',
@@ -82,7 +102,7 @@ const PhotoUploader: React.FC = () => {
     return (
         <>
             {contextHolder}
-            <div style={{width: '50%', height: '50vh', margin: '50px'}}>
+            <div style={{width: '100%', height: 'auto'}}>
                 <Upload.Dragger
                     listType="picture"
                     showUploadList={true}
@@ -98,7 +118,15 @@ const PhotoUploader: React.FC = () => {
                     type="primary"
                     onClick={handleUpload}
                     disabled={photos.length === 0}
-                    style={{marginTop: 16}}
+                    style={{
+                        width: "20%",
+                        margin: "10px auto",
+                        fontSize: '16px',
+                        paddingBottom: 6,
+                        display: "flex",
+                        alignItems: "center"
+                }}
+                    loading={isLoading}
                 >
                     {photos.length > 1 ? 'Upload Photos' : 'Upload Photo'}
                 </Button>

@@ -28,7 +28,7 @@ import java.util.List;
  * @author Emre Ünaldı
  * @since 13.07.2024
  */
-@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1/adverts")
 @Tag(name = "Advert Controller", description = "Advert Management")
