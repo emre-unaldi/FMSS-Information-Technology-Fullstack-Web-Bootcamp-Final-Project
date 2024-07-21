@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import {Badge, Card, Carousel, Col, Descriptions, DescriptionsProps, Divider, Row, Tag} from "antd";
 import {getLocation, ILocation} from "@/services/google"
@@ -7,6 +7,8 @@ import GoogleMap from "@/components/googleMap";
 import { FcOk } from "react-icons/fc";
 import { IoIosCloseCircle } from "react-icons/io";
 import { FaTurkishLiraSign } from "react-icons/fa6";
+import {fetchAdvert, IAddress, IAdvertResponse, IAdvertsApiResponse} from "@/services/advert";
+import Cookies from "universal-cookie";
 
 type AdvertDetailsContainerProps = {
     id: string
@@ -14,98 +16,129 @@ type AdvertDetailsContainerProps = {
 
 const AdvertDetailsContainer: React.FC<AdvertDetailsContainerProps> = ({ id }) => {
     const [location, setLocation] = React.useState<ILocation>();
-    const address: string = "Karamustafa paşa mahallesi, pekmez sokak menekşe apartman b Blok no 9 / 12 İncesu / Kayseri"
+    const [advert, setAdvert] = useState<IAdvertResponse>();
+    const [advertAddress, setAdvertAddress] = React.useState<string>("");
+    const cookies = new Cookies();
 
     useEffect( () => {
-        const fetchLocation = async (address: string) => {
-            const location = await getLocation(address)
-            setLocation(location)
+        const getAdvert = async () => {
+            const accessToken = await cookies.get("jwt-access-token");
+            const advertId = parseInt(id);
+            const response = await fetchAdvert(advertId, accessToken);
+
+            if (response?.success) {
+                setAdvert(response?.data)
+                const address: IAddress = response?.data?.address
+                const mapAddress: string = `
+                    ${address.neighborhood} 
+                    ${address.street} 
+                    ${address.province} 
+                    ${address.county} 
+                    ${address.zipCode}
+                `
+                const location = await getLocation(mapAddress)
+                setLocation(location)
+                setAdvertAddress(mapAddress);
+            } else {
+                throw new Error("Could not fetch adverts response");
+            }
         }
 
-        fetchLocation(address)
+        getAdvert()
             .then(resolve => console.log(resolve))
             .catch(reject => console.log(reject))
-    }, []);
+    }, [id]);
 
-    console.log("Location: " + JSON.stringify(location));
+    const checkAdvertStatus = (status: string | undefined) => {
+        switch (status) {
+            case "ACTIVE":
+                    return (<Badge status="success" text="Active" />)
+            case "PASSIVE":
+                    return (<Badge status="warning" text="Passive" />)
+            case "IN_REVIEW":
+                    return (<Badge status="processing" text="In Review" />)
+            default:
+                return (<Badge status="processing" text="In Review" />)
+        }
+    }
 
     const items: DescriptionsProps['items'] = [
         {
             key: '1',
             label: (<b>Advert Number</b>),
-            children: 'e52c3da2-8c1a-4096-b534-2f59199628e4',
+            children: (<span>{advert?.advertNumber}</span>),
             span: 3,
         },
         {
             key: '2',
             label: (<b>Housing Type</b>),
-            children: (<Tag color={"success"} >VILLA</Tag>),
+            children: (<Tag color={"success"} >{advert?.housingType}</Tag>),
             span: 2,
         },
         {
             key: '3',
             label: (<b>Advert Type</b>),
-            children: (<Tag color={"geekblue"} >For Sent</Tag>),
+            children: (<Tag color={"geekblue"} >{advert?.advertType}</Tag>),
             span: 2,
         },
         {
             key: '4',
             label: (<b>Title</b>),
-            children: 'Sample Apartment Listing 38',
+            children: (<span>{advert?.title}</span>),
             span: 3,
         },
         {
             key: '5',
             label: (<b>Description</b>),
-            children: 'Spacious apartment with great amenities 38',
+            children: (<span>{advert?.description}</span>),
             span: 3,
         },
         {
             key: '6',
             label: (<b>Advert Status</b>),
             span: 2,
-            children: <Badge status="success" text="Active" />,
+            children: checkAdvertStatus(advert?.advertStatus),
         },
         {
             key: '7',
             label: (<b>Release Date</b>),
-            children: '2024-07-21',
+            children: (<span>{advert?.releaseDate}</span>),
             span: 2,
         },
         {
             key: '8',
             label: (<b>Validity Date</b>),
-            children: '2024-12-12',
+            children: (<span>{advert?.validityDate}</span>),
             span: 2,
         },
         {
             key: '9',
             label: (<b>Area</b>),
-            children: '450',
+            children: (<span>{advert?.area}</span>),
             span: 2,
         },
         {
             key: '10',
             label: (<b>Number Of Rooms</b>),
-            children: '6',
+            children: (<span>{advert?.numberOfRooms}</span>),
             span: 2,
         },
         {
             key: '11',
             label: (<b>Price</b>),
-            children: (<span>1,200,000 <FaTurkishLiraSign /></span>),
+            children: (<span>{advert?.price} <FaTurkishLiraSign /></span>),
             span: 2,
         },
         {
             key: '12',
             label: (<b>Is Balcony</b>),
-            children: (<span>{true ? <FcOk style={{fontSize: 20 }} /> : <IoIosCloseCircle style={{fontSize: 22, color: "red"}} />}</span>),
+            children: (<span>{advert?.isBalcony ? <FcOk style={{fontSize: 20 }} /> : <IoIosCloseCircle style={{fontSize: 22, color: "red"}} />}</span>),
             span: 2,
         },
         {
             key: '13',
             label: (<b>Is Car Park</b>),
-            children: (<span>{false ? <FcOk style={{fontSize: 20 }} /> : <IoIosCloseCircle style={{fontSize: 22, color: "red"}} />}</span>),
+            children: (<span>{advert?.isCarPark ? <FcOk style={{fontSize: 20 }} /> : <IoIosCloseCircle style={{fontSize: 22, color: "red"}} />}</span>),
             span: 2
         },
     ];
@@ -115,30 +148,23 @@ const AdvertDetailsContainer: React.FC<AdvertDetailsContainerProps> = ({ id }) =
             <Row justify="center" align="top" style={{height: '50%', width: '100%'}}>
                 <Col span={12}>
                     <Carousel autoplay>
-                        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                            <Image
-                                src={"https://picsum.photos/400/250"}
-                                alt="Image 1"
-                                layout="responsive"
-                                width={400}
-                                height={250}
-                                objectFit="cover"
-                            />
-                        </div>
-                        <div>
-                            <Image
-                                src={"https://picsum.photos/400/260"}
-                                alt="Image 2"
-                                layout="responsive"
-                                width={400}
-                                height={260}
-                                objectFit="cover"
-                            />
-                        </div>
+                        {
+                            advert?.photos.map((photo) => (
+                                <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}  >
+                                    <img
+                                        src={photo.downloadUrl}
+                                        alt={`Image ${id}`}
+                                        width={"100%"}
+                                        height={420}
+                                        key={photo.id}
+                                    />
+                                </div>
+                            ))
+                        }
                     </Carousel>
                 </Col>
                 <Col span={11} style={{marginLeft: 20}}>
-                    <Card title={`Advert Details : ${id}`}>
+                    <Card title={advert?.title}>
                         <Descriptions
                             layout={"horizontal"}
                             bordered
@@ -151,7 +177,7 @@ const AdvertDetailsContainer: React.FC<AdvertDetailsContainerProps> = ({ id }) =
             <Divider/>
             <Row justify="center" align="middle" style={{width: '100%', height: '50%'}}>
                 <Col span={24}>
-                    {location && <GoogleMap location={location} address={address} />}
+                    {location && <GoogleMap location={location} address={advertAddress} />}
                 </Col>
             </Row>
         </>

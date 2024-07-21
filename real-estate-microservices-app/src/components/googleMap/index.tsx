@@ -14,6 +14,8 @@ const GoogleMap: React.FC<GoogleMapProps> = (props) => {
     const [open, setOpen] = useState<boolean>(false)
     const {location: position, address} = props
 
+    console.log("adress : " + address)
+
     const apiKey: string = process.env.NEXT_PUBLIC_GOOGLE_API_KEY ?? "";
     const mapId: string = process.env.NEXT_PUBLIC_GOOGLE_MAP_ID ?? "";
 
