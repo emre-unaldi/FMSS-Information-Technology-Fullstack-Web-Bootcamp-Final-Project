@@ -44,7 +44,7 @@ const LoginForm: React.FC = () => {
                         duration: 2,
                     });
                 }, 1000);
-                router.push("/home")
+                router.push("/dashboard")
             } else {
                 setButtonLoading(false)
                 setTimeout(() => {

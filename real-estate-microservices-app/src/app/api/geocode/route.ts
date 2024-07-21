@@ -1,41 +1,41 @@
 import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
-interface AddressComponent {
+interface IAddressComponent {
     long_name: string;
     short_name: string;
     types: string[];
 }
 
-interface Location {
+interface ILocation {
     lat: number;
     lng: number;
 }
 
-interface Geometry {
+interface IGeometry {
     bounds: {
-        northeast: Location;
-        southwest: Location;
+        northeast: ILocation;
+        southwest: ILocation;
     };
-    location: Location;
+    location: ILocation;
     location_type: string;
     viewport: {
-        northeast: Location;
-        southwest: Location;
+        northeast: ILocation;
+        southwest: ILocation;
     };
 }
 
-interface Result {
-    address_components: AddressComponent[];
+interface IResult {
+    address_components: IAddressComponent[];
     formatted_address: string;
-    geometry: Geometry;
+    geometry: IGeometry;
     partial_match: boolean;
     place_id: string;
     types: string[];
 }
 
-interface GeocodeResponse {
-    results: Result[];
+interface IGeocodeResponse {
+    results: IResult[];
     status: string;
 }
 
@@ -59,7 +59,7 @@ const GET = async (request: NextRequest) => {
     }
 
     try {
-        const response = await axios.get<GeocodeResponse>(
+        const response = await axios.get<IGeocodeResponse>(
             `https://maps.googleapis.com/maps/api/geocode/json`,
             {
                 params: {

@@ -1,9 +1,9 @@
 "use client"
 import React, {useState} from 'react';
+import Cookies from "universal-cookie";
 import {Button, message, Upload, UploadProps} from 'antd';
 import {UploadOutlined} from '@ant-design/icons';
 import type {UploadFile} from 'antd/es/upload/interface';
-import Cookies from "universal-cookie";
 import {uploadPhotos} from '@/services/photo';
 
 const PhotoUploader: React.FC = () => {

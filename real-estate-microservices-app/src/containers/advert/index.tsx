@@ -1,20 +1,19 @@
 "use client"
 import React, {useEffect} from "react";
-import {Badge, Card, Carousel, Col, Descriptions, DescriptionsProps, Divider, Row, Tag} from "antd";
 import Image from "next/image";
-import {getLocation, Location} from "@/services/google"
+import {Badge, Card, Carousel, Col, Descriptions, DescriptionsProps, Divider, Row, Tag} from "antd";
+import {getLocation, ILocation} from "@/services/google"
 import GoogleMap from "@/components/googleMap";
 import { FcOk } from "react-icons/fc";
 import { IoIosCloseCircle } from "react-icons/io";
 import { FaTurkishLiraSign } from "react-icons/fa6";
-import PhotoUploader from "@/components/photoUploader";
 
 type AdvertDetailsContainerProps = {
     id: string
 }
 
 const AdvertDetailsContainer: React.FC<AdvertDetailsContainerProps> = ({ id }) => {
-    const [location, setLocation] = React.useState<Location>();
+    const [location, setLocation] = React.useState<ILocation>();
     const address: string = "Karamustafa paşa mahallesi, pekmez sokak menekşe apartman b Blok no 9 / 12 İncesu / Kayseri"
 
     useEffect( () => {

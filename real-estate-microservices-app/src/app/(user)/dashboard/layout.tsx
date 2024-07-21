@@ -1,20 +1,20 @@
 "use client"
 import React from "react";
-import {Avatar, Dropdown, Layout, type MenuProps, Space, Tag, Typography} from "antd";
-import {LogoutOutlined, UserOutlined} from "@ant-design/icons";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
 import Cookies from "universal-cookie";
+import {Avatar, Dropdown, Layout, type MenuProps, Space, Tag, Typography} from "antd";
+import {LogoutOutlined, UserOutlined} from "@ant-design/icons";
 import {logout} from "@/services/auth";
 import {FaHome} from "react-icons/fa";
 
 const {Header, Content, Footer} = Layout;
 
-type HomeLayoutProps = {
+type DashboardLayoutProps = {
     children: React.ReactNode;
 }
 
-const HomeLayout: React.FC<HomeLayoutProps> = ({children}) => {
+const DashboardLayout: React.FC<DashboardLayoutProps> = ({children}) => {
     const router = useRouter();
     const cookies = new Cookies();
 
@@ -36,7 +36,7 @@ const HomeLayout: React.FC<HomeLayoutProps> = ({children}) => {
         {
             key: '1',
             label: (
-                <Link href={"/home"}>
+                <Link href={"/dashboard"}>
                     Profile
                 </Link>
             ),
@@ -127,4 +127,4 @@ const HomeLayout: React.FC<HomeLayoutProps> = ({children}) => {
     )
 }
 
-export default HomeLayout;
+export default DashboardLayout;

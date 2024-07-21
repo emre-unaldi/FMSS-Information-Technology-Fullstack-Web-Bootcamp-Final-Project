@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
+import {useRouter} from "next/navigation";
 import {Button, Col, Form, Input, message, Row} from "antd";
 import {LockOutlined, MailOutlined, PhoneOutlined, UserOutlined} from "@ant-design/icons";
-import {useRouter} from "next/navigation";
 import {IUserRegisterData, register} from "@/services/user";
 
 type RegisterFormValues = {
@@ -48,7 +48,6 @@ const RegisterForm: React.FC = () => {
 
         try {
             const response = await register(formData)
-            console.log(response)
 
             if (response?.success) {
                 setButtonLoading(false)
@@ -60,6 +59,7 @@ const RegisterForm: React.FC = () => {
                         duration: 2,
                     });
                 }, 1000);
+
                 router.push("/login")
             } else {
                 setButtonLoading(false)
@@ -171,7 +171,13 @@ const RegisterForm: React.FC = () => {
 
                 <Form.Item
                     name="phoneNumber"
-                    rules={[{required: true, message: 'Phone number is required!'}]}
+                    rules={[
+                        {required: true, message: 'Phone number is required!'},
+                        {
+                            pattern: /^\+?\d{1,3}[\s.-]?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+                            message: 'Phone number format is not correct!'
+                        }
+                    ]}
                     hasFeedback
                 >
                     <Input placeholder="Phone number" prefix={<PhoneOutlined/>} size={"large"}/>

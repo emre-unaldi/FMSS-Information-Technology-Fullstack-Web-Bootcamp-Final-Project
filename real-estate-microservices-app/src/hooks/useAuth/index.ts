@@ -1,7 +1,6 @@
 import React from "react";
-import { verifyJwtToken } from "@/libs/auth";
 import Cookies from "universal-cookie";
-import { JWTPayload } from "jose";
+import { verifyJwtToken } from "@/libs/auth";
 
 const fromServer = async () => {
     const cookies = require("next/headers").cookies;
@@ -16,7 +15,7 @@ const fromServer = async () => {
 }
 
 export const useAuth = () => {
-    const [auth, setAuth] = React.useState<JWTPayload | null>(null);
+    const [auth, setAuth] = React.useState(null);
 
     const getVerifiedToken = async () => {
         const cookies = new Cookies();

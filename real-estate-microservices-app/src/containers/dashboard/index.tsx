@@ -1,11 +1,11 @@
 "use client"
 import React from "react";
+import Link from "next/link";
 import {Button, Card, Col, Row, Space, Typography} from 'antd';
 import {PiMapPinLineFill} from "react-icons/pi";
 import {FaTurkishLiraSign} from "react-icons/fa6";
-import Link from "next/link";
 
-const HomeContainer: React.FC = () => {
+const DashboardContainer: React.FC = () => {
 
     return (
         <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
@@ -37,7 +37,7 @@ const HomeContainer: React.FC = () => {
                         <Col span={12}><b>Rooms:</b> 9</Col>
                         <Col span={12}><b>Area:</b> 450 m&sup2;</Col>
                     </Row>
-                    <Link href={`/home/advert/${index}`}>
+                    <Link href={`/dashboard/advert/${index}`}>
                         <Button style={{marginTop: 10, width: "100%", fontSize: 16}} type="primary">
                             Details
                         </Button>
@@ -48,4 +48,4 @@ const HomeContainer: React.FC = () => {
     )
 }
 
-export default HomeContainer;
+export default DashboardContainer;
