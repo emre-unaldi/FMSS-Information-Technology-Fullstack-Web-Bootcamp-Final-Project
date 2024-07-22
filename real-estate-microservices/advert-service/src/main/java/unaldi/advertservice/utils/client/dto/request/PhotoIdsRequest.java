@@ -1,7 +1,6 @@
 package unaldi.advertservice.utils.client.dto.request;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,7 +12,10 @@ import java.util.List;
  * @since 13.07.2024
  */
 @Getter
+@Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PhotoIdsRequest {
     private List<String> photoIds;
 }

@@ -41,4 +41,6 @@ public class Address {
     @OneToOne(mappedBy = "address")
     private Advert advert;
 
+    public Address(long l, String s, String sampleCity, String sampleState, String number) {
+    }
 }

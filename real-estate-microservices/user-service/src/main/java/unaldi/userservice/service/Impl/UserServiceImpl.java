@@ -190,7 +190,7 @@ public class UserServiceImpl implements UserService {
         return new SuccessResult(Messages.USER_DELETED);
     }
 
-    private Set<Role> mapToUserRoles(Set<String> strRoles) {
+    public Set<Role> mapToUserRoles(Set<String> strRoles) {
         Set<Role> roles = new HashSet<>();
 
         if (strRoles == null) {
