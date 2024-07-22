@@ -745,3 +745,1044 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
 
 2024-07-22T10:00:01.684+03:00  INFO 6756 --- [advert-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2024-07-22T11:19:25.689+03:00  INFO 12196 --- [advert-service] [restartedMain] u.a.AdvertServiceApplication             : Starting AdvertServiceApplication using Java 22.0.1 with PID 12196 (D:\workspace\java\fmss-bootcamp-final-project\real-estate-microservices\advert-service\target\classes started by emree in D:\workspace\java\fmss-bootcamp-final-project\real-estate-microservices)
+2024-07-22T11:19:25.697+03:00  INFO 12196 --- [advert-service] [restartedMain] u.a.AdvertServiceApplication             : No active profile set, falling back to 1 default profile: "default"
+2024-07-22T11:19:25.782+03:00  INFO 12196 --- [advert-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-22T11:19:25.782+03:00  INFO 12196 --- [advert-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-22T11:19:27.649+03:00  INFO 12196 --- [advert-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22T11:19:27.650+03:00  INFO 12196 --- [advert-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-22T11:19:27.830+03:00  INFO 12196 --- [advert-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 173 ms. Found 2 JPA repository interfaces.
+2024-07-22T11:19:27.847+03:00  INFO 12196 --- [advert-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22T11:19:27.849+03:00  INFO 12196 --- [advert-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-07-22T11:19:27.885+03:00  INFO 12196 --- [advert-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface unaldi.advertservice.repository.AddressRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-07-22T11:19:27.886+03:00  INFO 12196 --- [advert-service] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface unaldi.advertservice.repository.AdvertRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-07-22T11:19:27.888+03:00  INFO 12196 --- [advert-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-07-22T11:19:28.271+03:00  INFO 12196 --- [advert-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=788c958c-686a-3db5-a761-2595cddd82dc
+2024-07-22T11:19:28.658+03:00  WARN 12196 --- [advert-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-22T11:19:28.662+03:00  WARN 12196 --- [advert-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-22T11:19:29.215+03:00  INFO 12196 --- [advert-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2024-07-22T11:19:29.231+03:00  INFO 12196 --- [advert-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-22T11:19:29.232+03:00  INFO 12196 --- [advert-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-22T11:19:29.326+03:00  INFO 12196 --- [advert-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-22T11:19:29.327+03:00  INFO 12196 --- [advert-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3544 ms
+2024-07-22T11:19:29.798+03:00  INFO 12196 --- [advert-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-22T11:19:29.854+03:00  INFO 12196 --- [advert-service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-22T11:19:29.886+03:00  INFO 12196 --- [advert-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-22T11:19:30.240+03:00  INFO 12196 --- [advert-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-22T11:19:30.265+03:00  INFO 12196 --- [advert-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-22T11:19:30.466+03:00  INFO 12196 --- [advert-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7fb3569a
+2024-07-22T11:19:30.469+03:00  INFO 12196 --- [advert-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-22T11:19:30.500+03:00  WARN 12196 --- [advert-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-22T11:19:31.641+03:00  INFO 12196 --- [advert-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-22T11:19:31.729+03:00  WARN 12196 --- [advert-service] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-07-22T11:19:31.729+03:00  WARN 12196 --- [advert-service] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "ukrtvsgjnhocv4booqrdqsjhij" of relation "adverts" does not exist, skipping
+2024-07-22T11:19:31.738+03:00  INFO 12196 --- [advert-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22T11:19:32.109+03:00  INFO 12196 --- [advert-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-22T11:19:33.069+03:00  WARN 12196 --- [advert-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-22T11:19:33.214+03:00  WARN 12196 --- [advert-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-07-22T11:19:35.002+03:00  INFO 12196 --- [advert-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2024-07-22T11:19:35.038+03:00  WARN 12196 --- [advert-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-07-22T11:19:35.056+03:00  INFO 12196 --- [advert-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-22T11:19:35.162+03:00  INFO 12196 --- [advert-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-07-22T11:19:35.209+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-07-22T11:19:35.214+03:00  INFO 12196 --- [advert-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T11:19:35.238+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-07-22T11:19:35.238+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-07-22T11:19:35.238+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-07-22T11:19:35.238+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-07-22T11:19:35.238+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-07-22T11:19:35.238+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2024-07-22T11:19:35.238+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-07-22T11:19:35.550+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-07-22T11:19:35.552+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2024-07-22T11:19:35.554+03:00  INFO 12196 --- [advert-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-07-22T11:19:35.558+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1721636375558 with initial instances count: 5
+2024-07-22T11:19:35.565+03:00  INFO 12196 --- [advert-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ADVERT-SERVICE with eureka with status UP
+2024-07-22T11:19:35.565+03:00  INFO 12196 --- [advert-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721636375565, current=UP, previous=STARTING]
+2024-07-22T11:19:35.567+03:00  INFO 12196 --- [advert-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083: registering service...
+2024-07-22T11:19:35.598+03:00  INFO 12196 --- [advert-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2024-07-22T11:19:35.598+03:00  INFO 12196 --- [advert-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8083
+2024-07-22T11:19:35.627+03:00  INFO 12196 --- [advert-service] [restartedMain] u.a.AdvertServiceApplication             : Started AdvertServiceApplication in 10.688 seconds (process running for 12.183)
+2024-07-22T11:19:35.631+03:00  INFO 12196 --- [advert-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083 - registration status: 204
+2024-07-22T11:19:35.806+03:00  INFO 12196 --- [advert-service] [RMI TCP Connection(3)-192.168.1.178] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-22T11:19:35.806+03:00  INFO 12196 --- [advert-service] [RMI TCP Connection(2)-192.168.1.178] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-07-22T11:19:35.807+03:00  INFO 12196 --- [advert-service] [RMI TCP Connection(3)-192.168.1.178] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-22T11:19:35.809+03:00  INFO 12196 --- [advert-service] [RMI TCP Connection(3)-192.168.1.178] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-07-22T11:19:35.897+03:00  INFO 12196 --- [advert-service] [RMI TCP Connection(2)-192.168.1.178] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#4a28c5ef:0/SimpleConnection@76472a24 [delegate=amqp://admin@127.0.0.1:5672/, localPort=51499]
+2024-07-22T11:19:35.906+03:00  INFO 12196 --- [advert-service] [RMI TCP Connection(2)-192.168.1.178] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (logs.queue) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2024-07-22T11:21:34.936+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T11:21:34.936634600, exception=null)
+2024-07-22T11:21:44.508+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T11:21:44.508099100, exception=null)
+2024-07-22T11:21:54.836+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T11:21:54.835526, exception=null)
+2024-07-22T11:22:02.536+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T11:22:02.536306200, exception=null)
+2024-07-22T11:22:09.214+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T11:22:09.214472200, exception=null)
+2024-07-22T11:22:15.280+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T11:22:15.280150800, exception=null)
+2024-07-22T11:22:22.839+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T11:22:22.839928900, exception=null)
+2024-07-22T11:22:30.211+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T11:22:30.211695100, exception=null)
+2024-07-22T11:22:37.689+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T11:22:37.689166900, exception=null)
+2024-07-22T11:23:04.253+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T11:23:04.253510300, exception=null)
+2024-07-22T11:24:35.255+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T11:26:41.595+03:00 ERROR 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.u.c.GlobalExceptionHandler           : Exception occurred : {0}
+
+org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<unaldi.advertservice.utils.result.DataResult<unaldi.advertservice.entity.dto.response.AdvertResponse>> unaldi.advertservice.controller.AdvertController.save(unaldi.advertservice.entity.dto.request.AdvertSaveRequest): [Field error in object 'advertSaveRequest' on field 'releaseDate': rejected value [2024-07-13]; codes [FutureOrPresent.advertSaveRequest.releaseDate,FutureOrPresent.releaseDate,FutureOrPresent.java.time.LocalDate,FutureOrPresent]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [advertSaveRequest.releaseDate,releaseDate]; arguments []; default message [releaseDate]]; default message [must be a date in the present or in the future]] 
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:144) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:178) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:107) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-22T11:26:41.687+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=ERROR, message=Validation failed for argument [0] in public org.springframework.http.ResponseEntity<unaldi.advertservice.utils.result.DataResult<unaldi.advertservice.entity.dto.response.AdvertResponse>> unaldi.advertservice.controller.AdvertController.save(unaldi.advertservice.entity.dto.request.AdvertSaveRequest): [Field error in object 'advertSaveRequest' on field 'releaseDate': rejected value [2024-07-13]; codes [FutureOrPresent.advertSaveRequest.releaseDate,FutureOrPresent.releaseDate,FutureOrPresent.java.time.LocalDate,FutureOrPresent]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [advertSaveRequest.releaseDate,releaseDate]; arguments []; default message [releaseDate]]; default message [must be a date in the present or in the future]] , timestamp=2024-07-22T11:26:41.687349200, exception=400 BAD_REQUEST - MethodArgumentNotValidException)
+2024-07-22T11:26:41.698+03:00  WARN 12196 --- [advert-service] [http-nio-8083-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<unaldi.advertservice.utils.result.DataResult<unaldi.advertservice.entity.dto.response.AdvertResponse>> unaldi.advertservice.controller.AdvertController.save(unaldi.advertservice.entity.dto.request.AdvertSaveRequest): [Field error in object 'advertSaveRequest' on field 'releaseDate': rejected value [2024-07-13]; codes [FutureOrPresent.advertSaveRequest.releaseDate,FutureOrPresent.releaseDate,FutureOrPresent.java.time.LocalDate,FutureOrPresent]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [advertSaveRequest.releaseDate,releaseDate]; arguments []; default message [releaseDate]]; default message [must be a date in the present or in the future]] ]
+2024-07-22T11:26:53.686+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T11:26:53.686317, exception=null)
+2024-07-22T11:26:53.722+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T11:26:53.722155700, exception=null)
+2024-07-22T11:27:40.729+03:00 ERROR 12196 --- [advert-service] [http-nio-8083-exec-7] u.a.u.c.GlobalExceptionHandler           : Exception occurred : {0}
+
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.AdvertType` from String "FOR_RENT": not one of the values accepted for Enum class: [FOR_SALE, FOR_SENT]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:406) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:354) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:184) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:161) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:135) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:178) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:107) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `unaldi.advertservice.entity.enums.AdvertType` from String "FOR_RENT": not one of the values accepted for Enum class: [FOR_SALE, FOR_SENT]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 6, column: 17] (through reference chain: unaldi.advertservice.entity.dto.request.AdvertSaveRequest["advertType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1958) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:447) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:304) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:273) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:393) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2125) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:395) ~[spring-web-6.1.10.jar:6.1.10]
+	... 55 common frames omitted
+
+2024-07-22T11:27:40.740+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=ERROR, message=JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.AdvertType` from String "FOR_RENT": not one of the values accepted for Enum class: [FOR_SALE, FOR_SENT], timestamp=2024-07-22T11:27:40.740661600, exception=400 BAD_REQUEST - HttpMessageNotReadableException)
+2024-07-22T11:27:40.743+03:00  WARN 12196 --- [advert-service] [http-nio-8083-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.AdvertType` from String "FOR_RENT": not one of the values accepted for Enum class: [FOR_SALE, FOR_SENT]]
+2024-07-22T11:27:48.461+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T11:27:48.461559500, exception=null)
+2024-07-22T11:27:48.467+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T11:27:48.467021, exception=null)
+2024-07-22T11:28:43.263+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T11:28:43.263996800, exception=null)
+2024-07-22T11:28:43.268+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T11:28:43.268034300, exception=null)
+2024-07-22T11:29:35.262+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T11:29:53.372+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T11:29:53.372936700, exception=null)
+2024-07-22T11:29:53.379+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T11:29:53.379486300, exception=null)
+2024-07-22T11:30:34.567+03:00 ERROR 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.u.c.GlobalExceptionHandler           : Feign NotFoundException occurred : {0}
+
+feign.FeignException$NotFound: [404] during [GET] to [http://localhost:8081/api/v1/users/5] [UserServiceClient#findById(Long)]: [{"success":false,"message":"User not found in database","responseDateTime":"2024-07-22T11:30:34.5565855","data":{"message":"User not found in database","httpStatus":"NOT_FOUND","httpStatusCode":404,"httpMethod":"GET","errorType":"UserNotFoundException","requestPath":"/api/v1/users/5"}}]
+	at feign.FeignException.clientErrorStatus(FeignException.java:228) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:203) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
+	at org.springframework.cloud.openfeign.FeignCachingInvocationHandlerFactory$1.proceed(FeignCachingInvocationHandlerFactory.java:66) ~[spring-cloud-openfeign-core-4.1.2.jar:4.1.2]
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:64) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:416) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:401) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:74) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cloud.openfeign.FeignCachingInvocationHandlerFactory.lambda$create$1(FeignCachingInvocationHandlerFactory.java:53) ~[spring-cloud-openfeign-core-4.1.2.jar:4.1.2]
+	at jdk.proxy3/jdk.proxy3.$Proxy199.findById(Unknown Source) ~[na:na]
+	at unaldi.advertservice.service.Impl.AdvertServiceImpl.fetchUser(AdvertServiceImpl.java:202) ~[classes/:na]
+	at unaldi.advertservice.service.Impl.AdvertServiceImpl.save(AdvertServiceImpl.java:82) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:64) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:416) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.evaluate(CacheAspectSupport.java:545) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:433) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:395) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:74) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.10.jar:6.1.10]
+	at unaldi.advertservice.service.Impl.AdvertServiceImpl$$SpringCGLIB$$0.save(<generated>) ~[classes/:na]
+	at unaldi.advertservice.controller.AdvertController.save(AdvertController.java:84) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:107) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-22T11:30:34.569+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=ERROR, message=[404] during [GET] to [http://localhost:8081/api/v1/users/5] [UserServiceClient#findById(Long)]: [{"success":false,"message":"User not found in database","responseDateTime":"2024-07-22T11:30:34.5565855","data":{"message":"User not found in database","httpStatus":"NOT_FOUND","httpStatusCode":404,"httpMethod":"GET","errorType":"UserNotFoundException","requestPath":"/api/v1/users/5"}}], timestamp=2024-07-22T11:30:34.569193700, exception=404 NOT_FOUND - NotFound)
+2024-07-22T11:30:34.571+03:00  WARN 12196 --- [advert-service] [http-nio-8083-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [GET] to [http://localhost:8081/api/v1/users/5] [UserServiceClient#findById(Long)]: [{"success":false,"message":"User not found in database","responseDateTime":"2024-07-22T11:30:34.5565855","data":{"message":"User not found in database","httpStatus":"NOT_FOUND","httpStatusCode":404,"httpMethod":"GET","errorType":"UserNotFoundException","requestPath":"/api/v1/users/5"}}]]
+2024-07-22T11:30:43.294+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T11:30:43.293861400, exception=null)
+2024-07-22T11:30:43.299+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T11:30:43.299402100, exception=null)
+2024-07-22T11:31:26.605+03:00 ERROR 12196 --- [advert-service] [http-nio-8083-exec-6] u.a.u.c.GlobalExceptionHandler           : Exception occurred : {0}
+
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "apartment": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:406) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:354) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:184) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:161) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:135) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:178) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:107) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "apartment": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 4, column: 18] (through reference chain: unaldi.advertservice.entity.dto.request.AdvertSaveRequest["housingType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1958) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:447) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:304) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:273) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:393) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2125) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:395) ~[spring-web-6.1.10.jar:6.1.10]
+	... 55 common frames omitted
+
+2024-07-22T11:31:26.608+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=ERROR, message=JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "apartment": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE], timestamp=2024-07-22T11:31:26.607068300, exception=400 BAD_REQUEST - HttpMessageNotReadableException)
+2024-07-22T11:31:26.609+03:00  WARN 12196 --- [advert-service] [http-nio-8083-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "apartment": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE]]
+2024-07-22T11:31:36.542+03:00 ERROR 12196 --- [advert-service] [http-nio-8083-exec-8] u.a.u.c.GlobalExceptionHandler           : Exception occurred : {0}
+
+org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<unaldi.advertservice.utils.result.DataResult<unaldi.advertservice.entity.dto.response.AdvertResponse>> unaldi.advertservice.controller.AdvertController.save(unaldi.advertservice.entity.dto.request.AdvertSaveRequest): [Field error in object 'advertSaveRequest' on field 'validityDate': rejected value [2024-07-10]; codes [Future.advertSaveRequest.validityDate,Future.validityDate,Future.java.time.LocalDate,Future]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [advertSaveRequest.validityDate,validityDate]; arguments []; default message [validityDate]]; default message [ileri bir tarih olmalı]] 
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:144) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:178) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:107) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-22T11:31:36.544+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=ERROR, message=Validation failed for argument [0] in public org.springframework.http.ResponseEntity<unaldi.advertservice.utils.result.DataResult<unaldi.advertservice.entity.dto.response.AdvertResponse>> unaldi.advertservice.controller.AdvertController.save(unaldi.advertservice.entity.dto.request.AdvertSaveRequest): [Field error in object 'advertSaveRequest' on field 'validityDate': rejected value [2024-07-10]; codes [Future.advertSaveRequest.validityDate,Future.validityDate,Future.java.time.LocalDate,Future]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [advertSaveRequest.validityDate,validityDate]; arguments []; default message [validityDate]]; default message [ileri bir tarih olmalı]] , timestamp=2024-07-22T11:31:36.544991400, exception=400 BAD_REQUEST - MethodArgumentNotValidException)
+2024-07-22T11:31:36.546+03:00  WARN 12196 --- [advert-service] [http-nio-8083-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<unaldi.advertservice.utils.result.DataResult<unaldi.advertservice.entity.dto.response.AdvertResponse>> unaldi.advertservice.controller.AdvertController.save(unaldi.advertservice.entity.dto.request.AdvertSaveRequest): [Field error in object 'advertSaveRequest' on field 'validityDate': rejected value [2024-07-10]; codes [Future.advertSaveRequest.validityDate,Future.validityDate,Future.java.time.LocalDate,Future]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [advertSaveRequest.validityDate,validityDate]; arguments []; default message [validityDate]]; default message [ileri bir tarih olmalı]] ]
+2024-07-22T11:31:45.327+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T11:31:45.327876300, exception=null)
+2024-07-22T11:31:45.332+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T11:31:45.332992800, exception=null)
+2024-07-22T11:32:38.837+03:00 ERROR 12196 --- [advert-service] [http-nio-8083-exec-1] u.a.u.c.GlobalExceptionHandler           : Exception occurred : {0}
+
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "SUMMER-HOUSE": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:406) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:354) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:184) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:161) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:135) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:178) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:107) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "SUMMER-HOUSE": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 4, column: 18] (through reference chain: unaldi.advertservice.entity.dto.request.AdvertSaveRequest["housingType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1958) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:447) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:304) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:273) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:393) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2125) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:395) ~[spring-web-6.1.10.jar:6.1.10]
+	... 55 common frames omitted
+
+2024-07-22T11:32:38.839+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=ERROR, message=JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "SUMMER-HOUSE": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE], timestamp=2024-07-22T11:32:38.839062900, exception=400 BAD_REQUEST - HttpMessageNotReadableException)
+2024-07-22T11:32:38.840+03:00  WARN 12196 --- [advert-service] [http-nio-8083-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "SUMMER-HOUSE": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE]]
+2024-07-22T11:32:46.010+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T11:32:46.010252500, exception=null)
+2024-07-22T11:32:46.014+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T11:32:46.014755, exception=null)
+2024-07-22T11:33:30.124+03:00 ERROR 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.u.c.GlobalExceptionHandler           : Feign NotFoundException occurred : {0}
+
+feign.FeignException$NotFound: [404] during [GET] to [http://localhost:8081/api/v1/users/8] [UserServiceClient#findById(Long)]: [{"success":false,"message":"User not found in database","responseDateTime":"2024-07-22T11:33:30.1216557","data":{"message":"User not found in database","httpStatus":"NOT_FOUND","httpStatusCode":404,"httpMethod":"GET","errorType":"UserNotFoundException","requestPath":"/api/v1/users/8"}}]
+	at feign.FeignException.clientErrorStatus(FeignException.java:228) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:203) ~[feign-core-13.2.1.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:194) ~[feign-core-13.2.1.jar:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.decodeError(InvocationContext.java:126) ~[feign-core-13.2.1.jar:na]
+	at feign.InvocationContext.proceed(InvocationContext.java:72) ~[feign-core-13.2.1.jar:na]
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114) ~[feign-core-13.2.1.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70) ~[feign-core-13.2.1.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99) ~[feign-core-13.2.1.jar:na]
+	at org.springframework.cloud.openfeign.FeignCachingInvocationHandlerFactory$1.proceed(FeignCachingInvocationHandlerFactory.java:66) ~[spring-cloud-openfeign-core-4.1.2.jar:4.1.2]
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:64) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:416) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:401) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:74) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cloud.openfeign.FeignCachingInvocationHandlerFactory.lambda$create$1(FeignCachingInvocationHandlerFactory.java:53) ~[spring-cloud-openfeign-core-4.1.2.jar:4.1.2]
+	at jdk.proxy3/jdk.proxy3.$Proxy199.findById(Unknown Source) ~[na:na]
+	at unaldi.advertservice.service.Impl.AdvertServiceImpl.fetchUser(AdvertServiceImpl.java:202) ~[classes/:na]
+	at unaldi.advertservice.service.Impl.AdvertServiceImpl.save(AdvertServiceImpl.java:82) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:64) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:416) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.evaluate(CacheAspectSupport.java:545) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:433) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:395) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:74) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.10.jar:6.1.10]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.10.jar:6.1.10]
+	at unaldi.advertservice.service.Impl.AdvertServiceImpl$$SpringCGLIB$$0.save(<generated>) ~[classes/:na]
+	at unaldi.advertservice.controller.AdvertController.save(AdvertController.java:84) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:107) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-22T11:33:30.126+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=ERROR, message=[404] during [GET] to [http://localhost:8081/api/v1/users/8] [UserServiceClient#findById(Long)]: [{"success":false,"message":"User not found in database","responseDateTime":"2024-07-22T11:33:30.1216557","data":{"message":"User not found in database","httpStatus":"NOT_FOUND","httpStatusCode":404,"httpMethod":"GET","errorType":"UserNotFoundException","requestPath":"/api/v1/users/8"}}], timestamp=2024-07-22T11:33:30.126785800, exception=404 NOT_FOUND - NotFound)
+2024-07-22T11:33:30.129+03:00  WARN 12196 --- [advert-service] [http-nio-8083-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [feign.FeignException$NotFound: [404] during [GET] to [http://localhost:8081/api/v1/users/8] [UserServiceClient#findById(Long)]: [{"success":false,"message":"User not found in database","responseDateTime":"2024-07-22T11:33:30.1216557","data":{"message":"User not found in database","httpStatus":"NOT_FOUND","httpStatusCode":404,"httpMethod":"GET","errorType":"UserNotFoundException","requestPath":"/api/v1/users/8"}}]]
+2024-07-22T11:33:36.921+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T11:33:36.921981500, exception=null)
+2024-07-22T11:33:36.926+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T11:33:36.926440200, exception=null)
+2024-07-22T11:34:31.089+03:00 ERROR 12196 --- [advert-service] [http-nio-8083-exec-6] u.a.u.c.GlobalExceptionHandler           : Exception occurred : {0}
+
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "SUMMER-HOUSE": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:406) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:354) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:184) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:161) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:135) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:178) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:107) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "SUMMER-HOUSE": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE]
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 4, column: 18] (through reference chain: unaldi.advertservice.entity.dto.request.AdvertSaveRequest["housingType"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1958) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1245) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:447) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:304) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:273) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:393) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2125) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501) ~[jackson-databind-2.17.1.jar:2.17.1]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:395) ~[spring-web-6.1.10.jar:6.1.10]
+	... 55 common frames omitted
+
+2024-07-22T11:34:31.090+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=ERROR, message=JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "SUMMER-HOUSE": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE], timestamp=2024-07-22T11:34:31.090651800, exception=400 BAD_REQUEST - HttpMessageNotReadableException)
+2024-07-22T11:34:31.094+03:00  WARN 12196 --- [advert-service] [http-nio-8083-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `unaldi.advertservice.entity.enums.HousingType` from String "SUMMER-HOUSE": not one of the values accepted for Enum class: [SUMMER_HOUSE, APARTMENT, DETACHED_HOUSE, VILLA, RESIDENCE]]
+2024-07-22T11:34:35.275+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T11:34:49.654+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T11:34:49.654525100, exception=null)
+2024-07-22T11:34:49.663+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T11:34:49.663909600, exception=null)
+2024-07-22T11:36:14.553+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T11:36:14.553609200, exception=null)
+2024-07-22T11:36:14.558+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T11:36:14.558534500, exception=null)
+2024-07-22T11:39:35.279+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T11:44:35.288+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T11:45:43.153+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T11:45:43.153739200, exception=null)
+2024-07-22T11:48:30.970+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Advert found successfully, timestamp=2024-07-22T11:48:30.970391900, exception=null)
+2024-07-22T11:49:35.305+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T11:54:35.306+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T11:59:35.322+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:04:35.336+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:09:35.343+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:14:35.348+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:19:35.353+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:24:35.361+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:26:27.460+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Advert found successfully, timestamp=2024-07-22T12:26:27.460044600, exception=null)
+2024-07-22T12:26:41.365+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Advert found successfully, timestamp=2024-07-22T12:26:41.365728, exception=null)
+2024-07-22T12:29:35.373+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:34:35.374+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:37:21.226+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Advert found successfully, timestamp=2024-07-22T12:37:21.226676800, exception=null)
+2024-07-22T12:38:49.781+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=DELETE, logType=INFO, message=Advert deleted successfully, timestamp=2024-07-22T12:38:49.780655, exception=null)
+2024-07-22T12:38:52.905+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T12:38:52.905181, exception=null)
+2024-07-22T12:39:26.686+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T12:39:26.686440, exception=null)
+2024-07-22T12:39:35.378+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:40:40.435+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T12:40:40.435210800, exception=null)
+2024-07-22T12:40:40.453+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T12:40:40.453662800, exception=null)
+2024-07-22T12:40:43.775+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T12:40:43.775745400, exception=null)
+2024-07-22T12:44:35.379+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:47:13.701+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=DELETE, logType=INFO, message=Advert deleted successfully, timestamp=2024-07-22T12:47:13.701860200, exception=null)
+2024-07-22T12:47:17.105+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T12:47:17.105246400, exception=null)
+2024-07-22T12:49:35.390+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:50:00.311+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-9] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T12:50:00.311495700, exception=null)
+2024-07-22T12:51:12.525+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T12:51:12.525645100, exception=null)
+2024-07-22T12:51:12.531+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T12:51:12.531745300, exception=null)
+2024-07-22T12:51:16.938+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T12:51:16.938271100, exception=null)
+2024-07-22T12:51:24.772+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-2] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Advert found successfully, timestamp=2024-07-22T12:51:24.772658600, exception=null)
+2024-07-22T12:51:58.368+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=DELETE, logType=INFO, message=Advert deleted successfully, timestamp=2024-07-22T12:51:58.368460400, exception=null)
+2024-07-22T12:52:01.171+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T12:52:01.171507400, exception=null)
+2024-07-22T12:54:35.391+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:55:34.518+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T12:55:34.518208, exception=null)
+2024-07-22T12:56:18.628+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T12:56:18.628267600, exception=null)
+2024-07-22T12:56:18.633+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-6] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T12:56:18.633690500, exception=null)
+2024-07-22T12:56:22.683+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-7] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T12:56:22.683259300, exception=null)
+2024-07-22T12:56:25.852+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Advert found successfully, timestamp=2024-07-22T12:56:25.852265400, exception=null)
+2024-07-22T12:56:51.585+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=DELETE, logType=INFO, message=Advert deleted successfully, timestamp=2024-07-22T12:56:51.585174900, exception=null)
+2024-07-22T12:56:54.360+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T12:56:54.360572200, exception=null)
+2024-07-22T12:59:35.393+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T12:59:59.041+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T12:59:59.041419700, exception=null)
+2024-07-22T13:03:14.751+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-8] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T13:03:14.751577100, exception=null)
+2024-07-22T13:04:02.131+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T13:04:02.131432900, exception=null)
+2024-07-22T13:04:02.136+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-10] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T13:04:02.136318, exception=null)
+2024-07-22T13:04:07.026+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-1] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T13:04:07.026685, exception=null)
+2024-07-22T13:04:10.913+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-3] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Advert found successfully, timestamp=2024-07-22T13:04:10.913146700, exception=null)
+2024-07-22T13:04:35.406+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T13:04:58.212+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-4] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=DELETE, logType=INFO, message=Advert deleted successfully, timestamp=2024-07-22T13:04:58.212984500, exception=null)
+2024-07-22T13:05:01.027+03:00  INFO 12196 --- [advert-service] [http-nio-8083-exec-5] u.a.utils.rabbitMQ.producer.LogProducer  : Log record written to queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T13:05:01.027226600, exception=null)
+2024-07-22T13:09:35.420+03:00  INFO 12196 --- [advert-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T13:12:17.939+03:00  INFO 12196 --- [advert-service] [lettuce-eventExecutorLoop-1-2] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/127.0.0.1:6379
+2024-07-22T13:12:17.941+03:00  INFO 12196 --- [advert-service] [lettuce-eventExecutorLoop-1-1] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was localhost/127.0.0.1:6379
+2024-07-22T13:12:17.964+03:00  WARN 12196 --- [advert-service] [lettuce-nioEventLoop-4-3] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection closed prematurely
+
+io.lettuce.core.RedisConnectionException: Connection closed prematurely
+	at io.lettuce.core.protocol.RedisHandshakeHandler.channelInactive(RedisHandshakeHandler.java:91) ~[lettuce-core-6.3.2.RELEASE.jar:6.3.2.RELEASE/8941aea]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:81) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.lettuce.core.ChannelGroupListener.channelInactive(ChannelGroupListener.java:69) ~[lettuce-core-6.3.2.RELEASE.jar:6.3.2.RELEASE/8941aea]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1402) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:301) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:900) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:811) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-22T13:12:17.964+03:00  WARN 12196 --- [advert-service] [lettuce-nioEventLoop-4-4] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [localhost/<unresolved>:6379]: Connection closed prematurely
+
+io.lettuce.core.RedisConnectionException: Connection closed prematurely
+	at io.lettuce.core.protocol.RedisHandshakeHandler.channelInactive(RedisHandshakeHandler.java:91) ~[lettuce-core-6.3.2.RELEASE.jar:6.3.2.RELEASE/8941aea]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:81) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.lettuce.core.ChannelGroupListener.channelInactive(ChannelGroupListener.java:69) ~[lettuce-core-6.3.2.RELEASE.jar:6.3.2.RELEASE/8941aea]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:303) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1402) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:301) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:900) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:811) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566) ~[netty-transport-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.111.Final.jar:4.1.111.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-22T13:12:23.995+03:00  INFO 12196 --- [advert-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ADVERT-SERVICE with eureka with status DOWN
+2024-07-22T13:12:23.995+03:00  INFO 12196 --- [advert-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721643143995, current=DOWN, previous=UP]
+2024-07-22T13:12:23.997+03:00  INFO 12196 --- [advert-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083: registering service...
+2024-07-22T13:12:24.042+03:00  INFO 12196 --- [advert-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083 - registration status: 204
+2024-07-22T13:12:24.317+03:00  INFO 12196 --- [advert-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22T13:12:24.346+03:00  INFO 12196 --- [advert-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-22T13:12:24.370+03:00  INFO 12196 --- [advert-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-22T13:12:24.371+03:00  INFO 12196 --- [advert-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-07-22T13:12:27.383+03:00  INFO 12196 --- [advert-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2024-07-22T13:12:27.410+03:00  INFO 12196 --- [advert-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 37 more
+
+2024-07-22T13:12:27.410+03:00  WARN 12196 --- [advert-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-22T13:12:27.445+03:00  INFO 12196 --- [advert-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 38 more
+
+2024-07-22T13:12:27.446+03:00  WARN 12196 --- [advert-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-22T13:12:27.446+03:00 ERROR 12196 --- [advert-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADVERT-SERVICE/DESKTOP-AV28T9D.mshome.net:advert-service:8083 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.1.3.jar:4.1.3]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.1.3.jar:4.1.3]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-3.3.1.jar:3.3.1]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-3.3.1.jar:3.3.1]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-22T13:12:27.458+03:00  INFO 12196 --- [advert-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
