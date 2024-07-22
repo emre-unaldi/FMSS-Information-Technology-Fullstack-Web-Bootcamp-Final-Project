@@ -85,7 +85,7 @@ public class AccountServiceImpl implements AccountService {
         AccountResponse accountResponse = accountRepository
                 .findById(accountId)
                 .map(AccountMapper.INSTANCE::accountToAccountResponse)
-                .orElseThrow(() -> new RuntimeException(ExceptionMessages.ACCOUNT_NOT_FOUND));
+                .orElseThrow(() -> new AccountNotFoundException(ExceptionMessages.ACCOUNT_NOT_FOUND));
 
 
         return new SuccessDataResult<>(accountResponse, Messages.ACCOUNT_FOUND);

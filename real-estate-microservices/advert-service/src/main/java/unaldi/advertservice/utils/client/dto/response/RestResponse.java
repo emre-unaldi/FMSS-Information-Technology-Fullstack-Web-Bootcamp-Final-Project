@@ -1,8 +1,6 @@
 package unaldi.advertservice.utils.client.dto.response;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * Copyright (c) 2024
@@ -14,6 +12,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class RestResponse<T> {
     private boolean success;
     private String message;

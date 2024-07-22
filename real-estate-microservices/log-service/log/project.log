@@ -482,3 +482,304 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
 
 2024-07-22T01:43:52.528+03:00  INFO 14740 --- [log-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2024-07-22T09:50:48.632+03:00  INFO 3384 --- [log-service] [restartedMain] u.logservice.LogServiceApplication       : Starting LogServiceApplication using Java 22.0.1 with PID 3384 (D:\workspace\java\fmss-bootcamp-final-project\real-estate-microservices\log-service\target\classes started by emree in D:\workspace\java\fmss-bootcamp-final-project\real-estate-microservices)
+2024-07-22T09:50:48.645+03:00  INFO 3384 --- [log-service] [restartedMain] u.logservice.LogServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-07-22T09:50:48.720+03:00  INFO 3384 --- [log-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-22T09:50:48.720+03:00  INFO 3384 --- [log-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-22T09:50:51.069+03:00  INFO 3384 --- [log-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-07-22T09:50:51.374+03:00  INFO 3384 --- [log-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 295 ms. Found 1 MongoDB repository interface.
+2024-07-22T09:50:51.844+03:00  INFO 3384 --- [log-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c0a16ca3-5cf2-36c3-8012-8480c6f53b66
+2024-07-22T09:50:52.030+03:00  WARN 3384 --- [log-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-22T09:50:52.034+03:00  WARN 3384 --- [log-service] [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-22T09:50:52.687+03:00  INFO 3384 --- [log-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2024-07-22T09:50:52.713+03:00  INFO 3384 --- [log-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-22T09:50:52.713+03:00  INFO 3384 --- [log-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-22T09:50:52.833+03:00  INFO 3384 --- [log-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-22T09:50:52.834+03:00  INFO 3384 --- [log-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4113 ms
+2024-07-22T09:50:53.595+03:00  INFO 3384 --- [log-service] [restartedMain] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/22.0.1+8-16"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@2baf3a01], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@211fa215, com.mongodb.Jep395RecordCodecProvider@7680c00e, com.mongodb.KotlinCodecProvider@47370fdd]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@159a4a08], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-07-22T09:50:53.616+03:00  INFO 3384 --- [log-service] [cluster-ClusterId{value='669e014dcc171f35c17e936b', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=35094000}
+2024-07-22T09:50:53.881+03:00  WARN 3384 --- [log-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-07-22T09:50:55.465+03:00  INFO 3384 --- [log-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2024-07-22T09:50:55.536+03:00  WARN 3384 --- [log-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-07-22T09:50:55.550+03:00  INFO 3384 --- [log-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-22T09:50:55.745+03:00  INFO 3384 --- [log-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-07-22T09:50:55.816+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-07-22T09:50:55.825+03:00  INFO 3384 --- [log-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T09:50:55.866+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-07-22T09:50:55.866+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-07-22T09:50:55.866+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-07-22T09:50:55.867+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-07-22T09:50:55.867+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-07-22T09:50:55.867+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2024-07-22T09:50:55.868+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-07-22T09:50:56.651+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-07-22T09:50:56.654+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2024-07-22T09:50:56.657+03:00  INFO 3384 --- [log-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-07-22T09:50:56.665+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1721631056663 with initial instances count: 0
+2024-07-22T09:50:56.668+03:00  INFO 3384 --- [log-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOG-SERVICE with eureka with status UP
+2024-07-22T09:50:56.670+03:00  INFO 3384 --- [log-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721631056670, current=UP, previous=STARTING]
+2024-07-22T09:50:56.673+03:00  INFO 3384 --- [log-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085: registering service...
+2024-07-22T09:50:56.705+03:00  INFO 3384 --- [log-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2024-07-22T09:50:56.707+03:00  INFO 3384 --- [log-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
+2024-07-22T09:50:56.724+03:00  INFO 3384 --- [log-service] [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2024-07-22T09:50:56.801+03:00  INFO 3384 --- [log-service] [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7941c60d:0/SimpleConnection@57ea36c5 [delegate=amqp://admin@127.0.0.1:5672/, localPort=49301]
+2024-07-22T09:50:56.852+03:00  INFO 3384 --- [log-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085 - registration status: 204
+2024-07-22T09:50:56.903+03:00  INFO 3384 --- [log-service] [restartedMain] u.logservice.LogServiceApplication       : Started LogServiceApplication in 9.073 seconds (process running for 10.453)
+2024-07-22T09:50:57.172+03:00  INFO 3384 --- [log-service] [RMI TCP Connection(1)-192.168.1.178] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-22T09:50:57.173+03:00  INFO 3384 --- [log-service] [RMI TCP Connection(1)-192.168.1.178] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-22T09:50:57.177+03:00  INFO 3384 --- [log-service] [RMI TCP Connection(1)-192.168.1.178] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-07-22T09:51:26.666+03:00  INFO 3384 --- [log-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-07-22T09:51:26.667+03:00  INFO 3384 --- [log-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-07-22T09:51:26.667+03:00  INFO 3384 --- [log-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-07-22T09:51:26.667+03:00  INFO 3384 --- [log-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-07-22T09:51:26.667+03:00  INFO 3384 --- [log-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-07-22T09:51:26.668+03:00  INFO 3384 --- [log-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2024-07-22T09:51:26.668+03:00  INFO 3384 --- [log-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-07-22T09:51:26.721+03:00  INFO 3384 --- [log-service] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-07-22T09:52:06.356+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=user-service, httpRequestMethod=GET, logType=INFO, message=User found successfully, timestamp=2024-07-22T09:52:06.314763600, exception=null)
+2024-07-22T09:52:07.129+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=POST, logType=INFO, message=Photos were successfully listed by their ids, timestamp=2024-07-22T09:52:07.021559500, exception=null)
+2024-07-22T09:52:07.234+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=POST, logType=INFO, message=Photos were successfully listed by their ids, timestamp=2024-07-22T09:52:07.230944900, exception=null)
+2024-07-22T09:52:07.314+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T09:52:07.302635500, exception=null)
+2024-07-22T09:52:07.513+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:52:07.510350200, exception=null)
+2024-07-22T09:52:07.520+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:52:07.518061500, exception=null)
+2024-07-22T09:52:50.279+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=auth-service, httpRequestMethod=POST, logType=INFO, message=User logged in successfully, timestamp=2024-07-22T09:52:50.263705700, exception=null)
+2024-07-22T09:52:52.427+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:52:52.422846100, exception=null)
+2024-07-22T09:52:52.433+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:52:52.424795400, exception=null)
+2024-07-22T09:52:55.101+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=user-service, httpRequestMethod=GET, logType=INFO, message=User found successfully, timestamp=2024-07-22T09:52:55.098255600, exception=null)
+2024-07-22T09:53:31.521+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Address saved successfully, timestamp=2024-07-22T09:53:31.516859700, exception=null)
+2024-07-22T09:53:48.437+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=POST, logType=ERROR, message=Photo name already exists : foto-11.jpg, timestamp=2024-07-22T09:53:48.434191100, exception=409 CONFLICT - PhotoAlreadyExistsException)
+2024-07-22T09:53:57.218+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=POST, logType=ERROR, message=Photo name already exists : foto-5.jpg, timestamp=2024-07-22T09:53:57.203314900, exception=409 CONFLICT - PhotoAlreadyExistsException)
+2024-07-22T09:54:29.406+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=POST, logType=ERROR, message=Photo name already exists : foto-20.jpg, timestamp=2024-07-22T09:54:29.402698, exception=409 CONFLICT - PhotoAlreadyExistsException)
+2024-07-22T09:54:53.617+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=POST, logType=INFO, message=Single photo uploaded successfully, timestamp=2024-07-22T09:54:53.612762100, exception=null)
+2024-07-22T09:54:53.621+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=POST, logType=INFO, message=Multiple photo uploaded successfully, timestamp=2024-07-22T09:54:53.614262, exception=null)
+2024-07-22T09:55:18.607+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=ERROR, message=Validation failed for argument [0] in public org.springframework.http.ResponseEntity<unaldi.advertservice.utils.result.DataResult<unaldi.advertservice.entity.dto.response.AdvertResponse>> unaldi.advertservice.controller.AdvertController.save(unaldi.advertservice.entity.dto.request.AdvertSaveRequest): [Field error in object 'advertSaveRequest' on field 'description': rejected value [Title ]; codes [Size.advertSaveRequest.description,Size.description,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [advertSaveRequest.description,description]; arguments []; default message [description],250,10]; default message [boyut '10' ile '250' arasında olmalı]] , timestamp=2024-07-22T09:55:18.603821800, exception=400 BAD_REQUEST - MethodArgumentNotValidException)
+2024-07-22T09:55:40.990+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=POST, logType=INFO, message=Photos were successfully listed by their ids, timestamp=2024-07-22T09:55:40.987682700, exception=null)
+2024-07-22T09:55:41.004+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Address found successfully, timestamp=2024-07-22T09:55:41.001511900, exception=null)
+2024-07-22T09:55:41.019+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=POST, logType=INFO, message=Advert saved successfully, timestamp=2024-07-22T09:55:41.016370900, exception=null)
+2024-07-22T09:55:48.365+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T09:55:48.362233500, exception=null)
+2024-07-22T09:55:48.462+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:55:48.455265700, exception=null)
+2024-07-22T09:55:48.466+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:55:48.456263100, exception=null)
+2024-07-22T09:55:48.476+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:55:48.473447100, exception=null)
+2024-07-22T09:55:55.875+03:00  INFO 3384 --- [log-service] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-07-22T09:55:59.469+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Advert found successfully, timestamp=2024-07-22T09:55:59.463423100, exception=null)
+2024-07-22T09:55:59.510+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:55:59.505945500, exception=null)
+2024-07-22T09:56:27.156+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:56:27.149595400, exception=null)
+2024-07-22T09:56:27.165+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:56:27.150592600, exception=null)
+2024-07-22T09:56:32.516+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=DELETE, logType=INFO, message=Advert deleted successfully, timestamp=2024-07-22T09:56:32.512623200, exception=null)
+2024-07-22T09:58:13.599+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T09:58:13.596181600, exception=null)
+2024-07-22T09:58:13.641+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:58:13.635979, exception=null)
+2024-07-22T09:58:13.689+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:58:13.680661900, exception=null)
+2024-07-22T09:58:18.564+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=DELETE, logType=INFO, message=Advert deleted successfully, timestamp=2024-07-22T09:58:18.562770, exception=null)
+2024-07-22T09:58:20.803+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T09:58:20.793851900, exception=null)
+2024-07-22T09:58:20.837+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:58:20.833918800, exception=null)
+2024-07-22T09:58:56.497+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=photo-service, httpRequestMethod=GET, logType=INFO, message=Photo downloaded successfully, timestamp=2024-07-22T09:58:56.494027300, exception=null)
+2024-07-22T09:59:04.977+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=DELETE, logType=INFO, message=Advert deleted successfully, timestamp=2024-07-22T09:59:04.961793900, exception=null)
+2024-07-22T09:59:08.918+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] u.l.utils.rabbitMQ.consumer.LogConsumer  : Log record read from queue : LogDTO(serviceName=advert-service, httpRequestMethod=GET, logType=INFO, message=Adverts listed successfully, timestamp=2024-07-22T09:59:08.910493900, exception=null)
+2024-07-22T09:59:58.292+03:00  INFO 3384 --- [log-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOG-SERVICE with eureka with status DOWN
+2024-07-22T09:59:58.292+03:00  INFO 3384 --- [log-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721631598292, current=DOWN, previous=UP]
+2024-07-22T09:59:58.293+03:00  INFO 3384 --- [log-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085: registering service...
+2024-07-22T09:59:58.337+03:00  INFO 3384 --- [log-service] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085 - registration status: 204
+2024-07-22T09:59:58.346+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2024-07-22T09:59:58.350+03:00  INFO 3384 --- [log-service] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2024-07-22T09:59:58.428+03:00  INFO 3384 --- [log-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-07-22T10:00:01.446+03:00  INFO 3384 --- [log-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2024-07-22T10:00:01.482+03:00  INFO 3384 --- [log-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 37 more
+
+2024-07-22T10:00:01.482+03:00  WARN 3384 --- [log-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-22T10:00:01.507+03:00  INFO 3384 --- [log-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 38 more
+
+2024-07-22T10:00:01.508+03:00  WARN 3384 --- [log-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+2024-07-22T10:00:01.508+03:00 ERROR 3384 --- [log-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOG-SERVICE/DESKTOP-AV28T9D.mshome.net:log-service:8085 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916) ~[eureka-client-2.0.2.jar:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892) ~[eureka-client-2.0.2.jar:2.0.2]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.1.3.jar:4.1.3]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.1.3.jar:4.1.3]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195) ~[spring-beans-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174) ~[spring-boot-3.3.1.jar:3.3.1]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093) ~[spring-context-6.1.10.jar:6.1.10]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-3.3.1.jar:3.3.1]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-3.3.1.jar:3.3.1]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-07-22T10:00:01.517+03:00  INFO 3384 --- [log-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

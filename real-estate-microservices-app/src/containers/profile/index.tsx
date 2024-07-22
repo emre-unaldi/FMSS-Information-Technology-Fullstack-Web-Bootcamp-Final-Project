@@ -85,6 +85,7 @@ const ProfileContainer: React.FC = () => {
                         duration: 2
                     });
                     resolve();
+                    window.location.reload()
                 }, 2000);
             } else {
                 setTimeout(() => {
@@ -95,6 +96,7 @@ const ProfileContainer: React.FC = () => {
                         duration: 2
                     });
                     reject();
+                    window.location.reload()
                 }, 2000);
             }
         });

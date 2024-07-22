@@ -5,28 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84224efc-ba5b-46f9-91f3-6dd8ee138c5a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/(user)/dashboard/profile/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/profile/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/test/java/unaldi/advertservice/service/address/AddressServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/test/java/unaldi/advertservice/service/address/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/test/java/unaldi/advertservice/service/advert/AdvertServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/test/java/unaldi/advertservice/service/advert/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/order-service/src/test/java/unaldi/orderservice/service/email/EmailServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/order-service/src/test/java/unaldi/orderservice/service/order/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/order-service/src/test/java/unaldi/orderservice/service/order/OrderServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/photo-service/src/test/java/unaldi/photoservice/service/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/photo-service/src/test/java/unaldi/photoservice/service/PhotoServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/test/java/unaldi/userservice/service/address/AccountServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/test/java/unaldi/userservice/service/address/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/test/java/unaldi/userservice/service/user/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/test/java/unaldi/userservice/service/user/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(user)/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(user)/dashboard/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(user)/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(user)/dashboard/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/createAdvertForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createAdvertForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/createAdvertSteps/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/createAdvertSteps/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/googleMap/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/googleMap/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/advert/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/advert/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/advert/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/advert/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/user/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/advert-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/auth-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/auth-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/discovery-client-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/discovery-client-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/log-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/log-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/order-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/order-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/photo-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/photo-service/log/project.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/log/project.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/profile/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/profile/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/entity/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/entity/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/entity/dto/response/AddressResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/entity/dto/response/AddressResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/utils/client/dto/request/PhotoIdsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/utils/client/dto/request/PhotoIdsRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/utils/client/dto/response/RestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/advert-service/src/main/java/unaldi/advertservice/utils/client/dto/response/RestResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/order-service/src/main/java/unaldi/orderservice/service/Impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/order-service/src/main/java/unaldi/orderservice/service/Impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/order-service/src/main/java/unaldi/orderservice/utils/client/dto/response/RestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/order-service/src/main/java/unaldi/orderservice/utils/client/dto/response/RestResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/photo-service/src/main/java/unaldi/photoservice/entity/dto/request/PhotoIdsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/photo-service/src/main/java/unaldi/photoservice/entity/dto/request/PhotoIdsRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/entity/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/entity/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/entity/dto/response/AccountResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/entity/dto/response/AccountResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/service/Impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/service/Impl/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/utils/rabbitMQ/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/src/main/java/unaldi/userservice/utils/rabbitMQ/dto/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../real-estate-microservices/user-service/user-service/log/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/../real-estate-microservices/user-service/user-service/log/project.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
