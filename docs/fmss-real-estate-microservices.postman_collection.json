@@ -1,0 +1,1134 @@
+{
+	"info": {
+		"_postman_id": "4325a2ca-649e-4941-a7bd-95c7d1a9a590",
+		"name": "fmss-real-estate-microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18186708"
+	},
+	"item": [
+		{
+			"name": "auth-service",
+			"item": [
+				{
+					"name": "/api/v1/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"emreeunaldii\",\r\n    \"password\": \"emreeunaldii\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/auth/logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/auth/verifyToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXJlZXVuYWxkaWkiLCJpYXQiOjE3MjE0MzEzNDIsImV4cCI6MTcyMTUxNzc0Mn0.KtcIyFVvooPhuvrA7RPXR5z592Vo1qIyXamB3iQnQyI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXJlZXVuYWxkaWkiLCJpYXQiOjE3MjE0MzEzNDIsImV4cCI6MTcyMTUxNzc0Mn0.KtcIyFVvooPhuvrA7RPXR5z592Vo1qIyXamB3iQnQyIs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/verifyToken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verifyToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-service",
+			"item": [
+				{
+					"name": "account",
+					"item": [
+						{
+							"name": "/api/v1/accounts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/accounts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"accounts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/accounts/{accountId}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/accounts/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "/api/v1/users/register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Emre\",\r\n    \"lastName\": \"Ünaldı\",\r\n    \"username\": \"emreeunaldii\",\r\n    \"email\": \"emre.unaldi@gmail.com\",\r\n    \"password\": \"emreeunaldii\",\r\n    \"phoneNumber\": \"+5078711189\",\r\n    \"roles\": [\"user\", \"admin\"]\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/users",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Emre\",\r\n    \"lastName\": \"Ünaldı\",\r\n    \"username\": \"emreunaldii\",\r\n    \"email\": \"emre.unaldii@gmail.com\",\r\n    \"password\": \"unaldi38i.\",\r\n    \"phoneNumber\": \"+5078711189\",\r\n    \"roles\": [\"user\", \"admin\"]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/users/{userId}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/users/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/users/findByUsername/{username}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/users/findByUsername/emreeunaldi",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"findByUsername",
+										"emreeunaldi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/users/{userId}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v1/users/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "photo-service",
+			"item": [
+				{
+					"name": "/api/v1/photos/upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "postman-cloud:///1ef3afee-72ff-4a00-9ddd-39d81079a1ed"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/photos/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"photos",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/photos/uploads",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXJlZXVuYWxkaWkiLCJpYXQiOjE3MjE1MDQ4MTAsImV4cCI6MTcyMTU5MTIxMH0.6x7p5IbtQQav9AAhzYuDifE8lt5RgKxtUjdAV4GtDTk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photos",
+									"type": "file",
+									"src": [
+										"postman-cloud:///1ef4794b-0ae2-4770-b2fa-110c525f867c",
+										"postman-cloud:///1ef4794b-0592-49a0-a936-75873647046f",
+										"postman-cloud:///1ef4794b-0bb1-4fc0-975e-102b4dce0dc0",
+										"postman-cloud:///1ef4794b-0611-48e0-a6cd-2c6e106e6343",
+										"postman-cloud:///1ef4794b-05ad-4750-ab44-40b69e35f55d",
+										"postman-cloud:///1ef4794b-0ad6-4420-b6d6-49b729dd0a43",
+										"postman-cloud:///1ef4794b-0ab8-4f60-b06b-af80fdb3742b",
+										"postman-cloud:///1ef4794b-0b4d-4e30-ba14-bc9991200fe4",
+										"postman-cloud:///1ef4794b-0f76-4570-85ea-df9de3fc96c3",
+										"postman-cloud:///1ef4794b-12b9-44d0-98cc-11993086fedd",
+										"postman-cloud:///1ef4794b-0fd3-41d0-a0f5-822a1e7cd84d",
+										"postman-cloud:///1ef4794b-109b-44f0-a032-0c8f047ca006",
+										"postman-cloud:///1ef4794b-144c-4220-a4df-83a4d24bfaf5",
+										"postman-cloud:///1ef4794b-14ab-4590-a38a-392b3abc2c02",
+										"postman-cloud:///1ef4794b-15c8-4fe0-9413-ff0faea145d3",
+										"postman-cloud:///1ef4794b-1719-4e80-9b38-37347e21df79",
+										"postman-cloud:///1ef4794b-178a-4360-bf55-106da47500d8",
+										"postman-cloud:///1ef4794b-1907-4120-85be-bcbcf25dd578",
+										"postman-cloud:///1ef4794b-195c-4850-a472-fa56583d0348",
+										"postman-cloud:///1ef4794b-1994-4ac0-bbe6-e3d75ffb8283"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/photos/uploads",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"photos",
+								"uploads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/photos/findByIds",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"photoIds\": [\"0cfc40f7-ea53-4522-99ea-7128d1f8c979\", \"8671874b-45bc-41c7-afa5-d681635ed0da\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/photos/findByIds",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"photos",
+								"findByIds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/photos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/photos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/photos/{photoId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/photos/0c8e0ac2-6227-4d33-a2a7-85a4f4b7fd87",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"photos",
+								"0c8e0ac2-6227-4d33-a2a7-85a4f4b7fd87"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/photos/download/{photoId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/photos/download/8671874b-45bc-41c7-afa5-d681635ed0da",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"photos",
+								"download",
+								"8671874b-45bc-41c7-afa5-d681635ed0da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/photos/{photoId}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/photos/80c2bfe0-2265-4ccc-a814-345dfacf5c1f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"photos",
+								"80c2bfe0-2265-4ccc-a814-345dfacf5c1f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "advert-service",
+			"item": [
+				{
+					"name": "advert",
+					"item": [
+						{
+							"name": "/api/v1/adverts",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"photoIds\": [\"75cb2375-e6ed-4e53-8973-eee898fa9dbe\", \"bc457ae2-d19e-4a0c-87b8-861259a03b3c\"],\r\n  \"userId\": 1,\r\n  \"housingType\": \"VILLA\",\r\n  \"advertStatus\": \"PASSIVE\",\r\n  \"advertType\": \"FOR_SENT\",\r\n  \"title\": \"Sample Apartment Listing 38\",\r\n  \"description\": \"Spacious apartment with great amenities 38\",\r\n  \"addressId\": 1,\r\n  \"releaseDate\": \"2024-07-13\",\r\n  \"validityDate\": \"2024-12-12\",\r\n  \"area\": 400,\r\n  \"numberOfRooms\": 9,\r\n  \"price\": 20000,\r\n  \"isBalcony\": false,\r\n  \"isCarPark\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/v1/adverts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"adverts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/adverts/changeStatus",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 1,\r\n  \"advertStatus\": \"PASSIVE\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/v1/adverts/changeStatus",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"adverts",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/adverts",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"1\",\r\n  \"photoIds\": [\"198ac9b8-e4ea-49d2-a8c4-497d9b3889fb\", \"e3c5c3ee-6d9f-4fa2-930b-53c489f4fc2a\"],\r\n  \"userId\": 38,\r\n  \"housingType\": \"VILLA\",\r\n  \"advertStatus\": \"PASSIVE\",\r\n  \"advertType\": \"FOR_SENT\",\r\n  \"title\": \"Sample Apartment Listing\",\r\n  \"description\": \"Spacious apartment with great amenities\",\r\n  \"addressId\": 34,\r\n  \"releaseDate\": \"2024-07-13\",\r\n  \"validityDate\": \"2024-12-12\",\r\n  \"area\": 400,\r\n  \"numberOfRooms\": 9,\r\n  \"isBalcony\": false,\r\n  \"isCarPark\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/v1/adverts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"adverts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/adverts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/v1/adverts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"adverts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/adverts/{advertId}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/v1/adverts/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"adverts",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/adverts/{advertId}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/v1/adverts/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"adverts",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "addresses",
+					"item": [
+						{
+							"name": "/api/v1/addresses",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXJlZXVuYWxkaWkiLCJpYXQiOjE3MjE1MzM1OTAsImV4cCI6MTcyMTYxOTk5MH0.9tnqD3eEaDh0jNM6AMAQqrW0z8DNVvGpM1YgDHvc73Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"neighborhood\": \"Midtown\",\r\n  \"street\": \"258 Fir Street\",\r\n  \"province\": \"Nova Scotia\",\r\n  \"county\": \"Halifax\",\r\n  \"zipCode\": \"B3H1Y5\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/v1/addresses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"addresses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/addresses",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 1,\r\n  \"neighborhood\": \"Greenwood\",\r\n  \"street\": \"123 Maple Street\",\r\n  \"province\": \"Ontario\",\r\n  \"county\": \"Waterloo\",\r\n  \"zipCode\": \"N2L3G1\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/v1/addresses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"addresses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/addresses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/v1/addresses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"addresses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/addresses/{addressId}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/v1/addresses/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"addresses",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/addresses/{addressId}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/v1/addresses/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"v1",
+										"addresses",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "order-service",
+			"item": [
+				{
+					"name": "/api/v1/orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"packageCount\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/orders",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,  \r\n  \"userId\": 1,\r\n  \"packageCount\": 4\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/orders/{orderId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/v1/orders/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/orders/{orderId}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/v1/orders/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "log-service",
+			"item": [
+				{
+					"name": "/api/v1/logs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"serviceName\": \"user-service\",\r\n  \"httpRequestMethod\": \"GET\",\r\n  \"logType\": \"INFO\",\r\n  \"message\": \"Users in the database are listed\",\r\n  \"requestPath\": \"/api/v1/users\",\r\n  \"timestamp\": \"2024-07-16T12:00:00\",\r\n  \"exception\": \"NullPointerExcepiton\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/logs",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"669470d6b8f957410e4e8f1c\",\r\n  \"serviceName\": \"photo-service\",\r\n  \"httpRequestMethod\": \"POST\",\r\n  \"logType\": \"ERROR\",\r\n  \"message\": \"Users in the database are listed 1\",\r\n  \"requestPath\": \"/api/v1/users/1\",\r\n  \"timestamp\": \"2024-07-20T12:00:00\",\r\n  \"exception\": \"NullPointerExcepiton\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/logs/{logId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/logs/66947167b8f957410e4e8f1d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"logs",
+								"66947167b8f957410e4e8f1d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/logs/{logId}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/logs/669470d6b8f957410e4e8f1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"logs",
+								"669470d6b8f957410e4e8f1c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Google-Geocoding-Api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=Karamustafa paşa mahallesi, pekmez sokak menekşe apartman b Blok no 9 / 12 İncesu / Kayseri&key=AIzaSyDLvuKeSSjlA_RWcLdLPx2KSJmhXU0eN3E",
+					"protocol": "https",
+					"host": [
+						"maps",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"maps",
+						"api",
+						"geocode",
+						"json"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "Karamustafa paşa mahallesi, pekmez sokak menekşe apartman b Blok no 9 / 12 İncesu / Kayseri"
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyDLvuKeSSjlA_RWcLdLPx2KSJmhXU0eN3E"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
