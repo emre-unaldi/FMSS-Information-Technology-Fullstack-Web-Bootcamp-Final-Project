@@ -103,8 +103,21 @@ After all services are up and running with `Docker`:
 > All running services can access dependent graphic interfaces via the web without being dependent on the local environment.
 
 ## Unit Test Results
-> User Service Tests
-![database-model-diagram](./docs/user-service.test.png)
+> User Service Tests  
+
+![user-service-test](./docs/user-service-test.png)
+
+> Photo Service Tests  
+
+![photo-service-test](./docs/photo-service-test.png)
+
+> Advert Service Tests  
+
+![advert-service-test](./docs/advert-service-test.png)
+
+> Order Service Tests  
+
+![order-advert-service-test](./docs/order-service-test.png)
 
 ---
 
