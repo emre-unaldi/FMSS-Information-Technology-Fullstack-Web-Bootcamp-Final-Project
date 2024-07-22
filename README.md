@@ -5,6 +5,7 @@
 - [Database Entity Relationships](#database-entity-relationships)
 - [Backend Technology Stack](#backend-technology-stack)
 - [Backend Build and Run Project](#backend-build-and-run-project)
+- [Unit Test Results](#unit-test-results)
 
 ## `Frontend Content`
 - [Introduction](#frontend-introduction)
@@ -100,6 +101,10 @@ After all services are up and running with `Docker`:
 - `RabbitMQ` interface can be accessed from port **15672**
 - `Mongo Express` interface can be accessed from port **8088**
 > All running services can access dependent graphic interfaces via the web without being dependent on the local environment.
+
+## Unit Test Results
+> User Service Tests
+![database-model-diagram](./docs/user-service.test.png)
 
 ---
 
